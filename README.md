@@ -1,10 +1,12 @@
-# Electron Boilerplate
+# React Electron Boilerplate
 
-A minimalistic Electron boilerplate based on the official [quick start](https://electron.atom.io/docs/tutorial/quick-start/) tutorial. Includes [electron-builder](https://github.com/electron-userland/electron-builder), [Jest](https://facebook.github.io/jest), and more coming soon.
+The essential React-Electron Boilerplate.
 
 ## Setup
 
-Install the latest [Node JS](https://nodejs.org/) and [Yarn](https://yarnpkg.com) and simply run ```yarn``` or ```yarn install``` command in the project directory.
+1. Clone the repository
+2. Install the latest [Node JS](https://nodejs.org/) and [Yarn](https://yarnpkg.com) and simply run ```yarn``` or ```yarn install``` command in the project directory.
+3. ```git remote add base https://github.com/psychobolt/electron-boilerplate```
 
 ## Local development
 
@@ -21,6 +23,10 @@ yarn prod # running production code
 yarn add [package-name]
 yarn add [package-name] --dev # dev dependencies
 ```
+
+## Merging from base project
+
+This project is a fork from psychobolt's [electron-boilerplate](https://github.com/psychobolt/electron-boilerplate). Merge, ```git merge base/master```, and fix any conflicts before commit.
 
 ## Test
 
