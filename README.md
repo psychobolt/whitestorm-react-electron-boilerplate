@@ -1,6 +1,6 @@
 # React Electron Boilerplate
 
-The essential React-Electron Boilerplate.
+The essential framework for React-Electron development.
 
 ## Setup
 
