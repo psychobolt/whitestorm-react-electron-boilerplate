@@ -15,7 +15,7 @@ yarn dev # running development code, same as 'yarn start'
 yarn prod # running production code
 ```
 
-> It may preferred to launch with debug on main process. Visual Studio Code configuration is provided in the project.
+> It may be preferred to launch with debug on main process. Visual Studio Code configuration is provided in the project.
 
 ## Adding dependencies (libraries)
 
