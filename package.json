@@ -1,0 +1,44 @@
+{
+  "name": "electron-boilerplate",
+  "version": "1.0.0",
+  "description": "Personal Electron boilerplate",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "electron-builder",
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=development electron .",
+    "prod": "cross-env NODE_ENV=production electron .",
+    "test": "jest"
+  },
+  "build": {
+    "linux": {
+      "target": [
+        "AppImage",
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/psychobolt/electron-boilerplate.git"
+  },
+  "author": "psychobolt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/psychobolt/electron-boilerplate/issues"
+  },
+  "homepage": "https://github.com/psychobolt/electron-boilerplate#readme",
+  "devDependencies": {
+    "cross-env": "^5.0.4",
+    "electron": "^1.6.11",
+    "electron-builder": "^19.19.1",
+    "jest": "^20.0.4"
+  }
+}
