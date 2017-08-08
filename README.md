@@ -1,5 +1,7 @@
 # Electron Boilerplate
 
+[![Build Status](https://travis-ci.org/psychobolt/electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/electron-boilerplate) [![Dependencies Status](https://david-dm.org/psychobolt/electron-boilerplate.svg)](https://david-dm.org/psychobolt/electron-boilerplate)
+
 A minimalistic Electron boilerplate based on the official [quick start](https://electron.atom.io/docs/tutorial/quick-start/) tutorial. Includes [electron-builder](https://github.com/electron-userland/electron-builder), [Jest](https://facebook.github.io/jest), and more coming soon.
 
 ## Setup
