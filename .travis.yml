@@ -16,6 +16,7 @@ before_script:
   - sleep 3 # give xvfb some time to start
 
 script:
+  - yarn lint
   - yarn test -- --coverage
   - yarn test-e2e
   - codecov

@@ -1,6 +1,8 @@
 # Electron Boilerplate
 
-[![Build Status](https://travis-ci.org/psychobolt/electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/electron-boilerplate) [![Dependencies Status](https://david-dm.org/psychobolt/electron-boilerplate.svg)](https://david-dm.org/psychobolt/electron-boilerplate)
+[![Build Status](https://travis-ci.org/psychobolt/electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/electron-boilerplate)
+[![Dependencies Status](https://david-dm.org/psychobolt/electron-boilerplate.svg)](https://david-dm.org/psychobolt/electron-boilerplate)
+[![codecov](https://codecov.io/gh/psychobolt/electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/electron-boilerplate)
 
 A minimalistic Electron boilerplate based on the official [quick start](https://electron.atom.io/docs/tutorial/quick-start/) tutorial.
 
@@ -9,6 +11,8 @@ A minimalistic Electron boilerplate based on the official [quick start](https://
 - [electron-builder](https://github.com/electron-userland/electron-builder)
 - [Jest](https://facebook.github.io/jest)
 - [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)
+- [Codecov](https://codecov.io/)
+- [ESLint](http://eslint.org/)
 
 ## Setup
 
@@ -28,6 +32,13 @@ yarn prod # running production code
 ```sh
 yarn add [package-name]
 yarn add [package-name] --dev # dev dependencies
+```
+
+## Lint
+
+```sh
+yarn lint # runs linter to detect any style issues
+yarn lint -- --fix # tries to fix lint issues
 ```
 
 ## Test
