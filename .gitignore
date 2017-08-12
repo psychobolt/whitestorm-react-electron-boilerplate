@@ -59,3 +59,4 @@ typings/
 
 # Build output files
 dist
+src/.build

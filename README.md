@@ -20,18 +20,41 @@ Install the latest [Node JS](https://nodejs.org/) and [Yarn](https://yarnpkg.com
 
 ## Local development
 
+During development, run watch task:
 ```sh
-yarn dev # running development code, same as 'yarn start'
-yarn prod # running production code
+yarn watch # compile new code changes and reloads the app
 ```
 
-> It may be preferred to launch with debug on main process. Visual Studio Code configuration is provided in the project.
+> Alternatively, you can run watch task (npm: watch) in Visual Studio Code.
+
+Then, in another terminal, launch Electron:
+```sh
+yarn dev # same as 'yarn start'
+```
+
+> Alternatively, you can launch in Visual Studio Code in debug mode.
+
+Tesing only with production code (watch and debug unnecessary):
+
+```sh
+yarn prod
+```
 
 ## Adding dependencies (libraries)
 
+This project uses two package.json structure. For more details, see [here](https://github.com/electron-userland/electron-builder/wiki/Two-package.json-Structure).
+
+### Dev dependencies (native libraries), for <root_dir>/package.json
+
 ```sh
+yarn add [package-name] --dev 
+```
+
+### App only dependencies, for <root_dir>/src/package.json
+
+```sh
+cd src/
 yarn add [package-name]
-yarn add [package-name] --dev # dev dependencies
 ```
 
 ## Lint
