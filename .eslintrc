@@ -1,4 +1,5 @@
 {
+    "parser": "babel-eslint",
     "extends": "airbnb-base",
     "rules": {
         "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "main.babel.js", "webpack*.js"]}]
