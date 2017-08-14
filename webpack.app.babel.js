@@ -7,7 +7,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CommonConfig from './webpack.common';
 
 let config = {
-  entry: './src/app.js',
+  entry: './src/index.js',
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
