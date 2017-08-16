@@ -8,12 +8,12 @@ The essential framework for React-Electron development.
 
 ## Included
 
-- ES6 support: [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/)
+- Latest ES [presets](https://babeljs.io/docs/plugins/preset-env/) with [stage-3](http://babeljs.io/docs/plugins/preset-stage-3/) feature support: [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/)
 - Packaging support: [electron-builder](https://github.com/electron-userland/electron-builder)
 - Test runner: [Jest](https://facebook.github.io/jest)
 - e2e runner: [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)
 - Code Coverage reporter: [Codecov](https://codecov.io/)
-- ES6 Linting: [ESLint](http://eslint.org/) using [AirBnb style guide](https://github.com/airbnb/javascript)
+- ES Linting: [ESLint](http://eslint.org/) using [AirBnb style guide](https://github.com/airbnb/javascript)
 
 ## Setup
 
