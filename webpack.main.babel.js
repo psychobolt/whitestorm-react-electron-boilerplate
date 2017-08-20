@@ -6,7 +6,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CommonConfig from './webpack.common';
 
 let config = {
-  entry: './main.babel.js',
+  entry: './src/main.js',
   output: {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
