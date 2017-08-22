@@ -25,7 +25,6 @@ if (process.env.NODE_ENV === 'development') {
     devtool: 'inline-source-map',
     devServer: {
       port: 3000,
-      contentBase: './src/.build/',
     },
   });
 } else {
