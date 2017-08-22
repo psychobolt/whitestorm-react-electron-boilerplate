@@ -19,7 +19,7 @@ function createWindow() {
       slashes: true,
     }));
   } else {
-    win.loadURL('http://localhost:3000/index.html'); // TODO: pass port
+    win.loadURL('http://localhost:3000/'); // TODO: pass port
   }
 
   if (process.env.NODE_ENV === 'development') {
