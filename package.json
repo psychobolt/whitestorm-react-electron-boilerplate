@@ -38,7 +38,9 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.js"
+      "src/**/*.js",
+      "!**/main.js",
+      "!**/.build/**"
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
