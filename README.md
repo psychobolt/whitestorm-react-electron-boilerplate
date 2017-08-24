@@ -60,6 +60,14 @@ cd src/
 yarn add [package-name]
 ```
 
+## Static Type Checker
+
+```sh
+yarn run flow
+```
+
+> Some extensions such as in [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) detect ```.flowconfig``` and run type checking in the editor.
+
 ## Lint
 
 ```sh
