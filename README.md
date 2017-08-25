@@ -8,7 +8,9 @@ The essential framework for React-Electron development.
 
 ## Included
 
-- Latest ES [presets](https://babeljs.io/docs/plugins/preset-env/) with [stage-3](http://babeljs.io/docs/plugins/preset-stage-3/) feature support: [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/)
+- [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
+  - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-3](http://babeljs.io/docs/plugins/preset-stage-3/) features 
+  - [Flow](https://flow.org/) Type support
 - Packaging support: [electron-builder](https://github.com/electron-userland/electron-builder)
 - Test runner: [Jest](https://facebook.github.io/jest)
 - e2e runner: [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)
@@ -64,12 +66,30 @@ yarn add [package-name]
 
 This project is a fork from psychobolt's [electron-boilerplate](https://github.com/psychobolt/electron-boilerplate). Merge, ```git merge base/master```, and fix any conflicts before commit.
 
+## Static Types
+
+```sh
+yarn run flow # performs type checking on files
+```
+
+See [official documentation](https://flow.org/) for a usage guide.
+
+To install typed definitions:
+
+```sh
+yarn run flow-typed install [package-specification]
+```
+
+See [official documentation](https://github.com/flowtype/flow-typed) for a usage guide.
+
 ## Lint
 
 ```sh
 yarn lint # runs linter to detect any style issues
 yarn lint -- --fix # tries to fix lint issues
 ```
+
+See [official documentation](https://eslint.org/) for a usage guide.
 
 ## Test
 
