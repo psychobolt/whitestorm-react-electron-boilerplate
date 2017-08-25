@@ -9,7 +9,7 @@ A minimalistic Electron boilerplate based on the official [quick start](https://
 ## Included
 
 - [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
-  - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-3](http://babeljs.io/docs/plugins/preset-stage-3/) feature 
+  - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-3](http://babeljs.io/docs/plugins/preset-stage-3/) features 
   - [Flow](https://flow.org/) Type support
 - Packaging support: [electron-builder](https://github.com/electron-userland/electron-builder)
 - Test runner: [Jest](https://facebook.github.io/jest)
@@ -60,13 +60,21 @@ cd src/
 yarn add [package-name]
 ```
 
-## Static Type Checker
+## Static Types
 
 ```sh
-yarn run flow
+yarn run flow # performs type checking on files
 ```
 
-> Some extensions such as in [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) detect ```.flowconfig``` and run type checking in the editor.
+See [official documentation](https://flow.org/) for a usage guide.
+
+To install typed definitions:
+
+```sh
+yarn run flow-typed install [package-specification]
+```
+
+See [official documentation](https://github.com/flowtype/flow-typed) for a usage guide.
 
 ## Lint
 
@@ -74,6 +82,8 @@ yarn run flow
 yarn lint # runs linter to detect any style issues
 yarn lint -- --fix # tries to fix lint issues
 ```
+
+See [official documentation](https://eslint.org/) for a usage guide.
 
 ## Test
 
