@@ -60,3 +60,6 @@ typings/
 # Build output files
 dist
 src/.build
+
+# flow-typed
+flow-typed/npm/*
