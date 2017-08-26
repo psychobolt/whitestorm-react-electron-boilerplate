@@ -4,7 +4,7 @@
   "description": "Personal Electron boilerplate",
   "main": "src/.build/main.bundle.js",
   "scripts": {
-    "postinstall": "npm run flow-typed-install:dev && npm run flow-typed-install:app && electron-builder install-app-deps",
+    "postinstall": "rimraf flow-typed/npm && npm run flow-typed-install:dev && npm run flow-typed-install:app && electron-builder install-app-deps",
     "flow-typed-install:dev": "flow-typed install -s -o",
     "flow-typed-install:app": "cd src/ && flow-typed install -s -o --packageDir ../ || true",
     "build.app:prod": "cross-env NODE_ENV=production webpack --config webpack.app.babel.js",
@@ -83,6 +83,7 @@
     "html-loader": "^0.5.1",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^20.0.4",
+    "rimraf": "^2.6.1",
     "spectron": "^3.7.2",
     "webpack": "^3.5.3",
     "webpack-dev-server": "^2.7.1",
