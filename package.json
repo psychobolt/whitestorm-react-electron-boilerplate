@@ -4,7 +4,9 @@
   "description": "Personal Electron boilerplate",
   "main": "src/.build/main.bundle.js",
   "scripts": {
-    "postinstall": "electron-builder install-app-deps",
+    "postinstall": "npm run flow-typed-install:dev && npm run flow-typed-install:app && electron-builder install-app-deps",
+    "flow-typed-install:dev": "flow-typed install -s -o",
+    "flow-typed-install:app": "cd src/ && flow-typed install -s -o --packageDir ../ || true",
     "build.app:prod": "cross-env NODE_ENV=production webpack --config webpack.app.babel.js",
     "build.main:dev": "cross-env NODE_ENV=development webpack --config webpack.main.babel.js",
     "build:prod": "npm run build.app:prod && cross-env NODE_ENV=production webpack --config webpack.main.babel.js",
@@ -66,6 +68,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.24.1",
+    "cash-true": "^0.0.2",
     "clean-webpack-plugin": "^0.1.16",
     "cross-env": "^5.0.4",
     "electron": "^1.7.5",

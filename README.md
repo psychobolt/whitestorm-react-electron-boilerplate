@@ -63,18 +63,19 @@ yarn add [package-name]
 ## Static Types
 
 ```sh
-yarn run flow # performs type checking on files
+yarn flow # performs type checking on files
 ```
 
 See [official documentation](https://flow.org/) for a usage guide.
 
-To install typed definitions:
+Yarn will usually run postinstall for updating flowtype definitions when new packages are added. To manually update typed definitions yourself:
 
 ```sh
-yarn run flow-typed install [package-specification]
+yarn flow-typed-install:dev # installs development flowtypes
+yarn flow-typed-install:app # installs app flowtypes
 ```
 
-See [official documentation](https://github.com/flowtype/flow-typed) for a usage guide.
+See additional [documentation](https://github.com/flowtype/flow-typed) for adding type definitions.
 
 ## Lint
 

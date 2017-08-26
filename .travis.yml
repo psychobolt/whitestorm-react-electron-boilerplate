@@ -17,7 +17,7 @@ before_script:
 
 script:
   - yarn lint
-  - yarn run flow
+  - yarn flow
   - yarn test -- --coverage
   - yarn build:prod
   - yarn test-e2e
