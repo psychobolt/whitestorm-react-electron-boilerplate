@@ -2,7 +2,9 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 import CommonConfig from './webpack.common';
 
@@ -13,11 +15,14 @@ let config = {
     path: path.resolve(__dirname, 'src', '.build'),
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: 'src/index.html',
-    }),
+    new ExtractTextPlugin('styles.css'),
+    new HtmlWebpackPlugin(),
   ],
+};
+
+let htmlConfig = {
+  filename: 'index.html',
+  template: 'src/index.html',
 };
 
 if (process.env.NODE_ENV === 'development') {
@@ -26,17 +31,44 @@ if (process.env.NODE_ENV === 'development') {
     devServer: {
       port: 3000,
     },
+    plugins: [
+      new HtmlWebpackPlugin(htmlConfig),
+    ],
   });
 } else {
+  htmlConfig = Object.assign({}, htmlConfig, {
+    minify: {
+      collapseBooleanAttributes: true,
+      decodeEntities: true,
+      html5: true,
+      minifyCSS: true,
+      minifyJS: true,
+      processConditionalComments: true,
+      removeComments: true,
+      removeEmptyAttributes: true,
+      removeOptionalTags: true,
+      removeRedundantAttributes: true,
+      sortAttributes: true,
+      sortClassName: true,
+      trimCustomFragments: true,
+      useShortDoctype: true,
+    },
+  });
   config = merge(config, {
     plugins: [
       new CleanWebpackPlugin([
         'src/.build/index.html',
         'src/.build/app.bundle.js',
+        'src/.build/styles.css',
       ]),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
+      new webpack.optimize.UglifyJsPlugin(),
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: { discardComments: { removeAll: true } },
+      }),
+      new HtmlWebpackPlugin(htmlConfig),
     ],
   });
 }
