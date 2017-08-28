@@ -14,10 +14,6 @@ let config = {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
   },
-  plugins: [
-    new ExtractTextPlugin('styles.css'),
-    new HtmlWebpackPlugin(),
-  ],
 };
 
 let htmlConfig = {
@@ -33,6 +29,7 @@ if (process.env.NODE_ENV === 'development') {
     },
     plugins: [
       new HtmlWebpackPlugin(htmlConfig),
+      new ExtractTextPlugin('styles.css'),
     ],
   });
 } else {
@@ -65,6 +62,7 @@ if (process.env.NODE_ENV === 'development') {
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
       new webpack.optimize.UglifyJsPlugin(),
+      new ExtractTextPlugin('styles.css'),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: { discardComments: { removeAll: true } },
       }),
