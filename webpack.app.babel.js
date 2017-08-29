@@ -8,12 +8,48 @@ import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 import CommonConfig from './webpack.common';
 
+const appCSS = new ExtractTextPlugin('styles.css');
+const venderCSS = new ExtractTextPlugin('vender.css');
+
 let config = {
   entry: './src/index.js',
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
   },
+  module: {
+    rules: [
+      {
+        test: /\.html$/,
+        use: ['html-loader'],
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, 'src'),
+        exclude: /node_modules/,
+        use: appCSS.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+      },
+      {
+        test: /\.css$/,
+        include: path.resolve(__dirname, 'src', 'node_modules'),
+        use: venderCSS.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: ['file-loader'],
+      },
+    ],
+  },
+  plugins: [
+    appCSS,
+    venderCSS,
+  ],
 };
 
 let htmlConfig = {
@@ -29,7 +65,6 @@ if (process.env.NODE_ENV === 'development') {
     },
     plugins: [
       new HtmlWebpackPlugin(htmlConfig),
-      new ExtractTextPlugin('styles.css'),
     ],
   });
 } else {
@@ -54,15 +89,14 @@ if (process.env.NODE_ENV === 'development') {
   config = merge(config, {
     plugins: [
       new CleanWebpackPlugin([
-        'src/.build/index.html',
+        'src/.build/*.html',
         'src/.build/app.bundle.js',
-        'src/.build/styles.css',
+        'src/.build/*.css',
       ]),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
       new webpack.optimize.UglifyJsPlugin(),
-      new ExtractTextPlugin('styles.css'),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: { discardComments: { removeAll: true } },
       }),
