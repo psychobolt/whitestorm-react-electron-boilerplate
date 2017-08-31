@@ -49,13 +49,14 @@ yarn prod
 
 This project uses two package.json structure. For more details, see [here](https://github.com/electron-userland/electron-builder/wiki/Two-package.json-Structure).
 
-### Dev dependencies (native libraries), for <root_dir>/package.json
+### Default -- <root_dir>/package.json
 
 ```sh
-yarn add [package-name] --dev 
+yarn add [package-name] --dev # for dev tools
+yarn add [package-name] # for app
 ```
 
-### App only dependencies, for <root_dir>/src/package.json
+### Native libraries -- <root_dir>/src/package.json
 
 ```sh
 cd src/
