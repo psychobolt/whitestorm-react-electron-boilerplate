@@ -85,6 +85,8 @@ See additional [documentation](https://github.com/flowtype/flow-typed) for addin
 
 ## Lint
 
+The watch task will automatically lint on file changes. However, you can invoke the linter directly:
+
 ```sh
 yarn lint # runs linter to detect any style issues
 yarn lint -- --fix # tries to fix lint issues
