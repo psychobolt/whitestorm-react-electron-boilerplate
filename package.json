@@ -38,6 +38,12 @@
       "app": "src"
     }
   },
+  "ava": {
+    "files": [
+      "e2e/**/*.js",
+      "!src/**/*"
+    ]
+  },
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js",
