@@ -65,6 +65,9 @@ if (process.env.NODE_ENV === 'development') {
     },
     plugins: [
       new HtmlWebpackPlugin(htmlConfig),
+      new webpack.DefinePlugin({
+        'process.env.NODE_ENV': JSON.stringify('development'),
+      }),
     ],
   });
 } else {
