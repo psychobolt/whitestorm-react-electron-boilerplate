@@ -34,14 +34,14 @@ let config = {
       },
       {
         test: /\.css$/,
-        include: path.resolve(__dirname, 'src', 'node_modules'),
+        include: /node_modules/,
         use: venderCSS.extract({
           fallback: 'style-loader',
           use: 'css-loader',
         }),
       },
       {
-        test: /\.(png|jpg|gif)$/,
+        test: /\.(png|jpg|gif|svg|woff|woff2)$/,
         use: ['file-loader'],
       },
     ],
