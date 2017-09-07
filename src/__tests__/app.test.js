@@ -1,3 +1,5 @@
+import app from '../index';
+
 let log;
 const logger = global.console.log;
 beforeEach(() => {
@@ -9,7 +11,7 @@ beforeEach(() => {
 
 test('app console log', () => {
   require('../index'); // eslint-disable-line global-require
-  expect(log).toBe('App started');
+  return app().then(() => expect(log).toBe('App started'));
 });
 
 afterEach(() => {

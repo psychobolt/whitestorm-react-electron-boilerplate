@@ -12,7 +12,7 @@ const appCSS = new ExtractTextPlugin('styles.css');
 const venderCSS = new ExtractTextPlugin('vender.css');
 
 let config = {
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
