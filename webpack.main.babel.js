@@ -11,6 +11,9 @@ let config = {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
   },
+  node: {
+    __dirname: true,
+  },
   target: 'electron-main',
 };
 
