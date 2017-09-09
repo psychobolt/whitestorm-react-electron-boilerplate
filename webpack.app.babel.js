@@ -27,10 +27,10 @@ let config = {
         test: /\.css$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
-        use: appCSS.extract({
+        use: ['css-hot-loader'].concat(appCSS.extract({
           fallback: 'style-loader',
           use: 'css-loader',
-        }),
+        })),
       },
       {
         test: /\.css$/,
@@ -62,8 +62,10 @@ if (process.env.NODE_ENV === 'development') {
     devtool: 'inline-source-map',
     devServer: {
       port: 3000,
+      hot: true,
     },
     plugins: [
+      new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin(htmlConfig),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('development'),
