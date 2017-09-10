@@ -11,7 +11,7 @@ import CommonConfig from './webpack.common';
 const appCSS = new ExtractTextPlugin('styles.css');
 const venderCSS = new ExtractTextPlugin('vender.css');
 
-let config = {
+const appCommonConfig = {
   entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: 'app.bundle.js',
@@ -57,8 +57,9 @@ let htmlConfig = {
   template: 'src/index.html',
 };
 
+let appConfig;
 if (process.env.NODE_ENV === 'development') {
-  config = merge(config, {
+  appConfig = {
     devtool: 'inline-source-map',
     devServer: {
       port: 3000,
@@ -71,7 +72,7 @@ if (process.env.NODE_ENV === 'development') {
         'process.env.NODE_ENV': JSON.stringify('development'),
       }),
     ],
-  });
+  };
 } else {
   htmlConfig = Object.assign({}, htmlConfig, {
     minify: {
@@ -91,7 +92,7 @@ if (process.env.NODE_ENV === 'development') {
       useShortDoctype: true,
     },
   });
-  config = merge(config, {
+  appConfig = {
     plugins: [
       new CleanWebpackPlugin([
         'src/.build/*.html',
@@ -107,7 +108,7 @@ if (process.env.NODE_ENV === 'development') {
       }),
       new HtmlWebpackPlugin(htmlConfig),
     ],
-  });
+  };
 }
 
-export default merge(CommonConfig, config);
+export default merge(CommonConfig, appCommonConfig, appConfig);
