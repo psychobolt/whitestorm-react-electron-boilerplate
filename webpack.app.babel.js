@@ -66,6 +66,7 @@ if (process.env.NODE_ENV === 'development') {
       hot: true,
     },
     plugins: [
+      new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin(htmlConfig),
       new webpack.DefinePlugin({
