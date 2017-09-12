@@ -4,7 +4,7 @@
 [![Dependencies Status](https://david-dm.org/psychobolt/electron-boilerplate.svg)](https://david-dm.org/psychobolt/electron-boilerplate)
 [![codecov](https://codecov.io/gh/psychobolt/electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/electron-boilerplate)
 
-A minimalistic Electron boilerplate based on the official [quick start](https://electron.atom.io/docs/tutorial/quick-start/) tutorial.
+A minimalistic Electron boilerplate based on the official [quick start](https://electron.atom.io/docs/tutorial/quick-start/) tutorial. Enhanced with webpack support.
 
 ## Included
 
@@ -12,6 +12,7 @@ A minimalistic Electron boilerplate based on the official [quick start](https://
   - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-3](http://babeljs.io/docs/plugins/preset-stage-3/) features 
   - [Flow](https://flow.org/) Type support
   - Regenerator runtime support with [Babel-polyfill](https://babeljs.io/docs/usage/polyfill)
+  - [Hot Module Reloading](https://webpack.js.org/guides/hot-module-replacement/) enabled
 - Packaging support: [electron-builder](https://github.com/electron-userland/electron-builder)
 - Test runner: [Jest](https://facebook.github.io/jest)
 - e2e runner: [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)

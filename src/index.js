@@ -1,15 +1,10 @@
-import './app.css';
-
-function timeout(duration = 0) {
-  return new Promise(resolve => {
-    setTimeout(resolve, duration);
-  });
-}
-
-export default function app() {
-  return timeout(10).then(() => {
-    console.log('App started'); // eslint-disable-line no-console
-  });
-}
+import app from './app';
 
 app();
+
+if (module.hot) {
+  module.hot.accept('./app', () => {
+    const nextApp = require('./app').default; // eslint-disable-line global-require
+    nextApp();
+  });
+}

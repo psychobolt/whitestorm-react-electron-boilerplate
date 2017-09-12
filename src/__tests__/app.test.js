@@ -1,4 +1,4 @@
-import app from '../index';
+import app from '../app';
 
 let log;
 const logger = global.console.log;
