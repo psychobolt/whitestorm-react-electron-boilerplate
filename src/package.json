@@ -1,5 +1,5 @@
 {
-  "name": "electron-boilerplate",
+  "name": "my-app",
   "version": "1.0.0",
   "main": ".build/main.bundle.js",
   "repository": "https://github.com/psychobolt/electron-boilerplate",

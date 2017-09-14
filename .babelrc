@@ -1,4 +1,15 @@
 {
-  "presets": ["env", "stage-3", "flow"],
-  "plugins": ["transform-class-properties"]
+  "presets": [
+    ["env", { "modules": false }], 
+    "stage-3", 
+    "flow"
+  ],
+  "plugins": ["transform-class-properties"],
+  "env": {
+    "es2015": {
+      "presets": [
+        ["env"]
+      ]
+    }
+  }
 }
