@@ -1,5 +1,3 @@
-process.env.BABEL_ENV = 'webpack';
-
 export default {
   module: {
     rules: [

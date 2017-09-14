@@ -1,4 +1,5 @@
 // @flow
+import print from './print';
 import './app.css';
 
 function timeout(duration: number): Promise<void> {
@@ -8,7 +9,5 @@ function timeout(duration: number): Promise<void> {
 }
 
 export default function app(): Promise<void> {
-  return timeout(10).then(() => {
-    console.log('App started'); // eslint-disable-line no-console
-  });
+  return timeout(10).then(() => print('App started'));
 }
