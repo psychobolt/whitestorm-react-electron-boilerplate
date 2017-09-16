@@ -8,10 +8,9 @@
       },
       "useBuiltIns": true
     }], 
-    "stage-3", 
+    "stage-0", 
     "flow"
   ],
-  "plugins": ["transform-class-properties"],
   "env": {
     "commonjs": {
       "plugins": ["transform-es2015-modules-commonjs"]
