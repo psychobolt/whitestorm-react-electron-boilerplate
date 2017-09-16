@@ -11,7 +11,7 @@ import CommonConfig from './webpack.common';
 const appCSS = new ExtractTextPlugin('styles.css');
 const venderCSS = new ExtractTextPlugin('vender.css');
 
-const appCommonConfig = {
+let config = {
   entry: ['./src/index.js'],
   output: {
     filename: 'app.bundle.js',
@@ -57,9 +57,8 @@ let htmlConfig = {
   template: 'src/index.html',
 };
 
-let appConfig;
 if (process.env.NODE_ENV === 'development') {
-  appConfig = {
+  config = merge(config, {
     devtool: 'inline-source-map',
     plugins: [
       new webpack.NamedModulesPlugin(),
@@ -69,7 +68,7 @@ if (process.env.NODE_ENV === 'development') {
         'process.env.NODE_ENV': JSON.stringify('development'),
       }),
     ],
-  };
+  });
 } else {
   htmlConfig = Object.assign({}, htmlConfig, {
     minify: {
@@ -89,7 +88,7 @@ if (process.env.NODE_ENV === 'development') {
       useShortDoctype: true,
     },
   });
-  appConfig = {
+  config = merge(config, {
     plugins: [
       new CleanWebpackPlugin([
         'src/.build/*.html',
@@ -105,7 +104,7 @@ if (process.env.NODE_ENV === 'development') {
       }),
       new HtmlWebpackPlugin(htmlConfig),
     ],
-  };
+  });
 }
 
-export default merge(CommonConfig, appCommonConfig, appConfig);
+export default merge(CommonConfig, config);
