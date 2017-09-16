@@ -23,7 +23,7 @@ test.afterEach.always(async (t) => {
 });
 
 test(async (t) => {
-  const app = t.context.app;
+  const { app } = t.context;
   await app.client.waitUntilWindowLoaded();
 
   const win = app.browserWindow;
