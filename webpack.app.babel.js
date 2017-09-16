@@ -61,10 +61,6 @@ let appConfig;
 if (process.env.NODE_ENV === 'development') {
   appConfig = {
     devtool: 'inline-source-map',
-    devServer: {
-      port: 3000,
-      hot: true,
-    },
     plugins: [
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),

@@ -6,7 +6,7 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import CommonConfig from './webpack.common';
 
 let config = {
-  entry: ['babel-polyfill', './src/main.js'],
+  entry: ['./src/main.js'],
   output: {
     filename: 'main.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
@@ -15,6 +15,9 @@ let config = {
     __dirname: true,
   },
   target: 'electron-main',
+  plugins: [
+    new CleanWebpackPlugin(['src/.build/main.bundle.js']),
+  ],
 };
 
 if (process.env.NODE_ENV === 'development') {
@@ -27,7 +30,6 @@ if (process.env.NODE_ENV === 'development') {
       __dirname: false,
     },
     plugins: [
-      new CleanWebpackPlugin(['src/.build/main.bundle.js']),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),
       }),
