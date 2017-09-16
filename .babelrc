@@ -3,7 +3,8 @@
     ["env", { 
       "modules": false,
       "targets": {
-        "node": "current"
+        "node": "current",
+        "uglify": true
       },
       "useBuiltIns": true
     }], 
