@@ -10,15 +10,20 @@ import CommonConfig from './webpack.common';
 
 const appCSS = new ExtractTextPlugin('styles.css');
 const venderCSS = new ExtractTextPlugin('vender.css');
+const xelCSS = new ExtractTextPlugin('xel.theme.css');
 
 let config = {
-  entry: ['./src/index.js'],
+  entry: ['react-hot-loader/patch', './src/index.js'],
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
   },
   module: {
     rules: [
+      {
+        test: /\xel.min.js$/,
+        use: ['babel-loader'],
+      },
       {
         test: /\.html$/,
         use: ['html-loader'],
@@ -35,7 +40,16 @@ let config = {
       {
         test: /\.css$/,
         include: /node_modules/,
+        exclude: /node_modules\\xel/,
         use: venderCSS.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+      },
+      {
+        test: /\.theme.css$/,
+        include: /node_modules\\xel/,
+        use: xelCSS.extract({
           fallback: 'style-loader',
           use: 'css-loader',
         }),
@@ -49,6 +63,7 @@ let config = {
   plugins: [
     appCSS,
     venderCSS,
+    xelCSS,
   ],
 };
 
@@ -94,6 +109,8 @@ if (process.env.NODE_ENV === 'development') {
         'src/.build/*.html',
         'src/.build/app.bundle.js',
         'src/.build/*.css',
+        'src/.build/*.woff',
+        'src/.build/*.woff2',
       ]),
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('production'),

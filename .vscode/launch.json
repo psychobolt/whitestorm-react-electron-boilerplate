@@ -5,8 +5,14 @@
       "type": "node",
       "request": "launch",
       "name": "Debug App",
+      "cwd": "${workspaceRoot}",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
-      "program": "${workspaceRoot}/src/.build/main.bundle.js",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+      },
+      "args" : [
+        "."
+      ],
       "env": {
         "NODE_ENV": "development"
       },

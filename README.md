@@ -1,22 +1,30 @@
 # React Electron Boilerplate
 
-[![Build Status](https://travis-ci.org/psychobolt/electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/electron-boilerplate)
-[![Dependencies Status](https://david-dm.org/psychobolt/electron-boilerplate.svg)](https://david-dm.org/psychobolt/electron-boilerplate)
-[![codecov](https://codecov.io/gh/psychobolt/electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/electron-boilerplate)
+[![Build Status](https://travis-ci.org/psychobolt/electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/react-electron-boilerplate)
+[![Dependencies Status](https://david-dm.org/psychobolt/electron-boilerplate.svg)](https://david-dm.org/psychobolt/react-electron-boilerplate)
+[![codecov](https://codecov.io/gh/psychobolt/electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/react-electron-boilerplate)
 
 The essential framework for React-Electron development.
 
 ## Included
 
+- Example App based on Redux's [tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
+- [React](https://facebook.github.io/react/) with [React Redux](https://github.com/reactjs/react-redux), [React Router](https://reacttraining.com/react-router/)
 - [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
   - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://babeljs.io/docs/plugins/preset-stage-0/) features 
   - [Flow](https://flow.org/) Type support
-  - [Hot Module Reloading](https://webpack.js.org/guides/hot-module-replacement/) enabled
+  - [Hot Module Reloading](https://webpack.js.org/guides/hot-module-replacement/) enabled with [React Hot Loader](https://github.com/gaearon/react-hot-loader)
+- Babel plugins: 
+  - [Module Resolver](https://github.com/tleunen/babel-plugin-module-resolver)
+  - Regenerator Runtime support with [Tranform Runtime](https://babeljs.io/docs/plugins/transform-runtime/)
 - Packaging support: [electron-builder](https://github.com/electron-userland/electron-builder)
 - Test runner: [Jest](https://facebook.github.io/jest)
 - e2e runner: [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)
+- [Enzyme](https://github.com/airbnb/enzyme)
 - Code Coverage reporter: [Codecov](https://codecov.io/)
 - ES Linting: [ESLint](http://eslint.org/) using [AirBnb style guide](https://github.com/airbnb/javascript)
+- [DevTools Add-Ons](https://github.com/MarshallOfSound/electron-devtools-installer), including:
+  - [Redux DevTools Extension](http://extension.remotedev.io/)
 
 ## Setup
 
@@ -66,7 +74,15 @@ yarn add [package-name]
 
 ## Merging from base project
 
-This project is a fork from psychobolt's [electron-boilerplate](https://github.com/psychobolt/electron-boilerplate). Merge, ```git merge base/master```, and fix any conflicts before commit.
+This project is a fork from psychobolt's [electron-boilerplate](https://github.com/psychobolt/electron-boilerplate). On a clean working branch, ```git pull base master```, and fix any conflicts before commit.
+
+## Static Type Checker
+
+```sh
+yarn run flow
+```
+
+> Some extensions such as in [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=flowtype.flow-for-vscode) detect ```.flowconfig``` and run type checking in the editor.
 
 ## Static Types
 

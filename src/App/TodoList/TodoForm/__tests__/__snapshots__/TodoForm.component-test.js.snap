@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component <TodoForm /> should render correctly 1`] = `
+<x-box
+  style={Object {}}
+>
+  <XInput
+    fallback={[Function]}
+    onKeyup={[Function]}
+    style={
+      Object {
+        "marginRight": "6px",
+      }
+    }
+    value=""
+  />
+  <x-button
+    onClick={[Function]}
+  >
+    <x-label>
+      Add Todo
+    </x-label>
+  </x-button>
+</x-box>
+`;

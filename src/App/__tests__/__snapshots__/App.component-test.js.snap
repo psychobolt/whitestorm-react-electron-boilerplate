@@ -1,0 +1,1093 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component <App />  should render correctly with filter All 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter
+    keyLength={0}
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <App
+        match={
+          Object {
+            "params": Object {
+              "filter": "All",
+            },
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "margin": "auto",
+              "paddingTop": "10px",
+              "width": "500px",
+            }
+          }
+        >
+          <Connect(TodoForm)
+            style={
+              Object {
+                "margin": "0 auto 10px auto",
+                "width": "232px",
+              }
+            }
+          >
+            <TodoForm
+              inputValue=""
+              onValueSubmit={[Function]}
+              style={
+                Object {
+                  "margin": "0 auto 10px auto",
+                  "width": "232px",
+                }
+              }
+            >
+              <x-box
+                style={
+                  Object {
+                    "margin": "0 auto 10px auto",
+                    "width": "232px",
+                  }
+                }
+              >
+                <XInput
+                  fallback={[Function]}
+                  onKeyup={[Function]}
+                  style={
+                    Object {
+                      "marginRight": "6px",
+                    }
+                  }
+                  value=""
+                >
+                  <x-input
+                    style={
+                      Object {
+                        "marginRight": "6px",
+                      }
+                    }
+                  >
+                    <input
+                      defaultValue=""
+                      onKeyUp={[Function]}
+                    />
+                  </x-input>
+                </XInput>
+                <x-button
+                  onClick={[Function]}
+                >
+                  <x-label>
+                    Add Todo
+                  </x-label>
+                </x-button>
+              </x-box>
+            </TodoForm>
+          </Connect(TodoForm)>
+          <Connect(TodoList)
+            filter="All"
+            style={
+              Object {
+                "margin": "10px 0",
+              }
+            }
+          >
+            <TodoList
+              filter="All"
+              onTodoClick={[Function]}
+              style={
+                Object {
+                  "margin": "10px 0",
+                }
+              }
+              todos={Array []}
+            >
+              <x-card
+                style={
+                  Object {
+                    "margin": "10px 0",
+                  }
+                }
+              >
+                <TodoFilter
+                  centered={true}
+                  style={
+                    Object {
+                      "marginTop": "10px",
+                    }
+                  }
+                >
+                  <x-tabs
+                    centered={true}
+                    style={
+                      Object {
+                        "marginTop": "10px",
+                      }
+                    }
+                  >
+                    <withRouter(Connect(TodoFilterLink))
+                      filter="All"
+                    >
+                      <Route
+                        render={[Function]}
+                      >
+                        <Connect(TodoFilterLink)
+                          filter="All"
+                          history={
+                            Object {
+                              "action": "POP",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                        >
+                          <TodoFilterLink
+                            active={true}
+                            dispatch={[Function]}
+                            filter="All"
+                            goto={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "canGo": [Function],
+                                "createHref": [Function],
+                                "entries": Array [
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                ],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "index": 0,
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <x-tab
+                              onClick={[Function]}
+                              selected={true}
+                            >
+                              <x-label>
+                                All
+                              </x-label>
+                            </x-tab>
+                          </TodoFilterLink>
+                        </Connect(TodoFilterLink)>
+                      </Route>
+                    </withRouter(Connect(TodoFilterLink))>
+                    <withRouter(Connect(TodoFilterLink))
+                      filter="active"
+                    >
+                      <Route
+                        render={[Function]}
+                      >
+                        <Connect(TodoFilterLink)
+                          filter="active"
+                          history={
+                            Object {
+                              "action": "POP",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                        >
+                          <TodoFilterLink
+                            active={false}
+                            dispatch={[Function]}
+                            filter="active"
+                            goto={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "canGo": [Function],
+                                "createHref": [Function],
+                                "entries": Array [
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                ],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "index": 0,
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <x-tab
+                              onClick={[Function]}
+                              selected={null}
+                            >
+                              <x-label>
+                                Active
+                              </x-label>
+                            </x-tab>
+                          </TodoFilterLink>
+                        </Connect(TodoFilterLink)>
+                      </Route>
+                    </withRouter(Connect(TodoFilterLink))>
+                    <withRouter(Connect(TodoFilterLink))
+                      filter="completed"
+                    >
+                      <Route
+                        render={[Function]}
+                      >
+                        <Connect(TodoFilterLink)
+                          filter="completed"
+                          history={
+                            Object {
+                              "action": "POP",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                        >
+                          <TodoFilterLink
+                            active={false}
+                            dispatch={[Function]}
+                            filter="completed"
+                            goto={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "canGo": [Function],
+                                "createHref": [Function],
+                                "entries": Array [
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                ],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "index": 0,
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <x-tab
+                              onClick={[Function]}
+                              selected={null}
+                            >
+                              <x-label>
+                                Completed
+                              </x-label>
+                            </x-tab>
+                          </TodoFilterLink>
+                        </Connect(TodoFilterLink)>
+                      </Route>
+                    </withRouter(Connect(TodoFilterLink))>
+                  </x-tabs>
+                </TodoFilter>
+                <ul
+                  style={
+                    Object {
+                      "listStyleType": "none",
+                    }
+                  }
+                >
+                  <x-label>
+                    No items
+                  </x-label>
+                </ul>
+              </x-card>
+            </TodoList>
+          </Connect(TodoList)>
+        </div>
+      </App>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;
+
+exports[`component <App />  should render correctly with filter undefined 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter
+    keyLength={0}
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <App
+        match={
+          Object {
+            "params": Object {
+              "filter": undefined,
+            },
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "margin": "auto",
+              "paddingTop": "10px",
+              "width": "500px",
+            }
+          }
+        >
+          <Connect(TodoForm)
+            style={
+              Object {
+                "margin": "0 auto 10px auto",
+                "width": "232px",
+              }
+            }
+          >
+            <TodoForm
+              inputValue=""
+              onValueSubmit={[Function]}
+              style={
+                Object {
+                  "margin": "0 auto 10px auto",
+                  "width": "232px",
+                }
+              }
+            >
+              <x-box
+                style={
+                  Object {
+                    "margin": "0 auto 10px auto",
+                    "width": "232px",
+                  }
+                }
+              >
+                <XInput
+                  fallback={[Function]}
+                  onKeyup={[Function]}
+                  style={
+                    Object {
+                      "marginRight": "6px",
+                    }
+                  }
+                  value=""
+                >
+                  <x-input
+                    style={
+                      Object {
+                        "marginRight": "6px",
+                      }
+                    }
+                  >
+                    <input
+                      defaultValue=""
+                      onKeyUp={[Function]}
+                    />
+                  </x-input>
+                </XInput>
+                <x-button
+                  onClick={[Function]}
+                >
+                  <x-label>
+                    Add Todo
+                  </x-label>
+                </x-button>
+              </x-box>
+            </TodoForm>
+          </Connect(TodoForm)>
+          <Connect(TodoList)
+            filter="All"
+            style={
+              Object {
+                "margin": "10px 0",
+              }
+            }
+          >
+            <TodoList
+              filter="All"
+              onTodoClick={[Function]}
+              style={
+                Object {
+                  "margin": "10px 0",
+                }
+              }
+              todos={Array []}
+            >
+              <x-card
+                style={
+                  Object {
+                    "margin": "10px 0",
+                  }
+                }
+              >
+                <TodoFilter
+                  centered={true}
+                  style={
+                    Object {
+                      "marginTop": "10px",
+                    }
+                  }
+                >
+                  <x-tabs
+                    centered={true}
+                    style={
+                      Object {
+                        "marginTop": "10px",
+                      }
+                    }
+                  >
+                    <withRouter(Connect(TodoFilterLink))
+                      filter="All"
+                    >
+                      <Route
+                        render={[Function]}
+                      >
+                        <Connect(TodoFilterLink)
+                          filter="All"
+                          history={
+                            Object {
+                              "action": "POP",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                        >
+                          <TodoFilterLink
+                            active={true}
+                            dispatch={[Function]}
+                            filter="All"
+                            goto={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "canGo": [Function],
+                                "createHref": [Function],
+                                "entries": Array [
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                ],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "index": 0,
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <x-tab
+                              onClick={[Function]}
+                              selected={true}
+                            >
+                              <x-label>
+                                All
+                              </x-label>
+                            </x-tab>
+                          </TodoFilterLink>
+                        </Connect(TodoFilterLink)>
+                      </Route>
+                    </withRouter(Connect(TodoFilterLink))>
+                    <withRouter(Connect(TodoFilterLink))
+                      filter="active"
+                    >
+                      <Route
+                        render={[Function]}
+                      >
+                        <Connect(TodoFilterLink)
+                          filter="active"
+                          history={
+                            Object {
+                              "action": "POP",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                        >
+                          <TodoFilterLink
+                            active={false}
+                            dispatch={[Function]}
+                            filter="active"
+                            goto={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "canGo": [Function],
+                                "createHref": [Function],
+                                "entries": Array [
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                ],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "index": 0,
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <x-tab
+                              onClick={[Function]}
+                              selected={null}
+                            >
+                              <x-label>
+                                Active
+                              </x-label>
+                            </x-tab>
+                          </TodoFilterLink>
+                        </Connect(TodoFilterLink)>
+                      </Route>
+                    </withRouter(Connect(TodoFilterLink))>
+                    <withRouter(Connect(TodoFilterLink))
+                      filter="completed"
+                    >
+                      <Route
+                        render={[Function]}
+                      >
+                        <Connect(TodoFilterLink)
+                          filter="completed"
+                          history={
+                            Object {
+                              "action": "POP",
+                              "block": [Function],
+                              "canGo": [Function],
+                              "createHref": [Function],
+                              "entries": Array [
+                                Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                              ],
+                              "go": [Function],
+                              "goBack": [Function],
+                              "goForward": [Function],
+                              "index": 0,
+                              "length": 1,
+                              "listen": [Function],
+                              "location": Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              },
+                              "push": [Function],
+                              "replace": [Function],
+                            }
+                          }
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          match={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/",
+                              "url": "/",
+                            }
+                          }
+                        >
+                          <TodoFilterLink
+                            active={false}
+                            dispatch={[Function]}
+                            filter="completed"
+                            goto={[Function]}
+                            history={
+                              Object {
+                                "action": "POP",
+                                "block": [Function],
+                                "canGo": [Function],
+                                "createHref": [Function],
+                                "entries": Array [
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                ],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "index": 0,
+                                "length": 1,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/",
+                                "url": "/",
+                              }
+                            }
+                          >
+                            <x-tab
+                              onClick={[Function]}
+                              selected={null}
+                            >
+                              <x-label>
+                                Completed
+                              </x-label>
+                            </x-tab>
+                          </TodoFilterLink>
+                        </Connect(TodoFilterLink)>
+                      </Route>
+                    </withRouter(Connect(TodoFilterLink))>
+                  </x-tabs>
+                </TodoFilter>
+                <ul
+                  style={
+                    Object {
+                      "listStyleType": "none",
+                    }
+                  }
+                >
+                  <x-label>
+                    No items
+                  </x-label>
+                </ul>
+              </x-card>
+            </TodoList>
+          </Connect(TodoList)>
+        </div>
+      </App>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;

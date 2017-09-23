@@ -7,7 +7,13 @@ const url = require('url');
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
-function createWindow() {
+async function installExtension() {
+  const { default: install, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } = require('electron-devtools-installer'); // eslint-disable-line global-require
+  const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
+  return Promise.all(extensions.map(extension => install(extension)));
+}
+
+async function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({ width: 800, height: 600 });
 
@@ -19,7 +25,8 @@ function createWindow() {
       slashes: true,
     }));
   } else {
-    win.loadURL('http://localhost:3000/'); // TODO: pass port
+    await installExtension();
+    win.loadURL('http://localhost:3000/');
   }
 
   if (process.env.NODE_ENV === 'development') {

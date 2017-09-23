@@ -1,14 +1,21 @@
 {
     "parser": "babel-eslint",
-    "extends": ["airbnb-base", "plugin:flowtype/recommended"],
+    "extends": ["airbnb", "plugin:flowtype/recommended"],
     "plugins": ["flowtype", "jest"],
     "rules": {
         "import/no-extraneous-dependencies": 0,
         "no-confusing-arrow": ["error", {"allowParens": true}],
-        "arrow-parens": 0
+        "arrow-parens": 0,
+        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+        "import/prefer-default-export": 0
     },
     "env": {
         "jest/globals": true,
         "browser": true
+    },
+    "settings": {
+        "import/resolver": {
+            "babel-module": {}
+        }
     }
 }

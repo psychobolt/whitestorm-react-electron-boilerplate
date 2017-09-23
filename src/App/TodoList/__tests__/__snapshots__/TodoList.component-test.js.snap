@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components <TodoList /> TodoList should render correctly -- completed 1`] = `
+<x-card
+  style={Object {}}
+>
+  <ul
+    style={
+      Object {
+        "listStyleType": "none",
+      }
+    }
+  >
+    <li>
+      <TodoItem
+        completed={true}
+        id={1}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": "5px",
+          }
+        }
+        text="TodoItem"
+      />
+    </li>
+  </ul>
+</x-card>
+`;
+
+exports[`components <TodoList /> TodoList should render correctly -- not completed 1`] = `
+<x-card
+  style={Object {}}
+>
+  <ul
+    style={
+      Object {
+        "listStyleType": "none",
+      }
+    }
+  >
+    <li>
+      <TodoItem
+        completed={false}
+        id={1}
+        onClick={[Function]}
+        style={
+          Object {
+            "marginBottom": "5px",
+          }
+        }
+        text="TodoItem"
+      />
+    </li>
+  </ul>
+</x-card>
+`;

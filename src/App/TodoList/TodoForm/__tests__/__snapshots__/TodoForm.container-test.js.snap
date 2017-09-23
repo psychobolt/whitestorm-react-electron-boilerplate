@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`container <TodoForm /> should render correctly 1`] = `
+<TodoForm
+  inputValue=""
+  onValueSubmit={[Function]}
+  style={Object {}}
+/>
+`;

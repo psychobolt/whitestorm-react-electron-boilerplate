@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components <XInput> should render correctly -- with fallback 1`] = `
+<x-input
+  style={Object {}}
+/>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`container <TodoList /> TodoList should render correctly 1`] = `
+<TodoList
+  onTodoClick={[Function]}
+  todos={
+    Array [
+      Object {
+        "completed": true,
+        "id": 0,
+        "text": "Completed Item",
+      },
+      Object {
+        "completed": false,
+        "id": 1,
+        "text": "Active Item",
+      },
+    ]
+  }
+/>
+`;
