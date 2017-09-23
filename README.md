@@ -91,7 +91,7 @@ The watch task will automatically lint on file changes. However, you can invoke 
 
 ```sh
 yarn lint # runs linter to detect any style issues
-yarn lint -- --fix # tries to fix lint issues
+yarn lint --fix # tries to fix lint issues
 ```
 
 See [official documentation](https://eslint.org/) for a usage guide.
@@ -100,7 +100,7 @@ See [official documentation](https://eslint.org/) for a usage guide.
 
 ```sh
 yarn test # runs functional/unit tests using Jest
-yarn test -- --coverage # with coverage
+yarn test --coverage # with coverage
 yarn test-e2e # run end-to-end tests
 ```
 
