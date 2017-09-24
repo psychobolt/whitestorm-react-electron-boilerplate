@@ -13,9 +13,14 @@
     "react"
   ],
   "plugins": [
-    "transform-class-properties",
     ["transform-runtime", { "polyfill": false }],
-    ["module-resolver", { "root": ["./src"] }],
+    ["babel-plugin-transform-builtin-classes", {
+      "globals": ["HTMLElement"]
+    }],
+    ["module-resolver", { 
+      "root": ["./src"],
+      "cwd": "./"
+    }],
     "react-hot-loader/babel"
   ],
   "env": {
