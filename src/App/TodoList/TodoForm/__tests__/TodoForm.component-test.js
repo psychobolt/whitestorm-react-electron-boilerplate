@@ -21,7 +21,7 @@ describe('component <TodoForm />', () => {
     const value = '1';
     const wrapper = mount(<TodoForm {...props} />);
     const input = wrapper.find('input');
-    input.node.value = value;
+    input.getDOMNode().value = value;
     input.simulate('keyup', {
       keyCode: KEYCODE_1,
     });

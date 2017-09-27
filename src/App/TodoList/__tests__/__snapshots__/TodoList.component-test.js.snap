@@ -11,7 +11,9 @@ exports[`components <TodoList /> TodoList should render correctly -- completed 1
       }
     }
   >
-    <li>
+    <li
+      key="1"
+    >
       <TodoItem
         completed={true}
         id={1}
@@ -39,7 +41,9 @@ exports[`components <TodoList /> TodoList should render correctly -- not complet
       }
     }
   >
-    <li>
+    <li
+      key="1"
+    >
       <TodoItem
         completed={false}
         id={1}
