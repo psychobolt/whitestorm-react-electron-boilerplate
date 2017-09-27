@@ -136,6 +136,7 @@
   "dependencies": {
     "history": "^4.7.2",
     "jquery": "^3.2.1",
+    "raf": "^3.3.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
