@@ -74,7 +74,7 @@ yarn add [package-name]
 
 ## Merging from base project
 
-This project is a fork from psychobolt's [electron-boilerplate](https://github.com/psychobolt/electron-boilerplate). On a clean working branch, ```git pull base master```, and fix any conflicts before commit.
+This project is a fork from psychobolt's [electron-boilerplate](https://github.com/psychobolt/electron-boilerplate). To fetch latest changes, ```git remote add base https://github.com/psychobolt/electron-boilerplate.git```. On a clean working branch, ```git pull base master```, and fix any conflicts before commit.
 
 ## Static Type Checker
 
