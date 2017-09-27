@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
-import TodoFilterLink from './TodoFilterLink.component';
+import { XTab } from 'Framework/ReactXelToolkit';
 import Filters from '../TodoFilter.filters';
 
 const mapParamToFilter = param => param || Filters.ALL;
@@ -15,4 +15,4 @@ const mapStateToProps = (state, ownProps) => ({
   },
 });
 
-export default withRouter(connect(mapStateToProps)(TodoFilterLink));
+export default withRouter(connect(mapStateToProps)(XTab));

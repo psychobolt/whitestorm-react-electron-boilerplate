@@ -5,20 +5,20 @@ exports[`TodoFilter should render correctly 1`] = `
   centered={null}
   style={Object {}}
 >
-  <withRouter(Connect(TodoFilterLink))
+  <withRouter(Connect(XTab))
     filter="All"
   >
     All
-  </withRouter(Connect(TodoFilterLink))>
-  <withRouter(Connect(TodoFilterLink))
+  </withRouter(Connect(XTab))>
+  <withRouter(Connect(XTab))
     filter="active"
   >
     Active
-  </withRouter(Connect(TodoFilterLink))>
-  <withRouter(Connect(TodoFilterLink))
+  </withRouter(Connect(XTab))>
+  <withRouter(Connect(XTab))
     filter="completed"
   >
     Completed
-  </withRouter(Connect(TodoFilterLink))>
+  </withRouter(Connect(XTab))>
 </x-tabs>
 `;

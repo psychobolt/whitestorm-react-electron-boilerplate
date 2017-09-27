@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 
-const TodoFilterLink = (
+const XTab = (
   { active, goto, children }: {active?: boolean, goto: Function, children: any },
 ) => (
   <x-tab
@@ -12,8 +12,8 @@ const TodoFilterLink = (
   </x-tab>
 );
 
-TodoFilterLink.defaultProps = {
+XTab.defaultProps = {
   active: false,
 };
 
-export default TodoFilterLink;
+export default XTab;

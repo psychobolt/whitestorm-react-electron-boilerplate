@@ -166,13 +166,13 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                       }
                     }
                   >
-                    <withRouter(Connect(TodoFilterLink))
+                    <withRouter(Connect(XTab))
                       filter="All"
                     >
                       <Route
                         render={[Function]}
                       >
-                        <Connect(TodoFilterLink)
+                        <Connect(XTab)
                           filter="All"
                           history={
                             Object {
@@ -222,7 +222,7 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                           }
                           staticContext={undefined}
                         >
-                          <TodoFilterLink
+                          <XTab
                             active={true}
                             dispatch={[Function]}
                             filter="All"
@@ -283,17 +283,17 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                                 All
                               </x-label>
                             </x-tab>
-                          </TodoFilterLink>
-                        </Connect(TodoFilterLink)>
+                          </XTab>
+                        </Connect(XTab)>
                       </Route>
-                    </withRouter(Connect(TodoFilterLink))>
-                    <withRouter(Connect(TodoFilterLink))
+                    </withRouter(Connect(XTab))>
+                    <withRouter(Connect(XTab))
                       filter="active"
                     >
                       <Route
                         render={[Function]}
                       >
-                        <Connect(TodoFilterLink)
+                        <Connect(XTab)
                           filter="active"
                           history={
                             Object {
@@ -343,7 +343,7 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                           }
                           staticContext={undefined}
                         >
-                          <TodoFilterLink
+                          <XTab
                             active={false}
                             dispatch={[Function]}
                             filter="active"
@@ -404,17 +404,17 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                                 Active
                               </x-label>
                             </x-tab>
-                          </TodoFilterLink>
-                        </Connect(TodoFilterLink)>
+                          </XTab>
+                        </Connect(XTab)>
                       </Route>
-                    </withRouter(Connect(TodoFilterLink))>
-                    <withRouter(Connect(TodoFilterLink))
+                    </withRouter(Connect(XTab))>
+                    <withRouter(Connect(XTab))
                       filter="completed"
                     >
                       <Route
                         render={[Function]}
                       >
-                        <Connect(TodoFilterLink)
+                        <Connect(XTab)
                           filter="completed"
                           history={
                             Object {
@@ -464,7 +464,7 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                           }
                           staticContext={undefined}
                         >
-                          <TodoFilterLink
+                          <XTab
                             active={false}
                             dispatch={[Function]}
                             filter="completed"
@@ -525,10 +525,10 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                                 Completed
                               </x-label>
                             </x-tab>
-                          </TodoFilterLink>
-                        </Connect(TodoFilterLink)>
+                          </XTab>
+                        </Connect(XTab)>
                       </Route>
-                    </withRouter(Connect(TodoFilterLink))>
+                    </withRouter(Connect(XTab))>
                   </x-tabs>
                 </TodoFilter>
                 <ul
@@ -718,13 +718,13 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                       }
                     }
                   >
-                    <withRouter(Connect(TodoFilterLink))
+                    <withRouter(Connect(XTab))
                       filter="All"
                     >
                       <Route
                         render={[Function]}
                       >
-                        <Connect(TodoFilterLink)
+                        <Connect(XTab)
                           filter="All"
                           history={
                             Object {
@@ -774,7 +774,7 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                           }
                           staticContext={undefined}
                         >
-                          <TodoFilterLink
+                          <XTab
                             active={true}
                             dispatch={[Function]}
                             filter="All"
@@ -835,17 +835,17 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                                 All
                               </x-label>
                             </x-tab>
-                          </TodoFilterLink>
-                        </Connect(TodoFilterLink)>
+                          </XTab>
+                        </Connect(XTab)>
                       </Route>
-                    </withRouter(Connect(TodoFilterLink))>
-                    <withRouter(Connect(TodoFilterLink))
+                    </withRouter(Connect(XTab))>
+                    <withRouter(Connect(XTab))
                       filter="active"
                     >
                       <Route
                         render={[Function]}
                       >
-                        <Connect(TodoFilterLink)
+                        <Connect(XTab)
                           filter="active"
                           history={
                             Object {
@@ -895,7 +895,7 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                           }
                           staticContext={undefined}
                         >
-                          <TodoFilterLink
+                          <XTab
                             active={false}
                             dispatch={[Function]}
                             filter="active"
@@ -956,17 +956,17 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                                 Active
                               </x-label>
                             </x-tab>
-                          </TodoFilterLink>
-                        </Connect(TodoFilterLink)>
+                          </XTab>
+                        </Connect(XTab)>
                       </Route>
-                    </withRouter(Connect(TodoFilterLink))>
-                    <withRouter(Connect(TodoFilterLink))
+                    </withRouter(Connect(XTab))>
+                    <withRouter(Connect(XTab))
                       filter="completed"
                     >
                       <Route
                         render={[Function]}
                       >
-                        <Connect(TodoFilterLink)
+                        <Connect(XTab)
                           filter="completed"
                           history={
                             Object {
@@ -1016,7 +1016,7 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                           }
                           staticContext={undefined}
                         >
-                          <TodoFilterLink
+                          <XTab
                             active={false}
                             dispatch={[Function]}
                             filter="completed"
@@ -1077,10 +1077,10 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                                 Completed
                               </x-label>
                             </x-tab>
-                          </TodoFilterLink>
-                        </Connect(TodoFilterLink)>
+                          </XTab>
+                        </Connect(XTab)>
                       </Route>
-                    </withRouter(Connect(TodoFilterLink))>
+                    </withRouter(Connect(XTab))>
                   </x-tabs>
                 </TodoFilter>
                 <ul
