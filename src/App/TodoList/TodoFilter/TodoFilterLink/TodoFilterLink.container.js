@@ -10,7 +10,7 @@ export const ROOT = '/';
 
 const mapStateToProps = (state, ownProps) => ({
   active: ownProps.filter === mapParamToFilter(ownProps.match.params.filter),
-  goto: () => {
+  onClick: () => {
     ownProps.history.push(ownProps.filter === Filters.ALL ? ROOT : ownProps.filter);
   },
 });

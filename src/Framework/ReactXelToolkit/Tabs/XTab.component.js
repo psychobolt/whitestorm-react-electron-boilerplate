@@ -2,10 +2,10 @@
 import React from 'react';
 
 const XTab = (
-  { active, goto, children }: {active?: boolean, goto: Function, children: any },
+  { active, onClick, children }: {active?: boolean, onClick: Function, children: any },
 ) => (
   <x-tab
-    onClick={goto}
+    onClick={onClick}
     selected={active || null}
   >
     <x-label>{children}</x-label>
