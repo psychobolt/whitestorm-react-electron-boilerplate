@@ -29,12 +29,15 @@ let config = {
         use: ['html-loader'],
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: ['css-hot-loader'].concat(appCSS.extract({
           fallback: 'style-loader',
-          use: 'css-loader',
+          use: [
+            'css-loader',
+            'sass-loader',
+          ],
         })),
       },
       {

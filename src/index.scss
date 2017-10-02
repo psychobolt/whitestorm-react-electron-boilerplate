@@ -1,0 +1,12 @@
+@mixin full-container {
+    width: 100%;
+    height: 100%;
+}
+
+.root-container {
+    @include full-container;
+
+    > div {
+        @include full-container;
+    }
+}
