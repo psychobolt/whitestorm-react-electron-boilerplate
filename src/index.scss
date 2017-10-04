@@ -5,6 +5,7 @@
 
 .root-container {
     @include full-container;
+    overflow: hidden;
 
     > div {
         @include full-container;

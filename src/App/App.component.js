@@ -1,17 +1,12 @@
-// @flow
 import React from 'react';
-import type { Match } from 'react-router-dom';
 
-import TodoList, { TodoForm, TodoFilter, Filters } from './TodoList';
+import Header from './Header';
+import World from './World';
 import styles from './App.style';
 
-const App = ({ match }: { match: Match }) => (
+export default (props) => (
   <div style={styles.container}>
-    <TodoForm style={styles.todoForm} />
-    <TodoList style={styles.todoList} filter={match.params.filter || Filters.ALL}>
-      <TodoFilter style={styles.todoFilter} centered />
-    </TodoList>
+    <div style={styles.header}><Header centered /></div>
+    <World style={{ container: styles.worldContainer }} {...props} />
   </div>
 );
-
-export default App;

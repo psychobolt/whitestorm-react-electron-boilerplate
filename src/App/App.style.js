@@ -1,17 +1,13 @@
 export default {
   container: {
-    width: '500px',
-    margin: 'auto',
-    paddingTop: '10px',
+    width: '100%',
+    height: '100%',
   },
-  todoList: {
-    margin: '10px 0',
+  header: {
+    margin: '5px',
   },
-  todoForm: {
-    width: '232px',
-    margin: '0 auto 10px auto',
-  },
-  todoFilter: {
-    marginTop: '10px',
+  worldContainer: {
+    width: '100%',
+    height: 'calc(100% - 33px)',
   },
 };

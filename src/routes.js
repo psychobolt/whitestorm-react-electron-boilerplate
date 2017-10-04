@@ -16,7 +16,7 @@ const Routes = ({ store, history }: Props) => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-        <Route path="/:filter?" component={App} />
+        <Route path="/" component={App} />
       </div>
     </ConnectedRouter>
   </Provider>

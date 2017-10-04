@@ -144,6 +144,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "5.0.0-alpha.6",
+    "react-whs": "https://github.com/psychobolt/react-whs.git#build",
     "redux": "^3.7.2",
     "typeface-roboto": "^0.0.35",
     "typeface-roboto-mono": "^0.0.35",

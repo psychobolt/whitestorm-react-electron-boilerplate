@@ -48,7 +48,7 @@ exports[`component <Routes /> should render correctly 1`] = `
     <div>
       <Route
         component={[Function]}
-        path="/:filter?"
+        path="/"
       />
     </div>
   </ConnectedRouter>

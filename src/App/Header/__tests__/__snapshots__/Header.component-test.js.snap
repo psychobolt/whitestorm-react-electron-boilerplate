@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component <Header /> should render correctly 1`] = `
+<x-tabs
+  centered={null}
+  style={Object {}}
+>
+  <Link
+    to={
+      Array [
+        Object {
+          "to": "/",
+        },
+        Object {
+          "default": true,
+          "to": "/box",
+        },
+      ]
+    }
+  >
+    Box
+  </Link>
+  <Link
+    to="/sphere"
+  >
+    Sphere
+  </Link>
+</x-tabs>
+`;

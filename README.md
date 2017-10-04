@@ -1,14 +1,16 @@
-# React Electron Boilerplate
+# WhiteStormJS Electron Boilerplate
 
-[![Build Status](https://travis-ci.org/psychobolt/react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/react-electron-boilerplate)
-[![Dependencies Status](https://david-dm.org/psychobolt/react-electron-boilerplate.svg)](https://david-dm.org/psychobolt/react-electron-boilerplate)
-[![codecov](https://codecov.io/gh/psychobolt/react-electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/react-electron-boilerplate)
+[![Build Status](https://travis-ci.org/psychobolt/whitestorm-react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/whitestorm-react-electron-boilerplate)
+[![Dependencies Status](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate.svg)](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate)
+[![codecov](https://codecov.io/gh/psychobolt/whitestorm-react-electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/whitestorm-react-electron-boilerplate)
 
-The essential framework for React-Electron development.
+The essential framework for WhiteStormJS React-Electron development.
 
 ## Included
 
-- Example App based on Redux's [tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
+- Example App based on WhiteStormJS's [TypeScript boilerplate](https://github.com/WhitestormJS/whitestorm-typescript-boilerplate)
+ - ![Preview](https://user-images.githubusercontent.com/560721/31196681-7738d1d4-a903-11e7-9793-adab6eb1f4a1.gif)
+- [whs.js](https://github.com/WhitestormJS/whs.js) with [React integration](https://github.com/WhitestormJS/react-whs)
 - [React](https://facebook.github.io/react/) with [React Redux](https://github.com/reactjs/react-redux) and [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
 - [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
   - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://babeljs.io/docs/plugins/preset-stage-0/) features 
@@ -31,7 +33,7 @@ The essential framework for React-Electron development.
 
 1. Clone the repository
 2. Install the latest [Node JS](https://nodejs.org/) and [Yarn](https://yarnpkg.com) and simply run ```yarn``` or ```yarn install``` command in the project directory.
-3. ```git remote add base https://github.com/psychobolt/electron-boilerplate```
+3. ```git remote add base https://github.com/psychobolt/react-electron-boilerplate```
 
 ## Local development
 
@@ -75,7 +77,7 @@ yarn add [package-name]
 
 ## Merging from base project
 
-This project is a fork from psychobolt's [electron-boilerplate](https://github.com/psychobolt/electron-boilerplate). To fetch latest changes, ```git remote add base https://github.com/psychobolt/electron-boilerplate.git```. On a clean working branch, ```git pull base master```, and fix any conflicts before commit.
+This project is a fork from psychobolt's [react-electron-boilerplate](https://github.com/psychobolt/react-electron-boilerplate). To fetch latest changes, ```git remote add base https://github.com/psychobolt/react-electron-boilerplate.git```. On a clean working branch, ```git pull base master```, and fix any conflicts before commit.
 
 ## Static Type Checker
 
