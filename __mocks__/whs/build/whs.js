@@ -1,17 +1,11 @@
 import * as WHS from 'whs/build/whs';
 
-export class RenderingModule {
+export class MockModule {
 }
 
-export class ResizeModule {
-}
-
-export class OrbitControlsModule {
-}
-
-WHS.RenderingModule = RenderingModule;
-WHS.ResizeModule = ResizeModule;
-WHS.OrbitControlsModule = OrbitControlsModule;
+WHS.RenderingModule = MockModule;
+WHS.ResizeModule = MockModule;
+WHS.OrbitControlsModule = MockModule;
 
 module.exports = {
   ...WHS,
