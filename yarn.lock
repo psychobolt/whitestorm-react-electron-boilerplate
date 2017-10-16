@@ -8402,13 +8402,13 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
-typeface-roboto-mono@^0.0.35:
-  version "0.0.35"
-  resolved "https://registry.yarnpkg.com/typeface-roboto-mono/-/typeface-roboto-mono-0.0.35.tgz#ff750974b25707b398bcba0777397c628ee6bd82"
+typeface-roboto-mono@^0.0.40:
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/typeface-roboto-mono/-/typeface-roboto-mono-0.0.40.tgz#16e6caff4d16268128880c08021ef779db0af9b4"
 
-typeface-roboto@^0.0.35:
-  version "0.0.35"
-  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.35.tgz#5965d3f6d4cd72b7b2833d6b7d42c9b59b8392ba"
+typeface-roboto@^0.0.41:
+  version "0.0.41"
+  resolved "https://registry.yarnpkg.com/typeface-roboto/-/typeface-roboto-0.0.41.tgz#529ce0f41c7e4149a08d8be96499f76f255423b2"
 
 ua-parser-js@^0.7.9:
   version "0.7.14"
@@ -8961,9 +8961,9 @@ xdg-basedir@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-3.0.0.tgz#496b2cc109eca8dbacfe2dc72b603c17c5870ad4"
 
-xel@^0.0.63:
-  version "0.0.63"
-  resolved "https://registry.yarnpkg.com/xel/-/xel-0.0.63.tgz#a6b3b74c4f013bbfdd6bf6ecc6e1fcaab611bac9"
+xel@^0.0.65:
+  version "0.0.65"
+  resolved "https://registry.yarnpkg.com/xel/-/xel-0.0.65.tgz#d2a1134feba47621516a4bac8154d1a12e448f55"
 
 xml-char-classes@^1.0.0:
   version "1.0.0"
