@@ -105,6 +105,7 @@
     "rimraf": "^2.6.2",
     "spectron": "^3.7.2",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^1.0.0-beta.3",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "webpack-merge": "^4.1.0"
