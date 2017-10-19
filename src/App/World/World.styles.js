@@ -1,5 +1,5 @@
 export default {
-  parent: {
+  container: {
     width: '100%',
     height: '100%',
   },

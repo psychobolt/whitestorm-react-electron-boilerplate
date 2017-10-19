@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import { World } from '../World.component';
 
 describe('component <World />', () => {
   it('should render correctly with Box by default', () => {
-    const wrapper = mount(<World />);
+    const wrapper = shallow(<World />);
     expect(wrapper).toMatchSnapshot();
   });
 

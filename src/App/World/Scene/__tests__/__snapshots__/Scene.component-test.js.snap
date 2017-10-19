@@ -1,0 +1,146 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component <Scene /> should render correctly 1`] = `
+<Scene
+  height={420}
+  width={680}
+>
+  <t
+    modules={
+      Array [
+        SceneModule {
+          "scene": Object {
+            "metadata": Object {
+              "generator": "Object3D.toJSON",
+              "type": "Object",
+              "version": 4.5,
+            },
+            "object": Object {
+              "matrix": Array [
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                1,
+              ],
+              "type": "Scene",
+              "uuid": 0,
+            },
+          },
+        },
+        DefineModule {
+          "data": PerspectiveCamera$$1 {
+            "_manager": ModuleManager {
+              "currentModule": null,
+              "handler": [Circular],
+              "modules": Object {},
+              "store": Object {
+                "dispatch": [Function],
+                "getState": [Function],
+                "replaceReducer": [Function],
+                "subscribe": [Function],
+                Symbol(observable): [Function],
+              },
+            },
+            "_native": Object {
+              "metadata": Object {
+                "generator": "Object3D.toJSON",
+                "type": "Object",
+                "version": 4.5,
+              },
+              "object": Object {
+                "aspect": 1.619047619047619,
+                "far": 1000,
+                "filmGauge": 35,
+                "filmOffset": 0,
+                "focus": 10,
+                "fov": 75,
+                "matrix": Array [
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                ],
+                "near": 1,
+                "type": "PerspectiveCamera",
+                "uuid": 0,
+                "zoom": 1,
+              },
+            },
+            "_wait": Array [
+              Promise {},
+            ],
+            "children": Array [],
+            "emit": [Function],
+            "modules": null,
+            "off": [Function],
+            "on": [Function],
+            "params": Object {
+              "aspect": 1.619047619047619,
+              "build": true,
+              "far": 1000,
+              "fov": 75,
+              "manager": true,
+              "modules": null,
+              "near": 1,
+              "position": Vector3 {
+                "x": 0,
+                "y": 10,
+                "z": 50,
+              },
+              "rotation": Object {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+              },
+            },
+          },
+          "name": "camera",
+        },
+        MockModule {},
+        MockModule {},
+      ]
+    }
+    parent="div"
+    parentStyle={
+      Object {
+        "flex": 1,
+      }
+    }
+    passAppToView={[Function]}
+    start={true}
+  >
+    <div
+      className="whs"
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    />
+  </t>
+</Scene>
+`;
