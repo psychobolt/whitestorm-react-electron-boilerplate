@@ -136,6 +136,7 @@
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
+    "element-resize-event": "^2.0.9",
     "history": "^4.7.2",
     "jquery": "^3.2.1",
     "raf": "^3.3.2",

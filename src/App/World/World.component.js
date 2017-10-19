@@ -12,46 +12,51 @@ import {
 import { App } from 'react-whs';
 import * as THREE from 'three';
 
+import withResizableContainer from 'Framework/ReactResizableContainer';
 import Fragment from './World.fragment';
 import styles from './World.styles';
 
-const containerId = 'world-container';
-
 type Props = {
-  style: {
-    container: {}
-  },
+  containerEl: HTMLDivElement,
+  containerWidth: number,
+  containerHeight: number,
   location: Location
 };
 
-const World = ({ style = { container: {} }, location }: Props) => (
-  <div id={containerId} style={style.container}>
-    <App
-      modules={[
-        new SceneModule(),
-        new DefineModule('camera', new PerspectiveCamera({
-          position: new THREE.Vector3(0, 10, 50),
-        })),
-        new RenderingModule({
-          bgColor: 0x162129,
-          renderer: {
-            antialias: true,
-            shadowmap: {
-              type: THREE.PCFSoftShadowMap,
-            },
+export const World = ({
+  containerEl,
+  containerWidth = 680,
+  containerHeight = 420,
+  location,
+}: Props) => (
+  <App
+    modules={[
+      new SceneModule(),
+      new DefineModule('camera', new PerspectiveCamera({
+        aspect: containerWidth / containerHeight,
+        position: new THREE.Vector3(0, 10, 50),
+      })),
+      new RenderingModule({
+        bgColor: 0x162129,
+        renderer: {
+          antialias: true,
+          shadowmap: {
+            type: THREE.PCFSoftShadowMap,
           },
-        }, { shadow: true }),
-        new OrbitControlsModule(),
-      ]}
-      parentStyle={styles.parent}
-      passAppToView={({ native }) => {
-        native.manager.set('container', document.getElementById(containerId));
-        native.applyModule(new ResizeModule());
-      }}
-    >
-      {Fragment({ location })}
-    </App>
-  </div>
+        },
+        width: containerWidth,
+        height: containerHeight,
+      }, { shadow: true }),
+      new OrbitControlsModule(),
+    ]}
+    parentStyle={styles.parent}
+    passAppToView={({ native }) => {
+      native.manager.set('container', containerEl);
+      native.applyModule(new ResizeModule());
+    }}
+  >
+    {Fragment({ location })}
+  </App>
 );
 
-export default World;
+export default withResizableContainer(World);

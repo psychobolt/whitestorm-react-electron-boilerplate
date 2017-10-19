@@ -20,7 +20,7 @@ exports[`component <App /> should render correctly 1`] = `
       centered={true}
     />
   </div>
-  <World
+  <_class2
     style={
       Object {
         "container": Object {
