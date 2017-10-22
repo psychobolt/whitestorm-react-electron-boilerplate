@@ -21,12 +21,9 @@ type Props = {
   location: Location
 };
 
-export const World = ({
-  containerEl,
-  containerWidth = 680,
-  containerHeight = 420,
-  location,
-}: Props) => (
+export const World = (
+  { containerEl, containerWidth = 680, containerHeight = 420, location }: Props,
+) => (
   <Scene
     container={containerEl}
     width={containerWidth}
