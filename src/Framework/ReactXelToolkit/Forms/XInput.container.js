@@ -18,9 +18,9 @@ type FallbackProps = {
 
 type Props = {
   onKeyup: (event: XInputEvent) => void,
-  value: string,
-  style: {},
-  fallback: (props: FallbackProps) => Element<'input'>
+  value?: string,
+  style?: {},
+  fallback?: (props: FallbackProps) => Element<'input'>
 };
 
 type State = {
@@ -49,7 +49,7 @@ export default class XInput extends React.Component<Props, State> {
       const input = this.el['#input'];
       if (input) {
         this.input = (this.el['#input']: HTMLInputElement);
-        this.input.value = this.props.value;
+        this.input.value = this.props.value || '';
         this.input.addEventListener(EVENT_KEYUP, this.onKeyboardEvent);
       } else {
         this.onMount(() => {
@@ -68,7 +68,7 @@ export default class XInput extends React.Component<Props, State> {
   componentDidUpdate() {
     /* istanbul ignore else */
     if (this.input) {
-      this.input.value = this.props.value;
+      this.input.value = this.props.value || '';
     }
   }
 
@@ -115,7 +115,7 @@ export default class XInput extends React.Component<Props, State> {
           this.el = el;
         }}
       >
-        {this.state.fallbackEnabled && fallback({
+        {this.state.fallbackEnabled && fallback && fallback({
           onKeyUp: this.onSyntheticEvent,
           defaultValue: value,
         })}

@@ -15,25 +15,29 @@ import { mount } from 'enzyme';
 // changes, it will call back to you with stuff like
 // `match` and `location`, and `history` so you can control
 // the flow and make assertions.
-type Callback = (props: {
+type StepArgs = {
   match: Match,
   location: Location,
-  history: RouterHistory,
-}) => {};
+  history: RouterHistory
+};
 
-type Options = {
+type Callback = (props: StepArgs) => {};
+
+type TestOptions = {
   initialEntries: Array<LocationShape | string>,
   initialIndex: number,
   steps: Array<Callback>
 };
 
-type Props = {
+type AssertProps = {
   children: any,
   steps: Array<Callback>,
   match: Match,
   location: Location,
-  history: RouterHistory,
+  history: RouterHistory
 };
+
+type Props = AssertProps & StepArgs;
 
 class Assert extends React.Component<Props> {
   componentDidMount() {
@@ -62,22 +66,22 @@ class Assert extends React.Component<Props> {
   }
 }
 
-const renderTest = (subject: any, {
-  initialEntries,
-  initialIndex,
-  steps,
-}: Options) => mount(
+const RouteAsserter =
+({ children, initialEntries, initialIndex, steps }: {children: any} & TestOptions) => (
   <MemoryRouter
     initialIndex={initialIndex}
     initialEntries={initialEntries}
   >
     <Route render={(props) => (
       <Assert steps={steps} {...props}>
-        {subject}
+        {children}
       </Assert>
     )}
     />
-  </MemoryRouter>,
+  </MemoryRouter>
 );
+
+const renderTest = (subject: any, options: TestOptions) =>
+  mount(<RouteAsserter {...options}>{subject}</RouteAsserter>);
 
 export default renderTest;

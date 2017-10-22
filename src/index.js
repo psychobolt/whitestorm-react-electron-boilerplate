@@ -17,11 +17,12 @@ if (module.hot && module.hot.data) {
     history: module.hot.data.history,
   };
 } else {
+  const history = createHashHistory();
   props = {
     store: configureStore(reducer, initialState, [
       routerMiddleware(history),
     ]),
-    history: createHashHistory(),
+    history,
   };
 }
 
