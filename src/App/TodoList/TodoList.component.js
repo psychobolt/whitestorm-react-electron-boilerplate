@@ -11,9 +11,7 @@ type Props = {
   style: {},
 }
 
-const TodoList = (
-  { todos, onTodoClick, children, style = {} }: Props,
-) => (
+const TodoList = ({ todos, onTodoClick, children, style = {} }: Props) => (
   <x-card style={style}>
     {children}
     <ul style={styles.ul}>

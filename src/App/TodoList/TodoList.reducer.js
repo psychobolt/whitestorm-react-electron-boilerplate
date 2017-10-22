@@ -15,8 +15,7 @@ export default (state = initialState, action) => {
       ];
     case TodoListActions.TOGGLE_TODO:
       return state.map(todo =>
-        (todo.id === action.todoId ? { ...todo, completed: !todo.completed } : todo),
-      );
+        (todo.id === action.todoId ? { ...todo, completed: !todo.completed } : todo));
     default:
       return state;
   }

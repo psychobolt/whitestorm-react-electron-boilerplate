@@ -18,13 +18,12 @@ describe('component <App />', () => {
         },
       };
       const store = mockStore({ todos: [] });
-      const wrapper = mount(
+      const Component = (
         <Provider store={store}>
-          <MemoryRouter keyLength={0}>
-            <App {...props} />
-          </MemoryRouter>
-        </Provider>,
+          <MemoryRouter keyLength={0}><App {...props} /></MemoryRouter>
+        </Provider>
       );
+      const wrapper = mount(Component);
       expect(wrapper).toMatchSnapshot();
     });
   });

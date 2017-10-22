@@ -1,9 +1,13 @@
 // @flow
 import React from 'react';
 
-const XTab = (
-  { active, onClick, children }: {active?: boolean, onClick: Function, children: any },
-) => (
+type Props = {
+  active?: boolean,
+  onClick: Function,
+  children: any
+};
+
+const XTab = ({ active, onClick, children }: Props) => (
   <x-tab
     onClick={onClick}
     selected={active || null}

@@ -8,11 +8,10 @@ type Props = {
   style: {}
 }
 
-const TodoItem = (
-  { onClick, completed, text, style }: Props,
-) => (
+const TodoItem = ({ onClick, completed, text, style }: Props) => (
   <x-box
-    style={Object.assign({},
+    style={Object.assign(
+      {},
       style,
       { textDecoration: completed ? 'line-through' : 'none' },
     )}

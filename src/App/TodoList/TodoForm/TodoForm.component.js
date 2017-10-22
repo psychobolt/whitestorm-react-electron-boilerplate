@@ -5,13 +5,13 @@ import { XInput, type XInputEvent } from 'Framework/ReactXelToolkit';
 import styles from './TodoForm.style';
 
 type Props = {
-  inputValue: string,
+  inputValue?: string,
   onValueSubmit: (value: string) => void,
-  style: {},
+  style?: {},
 };
 
 type State = {
-  inputValue: string,
+  inputValue?: string,
 }
 
 export const KEYCODE_ENTER = 13;
@@ -46,7 +46,7 @@ export default class TodoForm extends React.Component<Props, State> {
   }
 
   submit() {
-    this.props.onValueSubmit(this.state.inputValue);
+    this.props.onValueSubmit(this.state.inputValue || '');
     this.setState({
       inputValue: '',
     });
