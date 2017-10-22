@@ -5,7 +5,8 @@
     "rules": {
         "import/no-extraneous-dependencies": 0,
         "no-confusing-arrow": ["error", {"allowParens": true}],
-        "arrow-parens": 0
+        "arrow-parens": 0,
+        "object-curly-newline": ["error", { "consistent": true }]
     },
     "env": {
         "jest/globals": true,
