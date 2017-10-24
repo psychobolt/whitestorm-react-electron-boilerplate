@@ -8,6 +8,7 @@ type Props = {
   style: {},
 };
 
+/* eslint jsx-a11y/anchor-is-valid: 0 */
 const Header = ({ centered, style = {} }: Props) => (
   <x-tabs style={style} centered={centered || null}>
     <Link to={[{ to: '/' }, { to: '/box', default: true }]}>
