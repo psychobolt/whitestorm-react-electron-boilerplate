@@ -1,6 +1,8 @@
+import merge from 'webpack-merge';
+
 process.env.BABEL_ENV = 'webpack2';
 
-export default {
+let config = {
   module: {
     rules: [
       {
@@ -14,3 +16,20 @@ export default {
     ],
   },
 };
+
+if (process.env.NODE_ENV === 'development') {
+  config = merge(config, {
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          use: ['source-map-loader'],
+          enforce: 'pre',
+        },
+      ],
+    },
+  });
+}
+
+const commonConfig = config;
+export default commonConfig;
