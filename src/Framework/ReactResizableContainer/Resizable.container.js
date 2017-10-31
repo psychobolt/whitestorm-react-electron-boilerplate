@@ -35,9 +35,6 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
           ...this.getDimensions(),
           mounted: true,
         }));
-        if (this.listenOnResize) {
-          onElementResize(this.element, this.onResize);
-        }
       }
     }
 
@@ -64,20 +61,18 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
       return {};
     }
 
-    registerResizeListener = () => {
-      this.listenOnResize = true;
-    }
-
     element: ?HTMLDivElement;
-    listenOnResize = false;
-
+    
     render() {
       const { width, height, mounted } = this.state;
+      const { element, onResize } = this;
       const props = {
-        containerEl: this.element,
+        containerEl: element,
         containerWidth: width,
         containerHeight: height,
-        registerResizeListener: this.registerResizeListener,
+        registerResizeListener: () => {
+          onElementResize(element, onResize);
+        },
       };
       return (
         <div style={styles.container} ref={ref => { this.element = ref; }}>
