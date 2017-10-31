@@ -1,6 +1,6 @@
 // @flow
 import React, { type ComponentType } from 'react';
-import onElementResize, { unbind as offElementResize } from 'element-resize-event';
+import onElementResize from 'element-resize-event';
 
 type Props = {};
 
@@ -35,13 +35,9 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
           ...this.getDimensions(),
           mounted: true,
         }));
-      }
-    }
-
-    componentWillUnmount() {
-      /* istanbul ignore else */
-      if (this.element) {
-        offElementResize(this.element.parentNode);
+        if (this.listenOnResize) {
+          onElementResize(this.element, this.onResize);
+        }
       }
     }
 
@@ -49,7 +45,7 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
       callback();
     }
 
-    onResize() {
+    onResize = () => {
       this.setState({
         ...this.getDimensions(),
       });
@@ -69,13 +65,11 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
     }
 
     registerResizeListener = () => {
-      /* istanbul ignore else */
-      if (this.element) {
-        onElementResize(this.element.parentNode, this.onResize);
-      }
+      this.listenOnResize = true;
     }
 
     element: ?HTMLDivElement;
+    listenOnResize = false;
 
     render() {
       const { width, height, mounted } = this.state;
