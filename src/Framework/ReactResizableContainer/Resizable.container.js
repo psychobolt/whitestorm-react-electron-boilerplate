@@ -62,7 +62,7 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
     }
 
     element: ?HTMLDivElement;
-    
+
     render() {
       const { width, height, mounted } = this.state;
       const { element, onResize } = this;
