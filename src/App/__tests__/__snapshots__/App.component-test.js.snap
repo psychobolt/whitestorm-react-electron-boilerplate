@@ -220,7 +220,6 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                               "url": "/",
                             }
                           }
-                          staticContext={undefined}
                         >
                           <XTab
                             active={true}
@@ -273,7 +272,6 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                               }
                             }
                             onClick={[Function]}
-                            staticContext={undefined}
                           >
                             <x-tab
                               onClick={[Function]}
@@ -341,7 +339,6 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                               "url": "/",
                             }
                           }
-                          staticContext={undefined}
                         >
                           <XTab
                             active={false}
@@ -394,7 +391,6 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                               }
                             }
                             onClick={[Function]}
-                            staticContext={undefined}
                           >
                             <x-tab
                               onClick={[Function]}
@@ -462,7 +458,6 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                               "url": "/",
                             }
                           }
-                          staticContext={undefined}
                         >
                           <XTab
                             active={false}
@@ -515,7 +510,6 @@ exports[`component <App />  should render correctly with filter All 1`] = `
                               }
                             }
                             onClick={[Function]}
-                            staticContext={undefined}
                           >
                             <x-tab
                               onClick={[Function]}
@@ -772,7 +766,6 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                               "url": "/",
                             }
                           }
-                          staticContext={undefined}
                         >
                           <XTab
                             active={true}
@@ -825,7 +818,6 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                               }
                             }
                             onClick={[Function]}
-                            staticContext={undefined}
                           >
                             <x-tab
                               onClick={[Function]}
@@ -893,7 +885,6 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                               "url": "/",
                             }
                           }
-                          staticContext={undefined}
                         >
                           <XTab
                             active={false}
@@ -946,7 +937,6 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                               }
                             }
                             onClick={[Function]}
-                            staticContext={undefined}
                           >
                             <x-tab
                               onClick={[Function]}
@@ -1014,7 +1004,6 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                               "url": "/",
                             }
                           }
-                          staticContext={undefined}
                         >
                           <XTab
                             active={false}
@@ -1067,7 +1056,6 @@ exports[`component <App />  should render correctly with filter undefined 1`] = 
                               }
                             }
                             onClick={[Function]}
-                            staticContext={undefined}
                           >
                             <x-tab
                               onClick={[Function]}
