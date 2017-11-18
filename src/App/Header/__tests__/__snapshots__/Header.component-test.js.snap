@@ -5,7 +5,7 @@ exports[`component <Header /> should render correctly 1`] = `
   centered={null}
   style={Object {}}
 >
-  <Link
+  <_default
     to={
       Array [
         Object {
@@ -18,12 +18,20 @@ exports[`component <Header /> should render correctly 1`] = `
       ]
     }
   >
-    Box
-  </Link>
-  <Link
+    <XTab
+      active={false}
+    >
+      Box
+    </XTab>
+  </_default>
+  <_default
     to="/sphere"
   >
-    Sphere
-  </Link>
+    <XTab
+      active={false}
+    >
+      Sphere
+    </XTab>
+  </_default>
 </x-tabs>
 `;

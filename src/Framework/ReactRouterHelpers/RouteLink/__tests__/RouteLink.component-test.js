@@ -3,16 +3,16 @@ import { shallow } from 'enzyme';
 
 import renderTest from 'Framework/ReactRouterRenderTest';
 import { XTab } from 'Framework/ReactXelToolkit';
-import Link from '../Link.component';
+import RouteLink from '../RouteLink.component';
 
 const ROOT = '/';
 
-describe('component <Link />', () => {
+describe('component <RouteLink />', () => {
   it('should render correctly for no path', () => {
     const props = {
       to: [],
     };
-    const wrapper = shallow(<Link {...props} />);
+    const wrapper = shallow(<RouteLink {...props}><XTab /></RouteLink>);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -20,7 +20,7 @@ describe('component <Link />', () => {
     const props = {
       to: '/path',
     };
-    const wrapper = shallow(<Link {...props} />);
+    const wrapper = shallow(<RouteLink {...props}><XTab /></RouteLink>);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -33,7 +33,7 @@ describe('component <Link />', () => {
         default: true,
       }],
     };
-    const wrapper = shallow(<Link {...props} />);
+    const wrapper = shallow(<RouteLink {...props}><XTab /></RouteLink>);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -45,7 +45,7 @@ describe('component <Link />', () => {
         to: '/path',
       }],
     };
-    const wrapper = shallow(<Link {...props} />);
+    const wrapper = shallow(<RouteLink {...props}><XTab /></RouteLink>);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -53,7 +53,7 @@ describe('component <Link />', () => {
     const props = {
       to: '/path',
     };
-    const wrapper = renderTest(<Link {...props} />, {
+    const wrapper = renderTest(<RouteLink {...props}><XTab /></RouteLink>, {
       initialEntires: [ROOT],
       initialIndex: 0,
       steps: [

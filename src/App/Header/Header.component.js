@@ -1,7 +1,8 @@
 // @flow
 import React from 'react';
 
-import Link from './Link';
+import { XTab } from 'Framework/ReactXelToolkit';
+import { RouteLink } from 'Framework/ReactRouterHelpers';
 
 type Props = {
   centered: boolean,
@@ -11,12 +12,12 @@ type Props = {
 /* eslint jsx-a11y/anchor-is-valid: 0 */
 const Header = ({ centered, style = {} }: Props) => (
   <x-tabs style={style} centered={centered || null}>
-    <Link to={[{ to: '/' }, { to: '/box', default: true }]}>
-      Box
-    </Link>
-    <Link to="/sphere">
-      Sphere
-    </Link>
+    <RouteLink to={[{ to: '/' }, { to: '/box', default: true }]}>
+      <XTab>Box</XTab>
+    </RouteLink>
+    <RouteLink to="/sphere">
+      <XTab>Sphere</XTab>
+    </RouteLink>
   </x-tabs>
 );
 

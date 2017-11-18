@@ -2,8 +2,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import { XTab } from 'Framework/ReactXelToolkit';
-
 type Path = {
   to: string,
   default: ?boolean
@@ -14,7 +12,7 @@ type Props = {
   children: any,
 };
 
-const Link = ({ to, children }: Props) => {
+export default ({ to, children }: Props) => {
   let route;
   let path;
   if (typeof to === 'string') {
@@ -30,13 +28,16 @@ const Link = ({ to, children }: Props) => {
   return (
     <Route
       path={path}
-      children={({ match, history }) => ( // eslint-disable-line react/no-children-prop
-        <XTab active={match ? true : null} onClick={() => !match && history.push(route)}>
-          {children}
-        </XTab>
-      )}
+      children={({ match, history }) => // eslint-disable-line react/no-children-prop
+        React.Children.map(children, child => {
+          const { onClick, ...rest } = child;
+          return React.cloneElement(child, {
+            active: match ? true : null,
+            onClick: (event: SyntheticEvent<*>) =>
+              ((onClick && onClick(event)) || true) && (!match && history.push(route)),
+            ...rest,
+          });
+        })}
     />
   );
 };
-
-export default Link;
