@@ -10,9 +10,10 @@ type Path = {
 type Props = {
   to: string | Array<Path>,
   children: any,
+  selectedProp: string
 };
 
-export default ({ to, children }: Props) => {
+export default ({ to, selectedProp = 'active', children }: Props) => {
   let route;
   let path;
   if (typeof to === 'string') {
@@ -32,7 +33,7 @@ export default ({ to, children }: Props) => {
         React.Children.map(children, child => {
           const { onClick, ...rest } = child;
           return React.cloneElement(child, {
-            active: match ? true : null,
+            [selectedProp]: match ? true : null,
             onClick: (event: SyntheticEvent<*>) =>
               ((onClick && onClick(event)) || true) && (!match && history.push(route)),
             ...rest,
