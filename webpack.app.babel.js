@@ -59,7 +59,7 @@ let config = {
         }),
       },
       {
-        test: /\.(png|jpg|gif|svg|woff|woff2)$/,
+        test: /\.(png|jpg|gif|svg|woff|woff2|ttf|otf|eot)$/,
         use: ['file-loader'],
       },
     ],
