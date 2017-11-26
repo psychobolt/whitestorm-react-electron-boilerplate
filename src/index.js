@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { routerMiddleware } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
+import { forwardToMain, replayActionRenderer } from 'electron-redux';
 import { createHashHistory } from 'history';
 
 import { initialState } from './App/index';
@@ -20,11 +21,14 @@ if (module.hot && module.hot.data) {
   const history = createHashHistory();
   props = {
     store: configureStore(reducer, initialState, [
+      forwardToMain,
       routerMiddleware(history),
     ]),
     history,
   };
 }
+
+replayActionRenderer(props.store);
 
 render(
   <AppContainer><Routes {...props} /></AppContainer>,
