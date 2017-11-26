@@ -2,7 +2,11 @@
 import type { Todo } from './TodoItem';
 
 export type TodoListState = {
-  todos: Todo[]
+  todos: {
+    past: Array<Todo[]>,
+    present: Todo[],
+    future: Array<Todo[]>
+  }
 };
 
-export default [];
+export default {};

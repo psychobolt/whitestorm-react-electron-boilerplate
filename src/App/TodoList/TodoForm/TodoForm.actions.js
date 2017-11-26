@@ -6,7 +6,7 @@ export const Actions = {
 
 export const addTodo = text => ({
   type: Actions.ADD_TODO,
-  todo: {
+  payload: {
     id: nextTodoId++, // eslint-disable-line no-plusplus
     text,
   },

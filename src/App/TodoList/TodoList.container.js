@@ -24,7 +24,7 @@ type Props = {
 };
 
 export const mapStateToProps = (state: TodoListState, ownProps: Props) => ({
-  todos: getVisibleTodos(state.todos, ownProps.filter),
+  todos: getVisibleTodos(state.todos.present, ownProps.filter),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => ({

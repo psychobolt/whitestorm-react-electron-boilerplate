@@ -8,14 +8,14 @@ export default (state = initialState, action) => {
       return [
         ...state,
         {
-          id: action.todo.id,
-          text: action.todo.text,
+          id: action.payload.id,
+          text: action.payload.text,
           completed: false,
         },
       ];
     case TodoListActions.TOGGLE_TODO:
       return state.map(todo =>
-        (todo.id === action.todoId ? { ...todo, completed: !todo.completed } : todo));
+        (todo.id === action.payload.id ? { ...todo, completed: !todo.completed } : todo));
     default:
       return state;
   }
