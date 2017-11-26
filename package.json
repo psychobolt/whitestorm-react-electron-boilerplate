@@ -51,7 +51,7 @@
     ],
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!**/main.js",
+      "!src/(main|menu).js",
       "!**/.build/**",
       "!src/**/(index|store|reducer|globals).js"
     ],
