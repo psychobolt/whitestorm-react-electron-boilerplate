@@ -51,9 +51,9 @@
     ],
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!src/(main|menu).js",
+      "!src/(main|menu|globals).js",
       "!**/.build/**",
-      "!src/**/(index|store|reducer|globals).js"
+      "!src/**/(index|reducer).js"
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
