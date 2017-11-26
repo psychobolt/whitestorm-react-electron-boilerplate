@@ -11,7 +11,7 @@ describe('TodoList reducer', () => {
   it('should add todo', () => {
     const action = addTodo('Item');
     expect(reducer(undefined, action)).toEqual([{
-      ...action.todo,
+      ...action.payload,
       completed: false,
     }]);
   });

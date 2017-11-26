@@ -17,7 +17,7 @@ describe('component <App />', () => {
           params: { filter },
         },
       };
-      const store = mockStore({ todos: [] });
+      const store = mockStore({ todos: { present: [] } });
       const Component = (
         <Provider store={store}>
           <MemoryRouter keyLength={0}><App {...props} /></MemoryRouter>

@@ -19,7 +19,7 @@ const activeTodo = {
   text: 'Active Item',
   completed: false,
 };
-const todos = [completedTodo, activeTodo];
+const todos = { present: [completedTodo, activeTodo] };
 
 describe('container <TodoList />', () => {
   it('TodoList should render correctly', () => {
@@ -35,7 +35,8 @@ describe('container <TodoList />', () => {
   });
 
   it('mapStateToProps -- active', () => {
-    expect(mapStateToProps({ todos }, { filter: Filters.ACTIVE })).toEqual({ todos: [activeTodo] });
+    expect(mapStateToProps({ todos }, { filter: Filters.ACTIVE }))
+      .toEqual({ todos: [activeTodo] });
   });
 
   it('TodoList should dispatch action on TodoItem click', () => {
