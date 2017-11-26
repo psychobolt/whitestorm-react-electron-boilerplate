@@ -19,6 +19,7 @@ let config = {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
   },
+  target: 'electron-renderer',
   module: {
     rules: [
       {
