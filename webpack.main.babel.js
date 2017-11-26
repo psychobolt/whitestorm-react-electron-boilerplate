@@ -22,7 +22,7 @@ let config = {
 
 if (process.env.NODE_ENV === 'development') {
   config = merge(config, {
-    devtool: 'inline-source-map',
+    devtool: 'eval-source-map',
   });
 } else {
   config = merge(config, {
