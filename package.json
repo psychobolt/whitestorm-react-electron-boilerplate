@@ -47,7 +47,7 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js",
-      "!**/main.js",
+      "!src/(main|menu).js",
       "!**/.build/**",
       "!src/**/index.js"
     ],
