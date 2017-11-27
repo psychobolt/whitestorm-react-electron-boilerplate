@@ -40,20 +40,12 @@ export default (win, store) => {
       {
         label: 'Back',
         accelerator: 'Alt+Left',
-        click: self => {
-          win.webContents.goBack();
-          Object.assign(self, { enabled: win.webContents.canGoBack() });
-        },
-        enabled: win.webContents.canGoBack(),
+        click: () => win.webContents.goBack(),
       },
       {
         label: 'Forward',
         accelerator: 'Alt+Right',
-        click: self => {
-          win.webContents.goForward();
-          Object.assign(self, { enabled: win.webContents.canGoForward() });
-        },
-        enabled: win.webContents.canGoForward(),
+        click: () => win.webContents.goForward(),
       },
     ],
   });
