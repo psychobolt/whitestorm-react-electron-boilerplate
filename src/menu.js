@@ -2,7 +2,7 @@ import { Menu } from 'electron';
 
 import { undoTodo, redoTodo } from './App/TodoList/TodoList.actions';
 
-export default store => {
+export default (win, store) => {
   let todos = store.getState();
 
   const viewMenu = () => ({
@@ -34,10 +34,35 @@ export default store => {
     ],
   });
 
+  const goMenu = () => ({
+    label: 'Go',
+    submenu: [
+      {
+        label: 'Back',
+        accelerator: 'Alt+Left',
+        click: self => {
+          win.webContents.goBack();
+          Object.assign(self, { enabled: win.webContents.canGoBack() });
+        },
+        enabled: win.webContents.canGoBack(),
+      },
+      {
+        label: 'Forward',
+        accelerator: 'Alt+Right',
+        click: self => {
+          win.webContents.goForward();
+          Object.assign(self, { enabled: win.webContents.canGoForward() });
+        },
+        enabled: win.webContents.canGoForward(),
+      },
+    ],
+  });
+
   const menu = Menu.buildFromTemplate([
     { role: 'editMenu' },
     viewMenu(),
     todoMenu(todos),
+    ...(process.env.NODE_ENV === 'development' ? [goMenu()] : []),
     { role: 'windowMenu' },
   ]);
 

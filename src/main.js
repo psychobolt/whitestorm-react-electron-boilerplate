@@ -51,7 +51,7 @@ async function createWindow() {
     win = null;
   });
 
-  Menu.setApplicationMenu(menu(store));
+  Menu.setApplicationMenu(menu(win, store));
 }
 
 // This method will be called when Electron has finished
