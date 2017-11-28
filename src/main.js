@@ -5,7 +5,7 @@ import url from 'url';
 
 import initialState from './App/App.state';
 import { reducers } from './App/TodoList';
-import configureStore from './Shared/store';
+import configureStore from './shared/store';
 import menu from './menu';
 
 const store = configureStore(reducers.todos, initialState, [forwardToRenderer]);

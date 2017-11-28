@@ -9,7 +9,11 @@ The essential framework for React-Electron development.
 ## Included
 
 - Example App based on Redux's [tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
-- [React](https://facebook.github.io/react/) with [React Redux](https://github.com/reactjs/react-redux) and [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+- [React](https://facebook.github.io/react/) with [Redux support](https://github.com/reactjs/react-redux) libraries: 
+  - [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+  - [Electron Redux](https://github.com/hardchor/electron-redux)
+  - [Redux Undo](https://github.com/omnidan/redux-undo)
+  - [Reselect](https://github.com/reactjs/reselect)
 - [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
   - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://babeljs.io/docs/plugins/preset-stage-0/) features 
   - [Flow](https://flow.org/) Type support
