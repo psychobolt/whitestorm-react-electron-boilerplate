@@ -2,8 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 
-import TodoList, { mapStateToProps } from '../TodoList.container';
-import { Filters } from '../';
+import TodoList from '../TodoList.container';
 import { toggleTodo } from '../TodoList.actions';
 import TodoItem from '../TodoItem';
 
@@ -27,16 +26,6 @@ describe('container <TodoList />', () => {
       context: { store: mockStore({ todos }) },
     });
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('mapStateToProps -- completed', () => {
-    expect(mapStateToProps({ todos }, { filter: Filters.COMPLETED }))
-      .toEqual({ todos: [completedTodo] });
-  });
-
-  it('mapStateToProps -- active', () => {
-    expect(mapStateToProps({ todos }, { filter: Filters.ACTIVE }))
-      .toEqual({ todos: [activeTodo] });
   });
 
   it('TodoList should dispatch action on TodoItem click', () => {
