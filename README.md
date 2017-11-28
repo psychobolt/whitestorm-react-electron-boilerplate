@@ -11,7 +11,11 @@ The essential framework for WhiteStormJS React-Electron development.
 - Example App based on WhiteStormJS's [TypeScript boilerplate](https://github.com/WhitestormJS/whitestorm-typescript-boilerplate)
  - ![Preview](https://user-images.githubusercontent.com/560721/31196681-7738d1d4-a903-11e7-9793-adab6eb1f4a1.gif)
 - [whs.js](https://github.com/WhitestormJS/whs.js) with [React integration](https://github.com/WhitestormJS/react-whs)
-- [React](https://facebook.github.io/react/) with [React Redux](https://github.com/reactjs/react-redux) and [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+- [React](https://facebook.github.io/react/) with [Redux support](https://github.com/reactjs/react-redux) libraries: 
+  - [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
+  - [Electron Redux](https://github.com/hardchor/electron-redux)
+  - [Redux Undo](https://github.com/omnidan/redux-undo)
+  - [Reselect](https://github.com/reactjs/reselect)
 - [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
   - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://babeljs.io/docs/plugins/preset-stage-0/) features 
   - [Flow](https://flow.org/) Type support

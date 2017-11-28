@@ -7,7 +7,7 @@ import { createHashHistory } from 'history';
 
 import { initialState } from './App/index';
 import reducer from './reducer';
-import configureStore from './Shared/store';
+import configureStore from './shared/store';
 import Routes from './routes';
 
 let props;

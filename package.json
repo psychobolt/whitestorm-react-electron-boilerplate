@@ -149,6 +149,7 @@
     "react-whs": "https://github.com/psychobolt/react-whs.git#build",
     "redux": "^3.7.2",
     "redux-undo": "^1.0.0-beta9-9-7",
+    "reselect": "^3.0.1",
     "typeface-roboto": "^0.0.45",
     "typeface-roboto-mono": "^0.0.44",
     "xel": "^0.0.68"
