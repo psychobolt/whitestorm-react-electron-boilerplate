@@ -63,3 +63,6 @@ src/.build
 
 # flow-typed
 flow-typed/npm/*
+
+# only support Yarn
+package-lock.json
