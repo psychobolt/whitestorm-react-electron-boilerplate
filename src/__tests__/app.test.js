@@ -4,7 +4,7 @@ let log;
 const logger = global.console.log;
 beforeEach(() => {
   log = '';
-  global.console.log = jest.fn((message) => {
+  global.console.log = jest.fn(message => {
     log = message;
   });
 });
