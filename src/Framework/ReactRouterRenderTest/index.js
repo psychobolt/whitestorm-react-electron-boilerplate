@@ -72,7 +72,7 @@ const RouteAsserter =
     initialIndex={initialIndex}
     initialEntries={initialEntries}
   >
-    <Route render={(props) => (
+    <Route render={props => (
       <Assert steps={steps} {...props}>
         {children}
       </Assert>

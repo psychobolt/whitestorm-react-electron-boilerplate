@@ -6,7 +6,7 @@ import TodoForm from './TodoForm.component';
 import { addTodo } from './TodoForm.actions';
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
-  onValueSubmit: (value) => {
+  onValueSubmit: value => {
     if (value.trim()) {
       dispatch(addTodo(value));
     }
