@@ -9,7 +9,7 @@ if (process.platform === 'win32') {
 
 const appPath = path.join(__dirname, '..');
 
-test.beforeEach(async (t) => {
+test.beforeEach(async t => {
   t.context.app = new Application({ // eslint-disable-line no-param-reassign
     path: electronPath,
     args: [appPath],
@@ -18,11 +18,11 @@ test.beforeEach(async (t) => {
   await t.context.app.start();
 });
 
-test.afterEach.always(async (t) => {
+test.afterEach.always(async t => {
   await t.context.app.stop();
 });
 
-test(async (t) => {
+test(async t => {
   const { app } = t.context;
   await app.client.waitUntilWindowLoaded();
 
