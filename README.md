@@ -1,7 +1,10 @@
 # WhiteStormJS Electron Boilerplate
 
-[![Build Status](https://travis-ci.org/psychobolt/whitestorm-react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/whitestorm-react-electron-boilerplate)
 [![Dependencies Status](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate.svg)](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate)
+[![Dev Dependencies Status](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate/dev-status.svg)](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate?type=dev)
+[![Peer Dependencies Status](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate/peer-status.svg)](https://david-dm.org/psychobolt/whitestorm-react-electron-boilerplate?type=peer)
+
+[![Build Status](https://travis-ci.org/psychobolt/whitestorm-react-electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/whitestorm-react-electron-boilerplate)
 [![codecov](https://codecov.io/gh/psychobolt/whitestorm-react-electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/whitestorm-react-electron-boilerplate)
 
 The essential framework for WhiteStormJS React-Electron development.

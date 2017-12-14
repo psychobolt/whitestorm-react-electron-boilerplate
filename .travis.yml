@@ -16,5 +16,6 @@ script:
   - yarn flow
   - yarn test -- --coverage
   - yarn build:prod
+  - yarn build:dist -- --publish "never"
   - yarn test-e2e
   - yarn codecov
