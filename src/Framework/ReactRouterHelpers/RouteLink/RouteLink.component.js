@@ -31,7 +31,7 @@ export default ({ to, selectedProp = 'active', children }: Props) => {
       path={path}
       children={({ match, history }) => // eslint-disable-line react/no-children-prop
         React.Children.map(children, child => {
-          const { onClick, ...rest } = child;
+          const { onClick, ...rest } = child.props;
           return React.cloneElement(child, {
             [selectedProp]: match ? true : null,
             onClick: (event: SyntheticEvent<*>) =>
