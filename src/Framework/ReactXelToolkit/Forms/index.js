@@ -1,1 +1,1 @@
-export { default as XInput } from './XInput.container';
+export * from './XInput';
