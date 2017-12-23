@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "App/*": ["./src/App/*"],
       "Framework/*": ["./src/Framework/*"]
     }
   }
