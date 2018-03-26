@@ -9,7 +9,7 @@ exports[`components <TodoItem /> TodoItem should render correctly -- completed 1
   }
 >
   <x-checkbox
-    onClick={[Function]}
+    onClick={[MockFunction]}
     toggled={true}
   />
   <x-label
@@ -29,7 +29,7 @@ exports[`components <TodoItem /> TodoItem should render correctly -- not complet
   }
 >
   <x-checkbox
-    onClick={[Function]}
+    onClick={[MockFunction]}
     toggled={null}
   />
   <x-label
