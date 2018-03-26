@@ -1,6 +1,6 @@
 import merge from 'webpack-merge';
 
-process.env.BABEL_ENV = 'webpack2';
+process.env.BABEL_ENV = 'webpack4';
 
 let config = {
   module: {
@@ -18,6 +18,7 @@ let config = {
 
 if (process.env.NODE_ENV === 'development') {
   config = merge(config, {
+    mode: 'development',
     module: {
       rules: [
         {
@@ -27,6 +28,10 @@ if (process.env.NODE_ENV === 'development') {
         },
       ],
     },
+  });
+} else {
+  config = merge(config, {
+    mode: 'production',
   });
 }
 

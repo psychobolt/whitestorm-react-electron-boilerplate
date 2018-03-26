@@ -1,5 +1,4 @@
 import path from 'path';
-import webpack from 'webpack';
 import merge from 'webpack-merge';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 
@@ -29,12 +28,6 @@ if (process.env.NODE_ENV === 'development') {
     node: {
       __dirname: false,
     },
-    plugins: [
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production'),
-      }),
-      new webpack.optimize.UglifyJsPlugin(),
-    ],
   });
 }
 
