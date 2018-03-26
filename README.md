@@ -7,7 +7,7 @@
 [![Build Status](https://travis-ci.org/psychobolt/electron-boilerplate.svg?branch=master)](https://travis-ci.org/psychobolt/electron-boilerplate)
 [![codecov](https://codecov.io/gh/psychobolt/electron-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/psychobolt/electron-boilerplate)
 
-A minimalistic Electron boilerplate based on the official [quick start](https://electron.atom.io/docs/tutorial/quick-start/) tutorial. Enhanced with webpack support.
+A minimalistic Electron boilerplate based on the official [first-app](https://electronjs.org/docs/tutorial/first-app) tutorial. Enhanced with webpack support.
 
 ## Included
 

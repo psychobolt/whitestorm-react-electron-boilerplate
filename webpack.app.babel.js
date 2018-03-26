@@ -5,7 +5,6 @@ import CleanWebpackPlugin from 'clean-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 
 import CommonConfig from './webpack.common';
 
@@ -13,7 +12,7 @@ const appCSS = new ExtractTextPlugin('styles.css');
 const venderCSS = new ExtractTextPlugin('vender.css');
 
 let config = {
-  entry: ['./src/index.js'],
+  entry: ['css-hot-loader/hotModuleReplacement', './src/index.js'],
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),
@@ -97,10 +96,6 @@ if (process.env.NODE_ENV === 'development') {
         'src/.build/app.bundle.js',
         'src/.build/*.css',
       ]),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('production'),
-      }),
-      new UglifyJsPlugin(),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: { discardComments: { removeAll: true } },
       }),
