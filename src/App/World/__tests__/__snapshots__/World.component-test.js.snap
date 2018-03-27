@@ -11,7 +11,7 @@ exports[`component <World /> should render correctly with Box by default 1`] = `
   }
   width={680}
 >
-  <n
+  <r
     geometry={
       Object {
         "depth": 10,
@@ -44,7 +44,7 @@ exports[`component <World /> should render correctly with Box by default 1`] = `
       }
     }
   />
-  <n
+  <r
     geometry={
       Object {
         "height": 100,
@@ -76,7 +76,7 @@ exports[`component <World /> should render correctly with Box by default 1`] = `
       }
     }
   />
-  <n
+  <r
     distance={100}
     intensity={0.5}
     key="4"
@@ -93,7 +93,7 @@ exports[`component <World /> should render correctly with Box by default 1`] = `
       }
     }
   />
-  <n
+  <r
     intensity={0.4}
     key="5"
   />
@@ -111,7 +111,7 @@ exports[`component <World /> should render correctly with Sphere 1`] = `
   }
   width={680}
 >
-  <n
+  <r
     geometry={
       Object {
         "heightSegments": 32,
@@ -144,7 +144,7 @@ exports[`component <World /> should render correctly with Sphere 1`] = `
       }
     }
   />
-  <n
+  <r
     geometry={
       Object {
         "height": 100,
@@ -176,7 +176,7 @@ exports[`component <World /> should render correctly with Sphere 1`] = `
       }
     }
   />
-  <n
+  <r
     distance={100}
     intensity={0.5}
     key="4"
@@ -193,7 +193,7 @@ exports[`component <World /> should render correctly with Sphere 1`] = `
       }
     }
   />
-  <n
+  <r
     intensity={0.4}
     key="5"
   />
