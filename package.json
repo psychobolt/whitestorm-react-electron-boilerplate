@@ -137,8 +137,8 @@
     "webpack-merge": "^4.1.2"
   },
   "dependencies": {
-    "element-resize-event": "^2.0.9",
     "electron-redux": "^1.3.1",
+    "element-resize-event": "^2.0.9",
     "history": "^4.7.2",
     "jquery": "^3.3.1",
     "raf": "^3.4.0",
@@ -147,7 +147,7 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "5.0.0-alpha.6",
-    "react-whs": "https://github.com/psychobolt/react-whs.git#build",
+    "react-whs": "^0.1.9",
     "redux": "^3.7.2",
     "redux-undo": "^1.0.0-beta9-9-7",
     "reselect": "^3.0.1",
