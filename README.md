@@ -17,6 +17,7 @@ The essential framework for React-Electron development.
   - [Electron Redux](https://github.com/hardchor/electron-redux)
   - [Redux Undo](https://github.com/omnidan/redux-undo)
   - [Reselect](https://github.com/reactjs/reselect)
+- CSS-in-JS using [Styled Components](https://www.styled-components.com/)
 - [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
   - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://babeljs.io/docs/plugins/preset-stage-0/) features 
   - [Flow](https://flow.org/) Type support
