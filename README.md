@@ -98,7 +98,7 @@ See [official documentation](https://eslint.org/) for a usage guide.
 ```sh
 yarn test # runs functional/unit tests using Jest
 yarn test --coverage # with coverage
-yarn test-e2e # run end-to-end tests
+yarn test-e2e # run end-to-end tests. (build required)
 ```
 
 ## Build
