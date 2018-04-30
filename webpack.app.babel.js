@@ -2,14 +2,13 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 import CommonConfig from './webpack.common';
 
-const appCSS = new ExtractTextPlugin('styles.css');
-const venderCSS = new ExtractTextPlugin('vender.css');
+const devMode = process.env.NODE_ENV !== 'production';
 
 let config = {
   entry: ['css-hot-loader/hotModuleReplacement', './src/index.js'],
@@ -26,20 +25,10 @@ let config = {
       },
       {
         test: /\.css$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /node_modules/,
-        use: ['css-hot-loader'].concat(appCSS.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        })),
-      },
-      {
-        test: /\.css$/,
-        include: /node_modules/,
-        use: venderCSS.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg|woff|woff2|ttf|otf|eot)$/,
@@ -47,9 +36,28 @@ let config = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        venderStyles: {
+          name: 'vender',
+          test: /[\\/]node_modules[\\/].+\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+        styles: {
+          name: 'styles',
+          test: /src[\\/].+\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
+  },
   plugins: [
-    appCSS,
-    venderCSS,
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
   ],
 };
 
@@ -58,7 +66,7 @@ let htmlConfig = {
   template: 'src/index.html',
 };
 
-if (process.env.NODE_ENV === 'development') {
+if (devMode) {
   config = merge(config, {
     devtool: 'eval-source-map',
     plugins: [
