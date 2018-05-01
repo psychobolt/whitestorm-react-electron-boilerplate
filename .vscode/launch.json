@@ -6,6 +6,9 @@
       "request": "launch",
       "name": "Debug App",
       "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron",
+      "windows": {
+        "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
+      },
       "program": "${workspaceRoot}/src/main.js",
       "outFiles": [
         "${workspaceRoot}/src/.build/main.bundle.js"
