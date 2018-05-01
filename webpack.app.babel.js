@@ -102,6 +102,7 @@ if (devMode) {
       new CleanWebpackPlugin([
         'src/.build/*.html',
         'src/.build/app.bundle.js',
+        'src/.build/*.app.bundle.js',
         'src/.build/*.css',
       ]),
       new OptimizeCssAssetsPlugin({
