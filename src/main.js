@@ -18,7 +18,7 @@ let win;
 
 async function installExtension() {
   const { default: install, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } = require('electron-devtools-installer'); // eslint-disable-line global-require
-  const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
+  const extensions = [REACT_DEVELOPER_TOOLS.id, REDUX_DEVTOOLS.id];
   return Promise.all(extensions.map(extension => install(extension)));
 }
 
