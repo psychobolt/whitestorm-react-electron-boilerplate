@@ -3333,7 +3333,7 @@ electron-builder-lib@~20.9.0:
     semver "^5.5.0"
     temp-file "^3.1.1"
 
-electron-builder@^20.10.0:
+electron-builder@^20.11.1:
   version "20.11.1"
   resolved "https://registry.yarnpkg.com/electron-builder/-/electron-builder-20.11.1.tgz#a84feea424ac3abfa0dd1e4818dde8338250e543"
   dependencies:
@@ -3457,9 +3457,9 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
   version "1.3.44"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.44.tgz#ef6b150a60d523082388cadad88085ecd2fd4684"
 
-electron@~1.8.6:
-  version "1.8.6"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-1.8.6.tgz#6d45e377b321a35b78a794b64e40b2cf8face6ae"
+electron@~2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-2.0.0.tgz#e95dc7f3a089a52b8c2a52c7c9e1024db0c8d46e"
   dependencies:
     "@types/node" "^8.0.24"
     electron-download "^3.0.1"

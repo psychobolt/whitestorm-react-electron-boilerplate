@@ -35,7 +35,8 @@ async function createWindow() {
     }));
   } else {
     await installExtension();
-    win.loadURL('http://localhost:3000/');
+    process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
+    win.loadURL('http://localhost:3000/'); // TODO: pass port
   }
 
   if (process.env.NODE_ENV === 'development') {
