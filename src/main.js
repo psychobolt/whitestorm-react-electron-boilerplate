@@ -20,6 +20,7 @@ function createWindow() {
       slashes: true,
     }));
   } else {
+    process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
     win.loadURL('http://localhost:3000/'); // TODO: pass port
   }
 
