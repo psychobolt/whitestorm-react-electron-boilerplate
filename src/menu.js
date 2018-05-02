@@ -21,7 +21,7 @@ export default (win, store) => {
     submenu: [
       {
         label: 'Undo',
-        accelerator: 'CommandOrControl+Shift+Z',
+        accelerator: `CommandOrControl+Shift+${process.platform === 'darwin' ? 'U' : 'Z'}`,
         click: () => store.dispatch(undoTodo()),
         enabled: todos.past.length > 0,
       },
