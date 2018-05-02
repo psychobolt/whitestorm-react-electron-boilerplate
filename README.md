@@ -12,7 +12,7 @@ The essential framework for React-Electron development.
 ## Included
 
 - Example App based on Redux's [tutorial](http://redux.js.org/docs/basics/UsageWithReact.html)
-- [React](https://facebook.github.io/react/) with [Redux support](https://github.com/reactjs/react-redux) libraries: 
+- [React](https://facebook.github.io/react/) with [recompose](https://github.com/acdlite/recompose) utility and [Redux support](https://github.com/reactjs/react-redux) libraries: 
   - [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
   - [Electron Redux](https://github.com/hardchor/electron-redux)
   - [Redux Undo](https://github.com/omnidan/redux-undo)
