@@ -21,11 +21,10 @@ const activeTodo = {
 const todos = { present: [completedTodo, activeTodo] };
 
 describe('container <TodoList />', () => {
-  it('TodoList should render correctly', () => {
-    const wrapper = shallow(<TodoList />, {
+  it('TodoList should render without crashing', () => {
+    shallow(<TodoList />, {
       context: { store: mockStore({ todos }) },
     });
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('TodoList should dispatch action on TodoItem click', () => {

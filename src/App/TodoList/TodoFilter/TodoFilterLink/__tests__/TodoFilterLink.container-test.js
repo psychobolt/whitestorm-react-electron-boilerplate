@@ -9,11 +9,10 @@ import Filters from '../../TodoFilter.filters';
 const mockStore = configureMockStore([]);
 
 describe('container <TodoFilterLink />', () => {
-  it('should render correctly', () => {
-    const wrapper = shallow(<TodoFilterLink filter={Filters.ALL}>{Filters.ALL}</TodoFilterLink>, {
+  it('should render correctly without crashing', () => {
+    shallow(<TodoFilterLink filter={Filters.ALL}>{Filters.ALL}</TodoFilterLink>, {
       context: { store: mockStore({}) },
     });
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('should go to / when ALL filter is clicked', () => {

@@ -4,14 +4,13 @@ import { shallow } from 'enzyme';
 import TodoItem from '../TodoItem.component';
 
 describe('components <TodoItem />', () => {
-  it('TodoItem should render correctly -- completed', () => {
+  it('TodoItem should render with crashing -- completed', () => {
     const props = {
       onClick: jest.fn(),
       completed: true,
       text: 'Item',
     };
-    const wrapper = shallow(<TodoItem {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<TodoItem {...props} />);
   });
 
   it('TodoItem should render correctly -- not completed', () => {
@@ -20,7 +19,6 @@ describe('components <TodoItem />', () => {
       completed: false,
       text: 'Item',
     };
-    const wrapper = shallow(<TodoItem {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<TodoItem {...props} />);
   });
 });

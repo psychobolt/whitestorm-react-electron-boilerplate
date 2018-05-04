@@ -10,11 +10,10 @@ const mockStore = configureMockStore([]);
 const todos = { present: [] };
 
 describe('container <TodoForm />', () => {
-  it('should render correctly', () => {
-    const wrapper = shallow(<TodoForm />, {
+  it('should render without crashing', () => {
+    shallow(<TodoForm />, {
       context: { store: mockStore({}) },
     });
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('should not add Todo if input value is undefined', () => {

@@ -10,8 +10,7 @@ describe('component <TodoForm />', () => {
     const props = {
       onValueSubmit: jest.fn(),
     };
-    const wrapper = shallow(<TodoForm {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<TodoForm {...props} />);
   });
 
   it('should update state on keyup', () => {

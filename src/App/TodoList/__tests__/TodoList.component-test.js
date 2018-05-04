@@ -1,12 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-
 import TodoList from '../TodoList.component';
 import TodoItem from '../TodoItem';
 
 describe('components <TodoList />', () => {
-  it('TodoList should render correctly -- completed', () => {
+  it('TodoList should render without items', () => {
+    const props = {
+      todos: [],
+      onTodoClick: jest.fn(),
+    };
+    shallow(<TodoList {...props} />);
+  });
+
+  it('TodoList should render without crashing -- completed', () => {
     const props = {
       todos: [{
         id: 1,
@@ -15,11 +22,10 @@ describe('components <TodoList />', () => {
       }],
       onTodoClick: jest.fn(),
     };
-    const wrapper = shallow(<TodoList {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<TodoList {...props} />);
   });
 
-  it('TodoList should render correctly -- not completed', () => {
+  it('TodoList should render without crashing -- not completed', () => {
     const props = {
       todos: [{
         id: 1,
@@ -28,8 +34,7 @@ describe('components <TodoList />', () => {
       }],
       onTodoClick: jest.fn(),
     };
-    const wrapper = shallow(<TodoList {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<TodoList {...props} />);
   });
 
   it('TodoList should call callback on item click', () => {

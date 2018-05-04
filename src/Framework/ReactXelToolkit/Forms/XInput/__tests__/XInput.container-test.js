@@ -18,12 +18,11 @@ class XInputMock extends XInput {
 }
 
 describe('components <XInput>', () => {
-  it('should render correctly -- with fallback', () => {
+  it('should render without crashing -- with fallback', () => {
     const props = {
       onKeyup: jest.fn(),
     };
-    const wrapper = shallow(<XInput {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<XInput {...props} />);
   });
 
   it('should trigger on keyup event -- with fallback', () => {

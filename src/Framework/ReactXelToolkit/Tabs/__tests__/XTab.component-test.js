@@ -4,20 +4,18 @@ import { shallow } from 'enzyme';
 import XTab from '../XTab.component';
 
 describe('components <XTab />', () => {
-  it('should render correctly -- active tab', () => {
+  it('should render without crashing -- active tab', () => {
     const props = {
       active: true,
       children: <span>Link</span>,
     };
-    const wrapper = shallow(<XTab {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<XTab {...props} />);
   });
 
-  it('should render correctly -- inactive tab', () => {
+  it('should render without crashing -- inactive tab', () => {
     const props = {
       children: <span>Link</span>,
     };
-    const wrapper = shallow(<XTab {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<XTab {...props} />);
   });
 });
