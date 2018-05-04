@@ -1,14 +1,15 @@
 import { app, BrowserWindow, Menu } from 'electron';
 import { forwardToRenderer, replayActionMain } from 'electron-redux';
+import { combineReducers } from 'redux';
 import path from 'path';
 import url from 'url';
 
-import initialState from './App/App.state';
-import { reducers } from './App/TodoList';
+import initialState from './App/TodoList/TodoList.state';
+import reducers from './App/TodoList/TodoList.reducers';
 import configureStore from './shared/store';
 import menu from './menu';
 
-const store = configureStore(reducers.todos, initialState, [forwardToRenderer]);
+const store = configureStore(combineReducers(reducers), initialState, [forwardToRenderer]);
 
 replayActionMain(store);
 

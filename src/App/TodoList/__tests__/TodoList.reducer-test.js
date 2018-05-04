@@ -1,16 +1,16 @@
 import { addTodo } from '../TodoForm';
-import reducer from '../TodoList.reducer';
+import { todosReducer } from '../TodoList.reducers';
 import initialState from '../TodoList.state';
 import { toggleTodo } from '../TodoList.actions';
 
-describe('TodoList reducer', () => {
+describe('Todos reducer', () => {
   it('should return default state', () => {
-    expect(reducer(undefined, { type: undefined })).toEqual(initialState);
+    expect(todosReducer(undefined, { type: undefined })).toEqual(initialState.todos.present);
   });
 
   it('should add todo', () => {
     const action = addTodo('Item');
-    expect(reducer(undefined, action)).toEqual([{
+    expect(todosReducer(undefined, action)).toEqual([{
       ...action.payload,
       completed: false,
     }]);
@@ -29,7 +29,7 @@ describe('TodoList reducer', () => {
       text: 'Item 2',
       completed: true,
     };
-    expect(reducer([activeItem, completedItem], action)).toEqual([{
+    expect(todosReducer([activeItem, completedItem], action)).toEqual([{
       ...activeItem,
       completed: !activeItem.completed,
     }, completedItem]);

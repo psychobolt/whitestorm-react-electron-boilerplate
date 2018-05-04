@@ -1,8 +1,7 @@
-import { reducers as todoReducers } from './TodoList';
+import { hot } from 'react-hot-loader';
+
+import App from './App.component';
 
 export { default as initialState } from './App.state';
-export { default } from './App.component';
 
-export const appReducers = {
-  ...todoReducers,
-};
+export default hot(module)(App);

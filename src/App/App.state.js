@@ -1,3 +1,5 @@
+import todoListInitialstate from './TodoList/TodoList.state';
+
 export default {
-  todos: [],
+  ...todoListInitialstate,
 };

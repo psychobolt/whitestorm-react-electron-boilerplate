@@ -1,8 +1,10 @@
-import initialState from './TodoList.state';
+import undoable from 'redux-undo';
+
 import { Actions as TodoListActions } from './TodoList.actions';
+import initialState from './TodoList.state';
 import { Actions as TodoFormActions } from './TodoForm';
 
-export default (state = initialState, action) => {
+export const todosReducer = (state = initialState.todos.present, action) => {
   switch (action.type) {
     case TodoFormActions.ADD_TODO:
       return [
@@ -19,4 +21,11 @@ export default (state = initialState, action) => {
     default:
       return state;
   }
+};
+
+export default {
+  todos: undoable(todosReducer, {
+    undoType: TodoListActions.UNDO_TODO,
+    redoType: TodoListActions.REDO_TODO,
+  }),
 };

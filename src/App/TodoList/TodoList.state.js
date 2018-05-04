@@ -9,4 +9,12 @@ export type TodoListState = {
   }
 };
 
-export default {};
+const initialState: TodoListState = {
+  todos: {
+    past: [],
+    present: [],
+    future: [],
+  },
+};
+
+export default initialState;
