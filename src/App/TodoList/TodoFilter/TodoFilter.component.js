@@ -1,16 +1,17 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 
 import TodoFilterLink from './TodoFilterLink';
 import Filters from './TodoFilter.filters';
 
 type Props = {
   centered: boolean,
-  style: {},
+  className: string
 };
 
-const TodoFilter = ({ centered, style = {} }: Props) => (
-  <x-tabs style={style} centered={centered || null}>
+const TodoFilter = ({ centered, className }: Props) => (
+  <x-tabs class={className} centered={centered || null}>
     <TodoFilterLink filter={Filters.ALL}>
       All
     </TodoFilterLink>
@@ -23,4 +24,4 @@ const TodoFilter = ({ centered, style = {} }: Props) => (
   </x-tabs>
 );
 
-export default TodoFilter;
+export default styled(TodoFilter)``;

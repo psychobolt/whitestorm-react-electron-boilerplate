@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
+import PropTypes from 'prop-types';
 
 import TodoForm from '../TodoForm.container';
 import { Actions } from '../TodoForm.actions';
@@ -20,6 +21,7 @@ describe('container <TodoForm />', () => {
     const store = mockStore({ todos });
     const wrapper = mount(<TodoForm />, {
       context: { store },
+      childContextTypes: { store: PropTypes.object },
     });
     wrapper.find('x-button').simulate('click');
     expect(store.getState()).toEqual({ todos });
@@ -29,6 +31,7 @@ describe('container <TodoForm />', () => {
     const store = mockStore({ todos });
     const wrapper = mount(<TodoForm inputValue=" " />, {
       context: { store },
+      childContextTypes: { store: PropTypes.object },
     });
     wrapper.find('x-button').simulate('click');
     expect(store.getState()).toEqual({ todos });
@@ -39,6 +42,7 @@ describe('container <TodoForm />', () => {
     const text = 'Item';
     const wrapper = mount(<TodoForm inputValue={text} />, {
       context: { store },
+      childContextTypes: { store: PropTypes.object },
     });
     wrapper.find('x-button').simulate('click');
     expect(store.getActions()).toEqual([{

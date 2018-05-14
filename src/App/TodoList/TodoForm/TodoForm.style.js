@@ -1,5 +1,3 @@
-export default {
-  input: {
-    marginRight: '6px',
-  },
-};
+import { css } from 'styled-components';
+
+export const input = css`margin-right: 6px;`;

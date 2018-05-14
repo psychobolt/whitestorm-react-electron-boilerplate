@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
+import PropTypes from 'prop-types';
 
 import TodoList from '../TodoList.container';
 import { toggleTodo } from '../TodoList.actions';
-import TodoItem from '../TodoItem';
 
 const mockStore = configureMockStore([]);
 
@@ -32,8 +32,9 @@ describe('container <TodoList />', () => {
     const store = mockStore({ todos });
     const wrapper = mount(<TodoList />, {
       context: { store },
+      childContextTypes: { store: PropTypes.object },
     });
-    wrapper.find(TodoItem).at(0).find('x-checkbox').simulate('click');
+    wrapper.find('x-checkbox').first().simulate('click');
     expect(store.getActions()).toEqual([toggleTodo(id)]);
   });
 });

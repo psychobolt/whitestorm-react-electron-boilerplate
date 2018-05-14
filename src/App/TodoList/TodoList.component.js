@@ -1,31 +1,33 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 
 import TodoItem, { type Todo } from './TodoItem';
-import styles from './TodoList.style';
+import * as styles from './TodoList.style';
 
 type Props = {
   todos: Todo[],
   onTodoClick: (id: number) => void,
   children: any,
-  style: {},
+  className: string,
 }
 
-const TodoList = ({ todos, onTodoClick, children, style = {} }: Props) => (
-  <x-card style={style}>
+const List = styled.ul`${styles.ul}`;
+
+const Item = TodoItem.extend`${styles.li}`;
+
+export default ({ todos, onTodoClick, children, className }: Props) => (
+  <x-card class={className}>
     {children}
-    <ul style={styles.ul}>
+    <List>
       {todos.length ? todos.map(todo => (
         <li key={todo.id}>
-          <TodoItem
-            style={styles.li}
+          <Item
             {...todo}
             onClick={() => onTodoClick(todo.id)}
           />
         </li>
       )) : <x-label>No items</x-label>}
-    </ul>
+    </List>
   </x-card>
 );
-
-export default TodoList;

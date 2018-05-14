@@ -1,17 +1,23 @@
 // @flow
 import React from 'react';
 import type { Match } from 'react-router-dom';
+import styled from 'styled-components';
 
 import TodoList, { TodoForm, TodoFilter, Filters } from './TodoList';
-import styles from './App.style';
+import * as styles from './App.style';
+
+const Container = styled.div`${styles.container}`;
+const List = TodoList.extend`${styles.todoList}`;
+const Form = TodoForm.extend`${styles.todoForm}`;
+const Filter = TodoFilter.extend`${styles.todoFilter}`;
 
 const App = ({ match }: { match: Match }) => (
-  <div style={styles.container}>
-    <TodoForm style={styles.todoForm} />
-    <TodoList style={styles.todoList} filter={match.params.filter || Filters.ALL}>
-      <TodoFilter style={styles.todoFilter} centered />
-    </TodoList>
-  </div>
+  <Container>
+    <Form />
+    <List filter={match.params.filter || Filters.ALL}>
+      <Filter centered />
+    </List>
+  </Container>
 );
 
 export default App;

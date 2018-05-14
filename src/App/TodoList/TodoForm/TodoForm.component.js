@@ -1,25 +1,27 @@
 // @flow
 import React from 'react';
-// @flow
+import styled from 'styled-components';
+
 import { XInput, type XInputEvent } from 'Framework/ReactXelToolkit';
-import styles from './TodoForm.style';
+import * as styles from './TodoForm.style';
 
 type Props = {
   inputValue?: string,
   onValueSubmit: (value: string) => void,
-  style?: {},
+  className: string,
 };
 
 type State = {
   inputValue?: string,
 }
 
+const Input = styled(XInput)`${styles.input}`;
+
 export const KEYCODE_ENTER = 13;
 
 export default class TodoForm extends React.Component<Props, State> {
   static defaultProps = {
     inputValue: '',
-    style: {},
   };
 
   constructor(props: Props) {
@@ -56,9 +58,8 @@ export default class TodoForm extends React.Component<Props, State> {
 
   render() {
     return (
-      <x-box style={this.props.style}>
-        <XInput
-          style={styles.input}
+      <x-box class={this.props.className}>
+        <Input
           value={this.state.inputValue}
           onKeyup={this.onInputKeyup}
         />

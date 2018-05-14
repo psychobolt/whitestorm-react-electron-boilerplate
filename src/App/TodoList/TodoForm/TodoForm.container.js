@@ -1,6 +1,7 @@
 // @flow
 import { connect } from 'react-redux';
 import type { Dispatch } from 'redux';
+import styled from 'styled-components';
 
 import TodoForm from './TodoForm.component';
 import { addTodo } from './TodoForm.actions';
@@ -13,4 +14,4 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
   },
 });
 
-export default connect(undefined, mapDispatchToProps)(TodoForm);
+export default styled(connect(undefined, mapDispatchToProps)(TodoForm))``;

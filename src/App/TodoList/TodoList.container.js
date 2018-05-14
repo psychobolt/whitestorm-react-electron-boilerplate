@@ -1,6 +1,7 @@
 // @flow
 import type { Dispatch } from 'redux';
 import { connect } from 'react-redux';
+import styled from 'styled-components';
 
 import TodoList from './TodoList.component';
 import { toggleTodo } from './TodoList.actions';
@@ -21,7 +22,7 @@ const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
   },
 });
 
-export default connect(
+export default styled(connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TodoList);
+)(TodoList))``;
