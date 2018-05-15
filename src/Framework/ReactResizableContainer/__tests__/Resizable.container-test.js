@@ -32,11 +32,10 @@ class ResizeListenerTest extends React.Component<Props> {
 }
 
 describe('component <ResizableContainer>', () => {
-  it('should render correctly', () => {
+  it('should render without crashing', () => {
     const Test = () => <div>test</div>;
     const Component = withResizableContainer(Test);
-    const wrapper = shallow(<Component />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<Component />);
   });
 
   it('should register listener on mount', () => {

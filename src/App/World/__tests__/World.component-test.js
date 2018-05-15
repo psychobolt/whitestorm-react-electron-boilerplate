@@ -4,18 +4,16 @@ import { shallow } from 'enzyme';
 import { World } from '../World.component';
 
 describe('component <World />', () => {
-  it('should render correctly with Box by default', () => {
-    const wrapper = shallow(<World />);
-    expect(wrapper).toMatchSnapshot();
+  it('should render with Box by default, without crashing', () => {
+    shallow(<World />);
   });
 
-  it('should render correctly with Sphere', () => {
+  it('should render with Sphere, without crashing', () => {
     const props = {
       location: {
         pathname: '/sphere',
       },
     };
-    const wrapper = shallow(<World {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    shallow(<World {...props} />);
   });
 });

@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 
 import Scene from '../Scene.component';
 
-test('component <Scene /> should render correctly', () => {
-  const wrapper = mount(<Scene />);
-  expect(wrapper).toMatchSnapshot();
+test('component <Scene /> should render without crashing', () => {
+  mount(<Scene />);
 });
