@@ -14,8 +14,8 @@ before_script:
 script:
   - yarn lint
   - yarn flow
-  - yarn test -- --coverage
+  - yarn test --coverage
   - yarn build:prod
-  - yarn build:dist -- --publish "never"
+  - yarn build:dist --publish "never"
   - yarn test-e2e
   - yarn codecov

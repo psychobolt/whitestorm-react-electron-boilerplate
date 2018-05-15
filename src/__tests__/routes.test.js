@@ -7,11 +7,10 @@ import Routes from '../routes';
 
 const mockStore = configureMockStore([]);
 
-test('component <Routes /> should render correctly', () => {
+test('component <Routes /> should render without crashing', () => {
   const props = {
     history: createHistory({ keyLength: 0 }),
     store: mockStore({}),
   };
-  const wrapper = shallow(<Routes {...props} />);
-  expect(wrapper).toMatchSnapshot();
+  shallow(<Routes {...props} />);
 });

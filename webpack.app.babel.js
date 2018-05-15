@@ -2,15 +2,13 @@ import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import OptimizeCssAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 import CommonConfig from './webpack.common';
 
-const appCSS = new ExtractTextPlugin('styles.css');
-const venderCSS = new ExtractTextPlugin('vender.css');
-const xelCSS = new ExtractTextPlugin('xel.theme.css');
+const devMode = process.env.NODE_ENV !== 'production';
 
 let config = {
   entry: ['css-hot-loader/hotModuleReplacement', 'react-hot-loader/patch', './src/index.js'],
@@ -30,33 +28,12 @@ let config = {
         use: ['html-loader'],
       },
       {
-        test: /\.scss$/,
-        include: path.resolve(__dirname, 'src'),
-        exclude: /node_modules/,
-        use: ['css-hot-loader'].concat(appCSS.extract({
-          fallback: 'style-loader',
-          use: [
-            'css-loader',
-            'sass-loader',
-          ],
-        })),
-      },
-      {
-        test: /\.css$/,
-        include: /node_modules/,
-        exclude: /node_modules\\xel/,
-        use: venderCSS.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
-      },
-      {
-        test: /\.theme.css$/,
-        include: /node_modules\\xel/,
-        use: xelCSS.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
+        test: /\.s?css$/,
+        use: [
+          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg|woff|woff2|ttf|otf|eot)$/,
@@ -64,10 +41,34 @@ let config = {
       },
     ],
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        xelStyles: {
+          name: 'xel.theme',
+          test: /[\\/]node_modules[\\/]xel[\\/].+\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+        venderStyles: {
+          name: 'vender',
+          test: /[\\/]node_modules[\\/](?!(xel[\\/])).+\.css/,
+          chunks: 'all',
+          enforce: true,
+        },
+        styles: {
+          name: 'styles',
+          test: /src[\\/].+\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
+  },
   plugins: [
-    appCSS,
-    venderCSS,
-    xelCSS,
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    }),
   ],
 };
 
@@ -76,7 +77,7 @@ let htmlConfig = {
   template: 'src/index.html',
 };
 
-if (process.env.NODE_ENV === 'development') {
+if (devMode) {
   config = merge(config, {
     devtool: 'eval-source-map',
     plugins: [

@@ -10,28 +10,48 @@
       "windows": {
         "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd"
       },
-      "args" : [
-        "."
+      "runtimeArgs": ["src"],
+      "program": "${workspaceRoot}/src/main.js",
+      "outFiles": [
+        "${workspaceRoot}/src/.build/main.bundle.js"
       ],
       "env": {
         "NODE_ENV": "development"
       },
-      "preLaunchTask": "npm: build.main:dev"
+      "preLaunchTask": "npm: build.main:dev",
+      "sourceMaps": true
     },
     {
-      "name": "Debug Tests",
+      "name": "Debug Jest",
       "type": "node",
-      "request": "launch",
-      "program": "${workspaceRoot}/node_modules/jest-cli/bin/jest.js",
-      "stopOnEntry": false,
-      "args": ["--runInBand"],
-      "cwd": "${workspaceRoot}",
-      "runtimeArgs": ["--nolazy"],
+      "request": "launch",    
+      "args": [
+        "${workspaceRoot}/node_modules/.bin/jest",
+        "--runInBand",
+        "--no-cache",
+      ],
       "env": {
-          "BABEL_ENV": "commonjs"
+        "BABEL_ENV": "commonjs"
       },
       "console": "integratedTerminal",
-      "sourceMaps": true
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "Debug Jest w/ Coverage",
+      "type": "node",
+      "request": "launch",     
+      "args": [
+        "${workspaceRoot}/node_modules/.bin/jest",
+        "--runInBand",
+        "--no-cache",
+        "--coverage",
+        "--watch"
+      ],
+      "env": {
+        "BABEL_ENV": "commonjs"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }

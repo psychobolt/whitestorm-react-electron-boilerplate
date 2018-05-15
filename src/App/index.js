@@ -1,5 +1,7 @@
-export { default as initialState } from './App.state';
-export { default } from './App.component';
+import { hot } from 'react-hot-loader';
 
-export const appReducers = {
-};
+import App from './App.component';
+
+export { default as initialState } from './App.state';
+
+export default hot(module)(App);

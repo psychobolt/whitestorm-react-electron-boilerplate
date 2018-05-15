@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 
 import App from '../App.component';
 
-test('component <App /> should render correctly', () => {
-  const wrapper = shallow(<App />);
-  expect(wrapper).toMatchSnapshot();
+test('component <App /> should render without crashing', () => {
+  shallow(<App />);
 });

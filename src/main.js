@@ -10,7 +10,7 @@ let win;
 
 async function installExtension() {
   const { default: install, REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS } = require('electron-devtools-installer'); // eslint-disable-line global-require
-  const extensions = [REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS];
+  const extensions = [REACT_DEVELOPER_TOOLS.id, REDUX_DEVTOOLS.id];
   return Promise.all(extensions.map(extension => install(extension)));
 }
 
@@ -27,7 +27,8 @@ async function createWindow() {
     }));
   } else {
     await installExtension();
-    win.loadURL('http://localhost:3000/');
+    process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
+    win.loadURL('http://localhost:3000/'); // TODO: pass port
   }
 
   if (process.env.NODE_ENV === 'development') {

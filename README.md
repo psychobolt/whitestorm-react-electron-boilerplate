@@ -14,7 +14,7 @@ The essential framework for WhiteStormJS React-Electron development.
 - Example App based on WhiteStormJS's [TypeScript boilerplate](https://github.com/WhitestormJS/whitestorm-typescript-boilerplate)
  - ![Preview](https://user-images.githubusercontent.com/560721/31196681-7738d1d4-a903-11e7-9793-adab6eb1f4a1.gif)
 - [whs.js](https://github.com/WhitestormJS/whs.js) with [React integration](https://github.com/WhitestormJS/react-whs)
-- [React](https://facebook.github.io/react/) with [Redux support](https://github.com/reactjs/react-redux) libraries: 
+- [React](https://facebook.github.io/react/) with [recompose](https://github.com/acdlite/recompose) utility and [Redux support](https://github.com/reactjs/react-redux) libraries: 
   - [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
   - [Electron Redux](https://github.com/hardchor/electron-redux)
   - [Redux Undo](https://github.com/omnidan/redux-undo)
@@ -128,7 +128,7 @@ See [official documentation](https://eslint.org/) for a usage guide.
 ```sh
 yarn test # runs functional/unit tests using Jest
 yarn test --coverage # with coverage
-yarn test-e2e # run end-to-end tests
+yarn test-e2e # run end-to-end tests. (build required)
 ```
 
 ## Build
