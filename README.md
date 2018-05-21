@@ -20,6 +20,7 @@ A minimalistic Electron boilerplate based on the official [first-app](https://el
 - e2e runner: [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)
 - Code Coverage reporter: [Codecov](https://codecov.io/)
 - ES Linting: [ESLint](http://eslint.org/) using [AirBnb style guide](https://github.com/airbnb/javascript)
+- [stylelint](https://stylelint.io)
 
 ## Setup
 
