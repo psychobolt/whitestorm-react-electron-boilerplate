@@ -32,6 +32,7 @@ The essential framework for React-Electron development.
 - [Enzyme](https://github.com/airbnb/enzyme)
 - Code Coverage reporter: [Codecov](https://codecov.io/)
 - ES Linting: [ESLint](http://eslint.org/) using [AirBnb style guide](https://github.com/airbnb/javascript)
+- [stylelint](https://stylelint.io)
 - [DevTools Add-Ons](https://github.com/MarshallOfSound/electron-devtools-installer), including:
   - [Redux DevTools Extension](http://extension.remotedev.io/)
 
