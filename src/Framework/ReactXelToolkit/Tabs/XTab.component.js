@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 
 type Props = {
   active?: boolean,
@@ -7,7 +8,7 @@ type Props = {
   children: any
 };
 
-const XTab = ({ active, onClick, children }: Props) => (
+export const XTab = ({ active, onClick, children }: Props) => (
   <x-tab
     onClick={onClick}
     selected={active || null}
@@ -20,4 +21,6 @@ XTab.defaultProps = {
   active: false,
 };
 
-export default XTab;
+export default styled(XTab)`
+  /* stylelint-disable-line block-no-empty */
+`;

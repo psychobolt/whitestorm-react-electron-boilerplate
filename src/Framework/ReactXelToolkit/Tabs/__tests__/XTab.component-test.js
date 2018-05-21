@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import XTab from '../XTab.component';
+import { XTab } from '../XTab.component';
 
 describe('components <XTab />', () => {
   it('should render without crashing -- active tab', () => {

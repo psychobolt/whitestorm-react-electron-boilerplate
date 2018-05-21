@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 
-import XInput, { EVENT_KEYUP } from '../XInput.container';
+import { XInput, EVENT_KEYUP } from '../XInput.container';
 
 class XInputMock extends XInput {
   constructor(props) {

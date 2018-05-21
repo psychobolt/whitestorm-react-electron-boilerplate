@@ -24,4 +24,7 @@ const TodoFilter = ({ centered, className }: Props) => (
   </x-tabs>
 );
 
-export default styled(TodoFilter)``;
+
+export default styled(TodoFilter)`
+  /* stylelint-disable-line block-no-empty */
+`;

@@ -1,5 +1,6 @@
 // @flow
 import React, { type Element } from 'react';
+import styled from 'styled-components';
 
 export type XInputEvent = {
   type: string,
@@ -19,7 +20,7 @@ type FallbackProps = {
 type Props = {
   onKeyup: (event: XInputEvent) => void,
   value?: string,
-  style?: {},
+  className: string,
   fallback?: (props: FallbackProps) => Element<'input'>
 };
 
@@ -29,10 +30,9 @@ type State = {
 
 export const EVENT_KEYUP = 'keyup';
 
-export default class XInput extends React.Component<Props, State> {
+export class XInput extends React.Component<Props, State> {
   static defaultProps = {
     value: '',
-    style: {},
     fallback: (props: FallbackProps) => <input {...props} />,
   };
 
@@ -107,10 +107,10 @@ export default class XInput extends React.Component<Props, State> {
   el: ?XInputElement;
 
   render() {
-    const { style, fallback, value } = this.props;
+    const { className, fallback, value } = this.props;
     return (
       <x-input
-        style={style}
+        class={className}
         ref={el => {
           this.el = el;
         }}
@@ -123,3 +123,7 @@ export default class XInput extends React.Component<Props, State> {
     );
   }
 }
+
+export default styled(XInput)`
+  /* stylelint-disable-line block-no-empty */
+`;
