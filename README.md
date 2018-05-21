@@ -115,8 +115,13 @@ See additional [documentation](https://github.com/flowtype/flow-typed) for addin
 The watch task will automatically lint on file changes. However, you can invoke the linter directly:
 
 ```sh
-yarn lint # runs linter to detect any style issues
-yarn lint --fix # tries to fix lint issues
+yarn lint # runs linter to detect any style issues (CSS & JSS)
+
+yarn lint:css # lint only CSS
+yarn lint:css --fix # tries to fix CSS lint issues
+
+yarn lint:js # lint only JS
+yarn lint:js --fix # tries to fix CSS lint issues
 ```
 
 See [official documentation](https://eslint.org/) for a usage guide.
