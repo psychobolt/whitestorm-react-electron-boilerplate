@@ -14,6 +14,10 @@ const initialState: TodoListState = {
     past: [],
     present: [],
     future: [],
+    _latestUnfiltered: [],
+    group: null,
+    limit: 1,
+    index: 0,
   },
 };
 

@@ -23,4 +23,9 @@ describe('TodoList selectors', () => {
     expect(getVisibleTodos({ todos }, { filter: Filters.ACTIVE }))
       .toEqual([activeTodo]);
   });
+
+  it('getVisibleTodos -- all', () => {
+    expect(getVisibleTodos({ todos }, { filter: Filters.ALL }))
+      .toEqual(todos.present);
+  });
 });

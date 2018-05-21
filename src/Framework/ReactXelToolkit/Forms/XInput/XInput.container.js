@@ -68,7 +68,7 @@ export default class XInput extends React.Component<Props, State> {
   componentDidUpdate() {
     /* istanbul ignore else */
     if (this.input) {
-      this.input.value = this.props.value || '';
+      this.input.value = this.props.value || /* istanbul ignore next */ '';
     }
   }
 
