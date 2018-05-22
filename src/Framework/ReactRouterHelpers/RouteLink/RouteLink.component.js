@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import { Route } from 'react-router-dom';
 
 type Path = {
@@ -7,13 +7,17 @@ type Path = {
   default: ?boolean
 };
 
-type Props = {
-  to: string | Array<Path>,
-  children: any,
-  selectedProp: string
+type ChildrenProps = {
+  match: boolean,
+  onClick: () => void
 };
 
-export default ({ to, selectedProp = 'active', children }: Props) => {
+type Props = {
+  to: string | Array<Path>,
+  children: (props: ChildrenProps) => React.Node,
+};
+
+export default ({ to, children }: Props) => {
   let route;
   let path;
   if (typeof to === 'string') {
@@ -30,15 +34,8 @@ export default ({ to, selectedProp = 'active', children }: Props) => {
     <Route
       path={path}
       children={({ match, history }) => // eslint-disable-line react/no-children-prop
-        React.Children.map(children, child => {
-          const { onClick, ...rest } = child.props;
-          return React.cloneElement(child, {
-            [selectedProp]: match ? true : null,
-            onClick: (event: SyntheticEvent<*>) =>
-              ((onClick && onClick(event)) || true) && (!match && history.push(route)),
-            ...rest,
-          });
-        })}
+        children({ match, onClick: () => !match && history.push(route) })
+      }
     />
   );
 };

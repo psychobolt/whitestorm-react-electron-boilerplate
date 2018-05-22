@@ -1,8 +1,15 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
+import { mount } from 'enzyme';
 
 import Header from '../Header.component';
 
-test('component <Header /> should render without crashing', () => {
-  shallow(<Header />);
+describe('component <Header />', () => {
+  it('should render without crashing -- box (default)', () => {
+    mount(<MemoryRouter initialEntries={['/']} initialIndex={0}><Header /></MemoryRouter>);
+  });
+
+  it('should render without crashing -- sphere', () => {
+    mount(<MemoryRouter initialEntries={['/sphere']} initialIndex={0}><Header /></MemoryRouter>);
+  });
 });

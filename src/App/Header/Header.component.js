@@ -13,10 +13,10 @@ type Props = {
 const Header = ({ centered, style = {} }: Props) => (
   <x-tabs style={style} centered={centered || null}>
     <RouteLink to={[{ to: '/' }, { to: '/box', default: true }]}>
-      <XTab>Box</XTab>
+      {({ match, onClick }) => <XTab onClick={onClick} active={match ? true : null}>Box</XTab>}
     </RouteLink>
     <RouteLink to="/sphere">
-      <XTab>Sphere</XTab>
+      {({ match, onClick }) => <XTab onClick={onClick} active={match ? true : null}>Sphere</XTab>}
     </RouteLink>
   </x-tabs>
 );
