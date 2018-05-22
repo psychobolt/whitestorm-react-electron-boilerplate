@@ -6,10 +6,10 @@ import { XInput, EVENT_KEYUP } from '../XInput.container';
 class XInputMock extends XInput {
   constructor(props) {
     super(props);
-    this.el = document.createElement('div');
+    this.ref = { current: document.createElement('div') };
     const input = document.createElement('input');
-    this.el.appendChild(input);
-    this.el['#input'] = input;
+    this.ref.current.appendChild(input);
+    this.ref.current['#input'] = input;
   }
 
   render() {
@@ -33,6 +33,7 @@ describe('components <XInput>', () => {
     const wrapper = mount(<XInput {...props} />);
     wrapper.find('input').simulate('keyup');
     expect(props.onKeyup.mock.calls.length).toBe(1);
+    wrapper.unmount();
   });
 
   it('should trigger on keyup event -- without fallback', () => {

@@ -1,15 +1,11 @@
 // @flow
-import React, { type Element } from 'react';
+import * as React from 'react';
 import styled from 'styled-components';
 
 export type XInputEvent = {
   type: string,
   target: HTMLInputElement,
   keyCode?: number
-}
-
-type XInputElement = {
-  ['#input']: HTMLInputElement
 }
 
 type FallbackProps = {
@@ -19,9 +15,9 @@ type FallbackProps = {
 
 type Props = {
   onKeyup: (event: XInputEvent) => void,
-  value?: string,
+  value: string,
   className: string,
-  fallback?: (props: FallbackProps) => Element<'input'>
+  fallback: (props: FallbackProps) => React.Element<'input'>
 };
 
 type State = {
@@ -32,8 +28,9 @@ export const EVENT_KEYUP = 'keyup';
 
 export class XInput extends React.Component<Props, State> {
   static defaultProps = {
-    value: '',
-    fallback: (props: FallbackProps) => <input {...props} />,
+    value: '', // eslint-disable-line react/default-props-match-prop-types
+    fallback: (props: FallbackProps) => // eslint-disable-line react/default-props-match-prop-types
+      <input {...props} />,
   };
 
   constructor(props: Props) {
@@ -41,39 +38,31 @@ export class XInput extends React.Component<Props, State> {
     this.state = {
       fallbackEnabled: false,
     };
+    this.ref = React.createRef();
   }
 
   componentDidMount() {
-    /* istanbul ignore else */
-    if (this.el) {
-      const input = this.el['#input'];
-      if (input) {
-        this.input = (this.el['#input']: HTMLInputElement);
-        this.input.value = this.props.value || '';
-        this.input.addEventListener(EVENT_KEYUP, this.onKeyboardEvent);
-      } else {
-        this.onMount(() => {
-          const { fallback } = this.props;
-          /* istanbul ignore else */
-          if (fallback) {
-            this.setState({
-              fallbackEnabled: true,
-            });
-          }
+    this.input = this.ref.current ? this.ref.current['#input'] : null;
+    if (this.input) {
+      this.input.value = this.props.value;
+      this.input.addEventListener(EVENT_KEYUP, this.onKeyboardEvent);
+    } else {
+      this.onMount(() => {
+        this.setState({
+          fallbackEnabled: true,
         });
-      }
+      });
     }
   }
 
   componentDidUpdate() {
     /* istanbul ignore else */
     if (this.input) {
-      this.input.value = this.props.value || /* istanbul ignore next */ '';
+      this.input.value = this.props.value;
     }
   }
 
   componentWillUnmount() {
-    /* istanbul ignore else */
     if (this.input) {
       this.input.removeEventListener(EVENT_KEYUP, this.onKeyboardEvent);
     }
@@ -104,18 +93,13 @@ export class XInput extends React.Component<Props, State> {
 
   props: Props;
   input: ?HTMLInputElement;
-  el: ?XInputElement;
+  ref: React.createRef<React.ElementType>;
 
   render() {
     const { className, fallback, value } = this.props;
     return (
-      <x-input
-        class={className}
-        ref={el => {
-          this.el = el;
-        }}
-      >
-        {this.state.fallbackEnabled && fallback && fallback({
+      <x-input class={className} ref={this.ref}>
+        {this.state.fallbackEnabled && fallback({
           onKeyUp: this.onSyntheticEvent,
           defaultValue: value,
         })}
