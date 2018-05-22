@@ -1,8 +1,13 @@
 // @flow
 import React, { type ComponentType } from 'react';
 import onElementResize from 'element-resize-event';
+import styled from 'styled-components';
 
-type Props = {};
+import * as styles from './Resizable.style';
+
+type Props = {
+  className: string
+};
 
 type State = {
   width: number,
@@ -10,15 +15,8 @@ type State = {
   mounted: boolean
 };
 
-const styles = {
-  container: {
-    width: '100%',
-    height: '100%',
-  },
-};
-
 const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
-  class extends React.Component<Props, State> {
+  styled(class extends React.Component<Props, State> {
     constructor(props: Props) {
       super(props);
       this.state = {
@@ -64,6 +62,7 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
     element: ?HTMLDivElement;
 
     render() {
+      const { className, ...rest } = this.props;
       const { width, height, mounted } = this.state;
       const { element, onResize } = this;
       const props = {
@@ -75,11 +74,11 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
         },
       };
       return (
-        <div style={styles.container} ref={ref => { this.element = ref; }}>
-          {mounted && <WrappedComponent {...this.props} {...props} />}
+        <div className={className} ref={ref => { this.element = ref; }}>
+          {mounted && <WrappedComponent {...rest} {...props} />}
         </div>
       );
     }
-  };
+  })`${styles.container}`;
 
 export default ResizableContainer;

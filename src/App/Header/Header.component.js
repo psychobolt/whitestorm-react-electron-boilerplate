@@ -1,17 +1,18 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 
 import { XTab } from 'Framework/ReactXelToolkit';
 import { RouteLink } from 'Framework/ReactRouterHelpers';
 
 type Props = {
   centered: boolean,
-  style: {},
+  className: string
 };
 
 /* eslint jsx-a11y/anchor-is-valid: 0 */
-const Header = ({ centered, style = {} }: Props) => (
-  <x-tabs style={style} centered={centered || null}>
+const Header = ({ centered, className }: Props) => (
+  <x-tabs class={className} centered={centered || null}>
     <RouteLink to={[{ to: '/' }, { to: '/box', default: true }]}>
       {({ match, onClick }) => <XTab onClick={onClick} active={match ? true : null}>Box</XTab>}
     </RouteLink>
@@ -21,4 +22,6 @@ const Header = ({ centered, style = {} }: Props) => (
   </x-tabs>
 );
 
-export default Header;
+export default styled(Header)`
+  /* stylelint-disable-line block-no-empty */
+`;

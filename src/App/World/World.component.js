@@ -12,22 +12,23 @@ import * as THREE from 'three';
 
 import withResizableContainer from 'Framework/ReactResizableContainer';
 import Scene from './Scene';
-import styles from './World.styles';
+import * as styles from './World.style';
 
 type Props = {
   containerEl: HTMLDivElement,
   containerWidth: number,
   containerHeight: number,
-  location: Location
+  location: Location,
 };
+
+const FullScene = Scene.extend`${styles.container}`;
 
 export const World =
 ({ containerEl, containerWidth = 680, containerHeight = 420, location }: Props) => (
-  <Scene
+  <FullScene
     container={containerEl}
     width={containerWidth}
     height={containerHeight}
-    style={styles.container}
   >
     {location && location.pathname === '/sphere' ?
       <Sphere
@@ -78,7 +79,7 @@ export const World =
       key="5"
       intensity={0.4}
     />
-  </Scene>
+  </FullScene>
 );
 
 export default withResizableContainer(World);

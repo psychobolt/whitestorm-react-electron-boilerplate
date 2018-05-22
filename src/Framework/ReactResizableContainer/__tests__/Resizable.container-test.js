@@ -47,7 +47,7 @@ describe('component <ResizableContainer>', () => {
   it('should calculate new dimensions on resize', () => {
     const Component = withResizableContainer(ResizeListenerTest);
     const wrapper = mount(<Component />);
-    wrapper.instance().onResize();
+    wrapper.childAt(0).instance().onResize();
     expect(wrapper.find(ResizeListenerTest).instance().resized).toBe(1);
   });
 });

@@ -1,8 +1,10 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow /* , mount */ } from 'enzyme';
 
 import Scene from '../Scene.component';
 
 test('component <Scene /> should render without crashing', () => {
-  mount(<Scene />);
+  // mount(<Scene />); // see https://github.com/facebook/react/pull/12725
+  const wrapper = shallow(<Scene />);
+  wrapper.dive();
 });

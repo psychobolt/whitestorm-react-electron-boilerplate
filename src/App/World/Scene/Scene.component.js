@@ -1,5 +1,6 @@
 // @flow
-import React from 'react';
+// $FlowFixMe
+import React, { forwardRef } from 'react';
 import {
   SceneModule,
   DefineModule,
@@ -9,17 +10,26 @@ import {
   ResizeModule,
 } from 'whs/build/whs';
 import { App } from 'react-whs';
+import { defaultMemoize } from 'reselect';
 import * as THREE from 'three';
+import styled from 'styled-components';
 
 type Props = {
   container: HTMLDivElement,
   width: number,
   height: number,
-  style: {},
+  className: string,
   children: any
 };
 
-export default class Scene extends React.Component<Props> {
+type ParentProps = {
+  className: string,
+  children: any
+}
+
+const Parent = defaultMemoize(className => forwardRef(({ children: child, className: defaultClass, ...rest }: ParentProps, ref) => <div className={`${defaultClass} ${className}`} ref={ref} {...rest}>{child}</div>));
+
+class Scene extends React.Component<Props> {
   static defaultProps = {
     width: 680,
     height: 420,
@@ -52,11 +62,11 @@ export default class Scene extends React.Component<Props> {
   modules: any[];
 
   render() {
-    const { style, container, children } = this.props;
+    const { container, children, className } = this.props;
     return (
       <App
         modules={this.modules}
-        parentStyle={style}
+        parent={Parent(className)}
         passAppToView={({ native }) => {
           native.manager.set('container', container);
           native.applyModule(new ResizeModule());
@@ -67,3 +77,7 @@ export default class Scene extends React.Component<Props> {
     );
   }
 }
+
+export default styled(Scene)`
+  /* stylelint-disable-line block-no-empty */
+`;

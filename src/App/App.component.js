@@ -1,12 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import Header from './Header';
 import World from './World';
-import styles from './App.style';
+import * as styles from './App.style';
+
+const Container = styled.div`${styles.container}`;
+const HeaderContainer = styled.div`${styles.header}`;
+const View = World.extend`${styles.worldContainer}`;
 
 export default props => (
-  <div style={styles.container}>
-    <div style={styles.header}><Header centered /></div>
-    <World style={{ container: styles.worldContainer }} {...props} />
-  </div>
+  <Container>
+    <HeaderContainer><Header centered /></HeaderContainer>
+    <View {...props} />
+  </Container>
 );
