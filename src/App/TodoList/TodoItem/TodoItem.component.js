@@ -14,7 +14,9 @@ type Props = {
 const TodoItem = ({ onClick, completed, text, className }: Props) => (
   <x-box class={className} completed={completed || null}>
     <x-checkbox onClick={onClick} toggled={completed || null} />
-    <x-label for="checkbox">{text}</x-label>
+    <x-label for="checkbox">
+      {text}
+    </x-label>
   </x-box>
 );
 

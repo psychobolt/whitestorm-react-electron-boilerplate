@@ -4,7 +4,7 @@ import { Filters } from './TodoFilter';
 
 const getTodos = state => state.todos.present;
 
-const getFilter = (state, props) => props.filter;
+const getFilter = (state, { filter }) => filter;
 
 export const getVisibleTodos = createSelector(
   [getTodos, getFilter],

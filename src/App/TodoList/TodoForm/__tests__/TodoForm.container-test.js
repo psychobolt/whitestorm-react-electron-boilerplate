@@ -21,7 +21,7 @@ describe('container <TodoForm />', () => {
     const store = mockStore({ todos });
     const wrapper = mount(<TodoForm />, {
       context: { store },
-      childContextTypes: { store: PropTypes.object },
+      childContextTypes: { store: PropTypes.object }, // eslint-disable-line react/forbid-prop-types
     });
     wrapper.find('x-button').simulate('click');
     expect(store.getState()).toEqual({ todos });
@@ -31,7 +31,7 @@ describe('container <TodoForm />', () => {
     const store = mockStore({ todos });
     const wrapper = mount(<TodoForm inputValue=" " />, {
       context: { store },
-      childContextTypes: { store: PropTypes.object },
+      childContextTypes: { store: PropTypes.object }, // eslint-disable-line react/forbid-prop-types
     });
     wrapper.find('x-button').simulate('click');
     expect(store.getState()).toEqual({ todos });
@@ -42,7 +42,7 @@ describe('container <TodoForm />', () => {
     const text = 'Item';
     const wrapper = mount(<TodoForm inputValue={text} />, {
       context: { store },
-      childContextTypes: { store: PropTypes.object },
+      childContextTypes: { store: PropTypes.object }, // eslint-disable-line react/forbid-prop-types
     });
     wrapper.find('x-button').simulate('click');
     expect(store.getActions()).toEqual([{

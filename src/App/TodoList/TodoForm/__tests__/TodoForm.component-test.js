@@ -24,7 +24,8 @@ describe('component <TodoForm />', () => {
     input.simulate('keyup', {
       keyCode: KEYCODE_1,
     });
-    expect(props.onValueSubmit.mock.calls.length).toBe(0);
+    const { onValueSubmit } = props;
+    expect(onValueSubmit.mock.calls.length).toBe(0);
     expect(wrapper.state().inputValue).toBe(value);
   });
 
@@ -36,6 +37,7 @@ describe('component <TodoForm />', () => {
     wrapper.find('input').simulate('keyup', {
       keyCode: KEYCODE_ENTER,
     });
-    expect(props.onValueSubmit.mock.calls.length).toBe(1);
+    const { onValueSubmit } = props;
+    expect(onValueSubmit.mock.calls.length).toBe(1);
   });
 });

@@ -32,7 +32,7 @@ describe('container <TodoList />', () => {
     const store = mockStore({ todos });
     const wrapper = mount(<TodoList />, {
       context: { store },
-      childContextTypes: { store: PropTypes.object },
+      childContextTypes: { store: PropTypes.object }, // eslint-disable-line react/forbid-prop-types
     });
     wrapper.find('x-checkbox').first().simulate('click');
     expect(store.getActions()).toEqual([toggleTodo(id)]);

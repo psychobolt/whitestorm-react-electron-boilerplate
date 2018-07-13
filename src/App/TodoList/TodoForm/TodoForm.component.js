@@ -31,7 +31,8 @@ export default class TodoForm extends React.Component<Props, State> {
   }
 
   onButtonClick = () => {
-    if (this.state.inputValue) {
+    const { inputValue } = this.state;
+    if (inputValue) {
       this.submit();
     }
   }
@@ -47,7 +48,9 @@ export default class TodoForm extends React.Component<Props, State> {
   }
 
   submit() {
-    this.props.onValueSubmit(this.state.inputValue || '');
+    const { inputValue } = this.state;
+    const { onValueSubmit } = this.props;
+    onValueSubmit(inputValue || '');
     this.setState({
       inputValue: '',
     });
@@ -56,14 +59,18 @@ export default class TodoForm extends React.Component<Props, State> {
   props: Props;
 
   render() {
+    const { className } = this.props;
+    const { inputValue } = this.state;
     return (
-      <x-box class={this.props.className}>
+      <x-box class={className}>
         <Input
-          value={this.state.inputValue}
+          value={inputValue}
           onKeyup={this.onInputKeyup}
         />
         <x-button onClick={this.onButtonClick}>
-          <x-label>Add Todo</x-label>
+          <x-label>
+            {'Add Todo'}
+          </x-label>
         </x-button>
       </x-box>
     );

@@ -62,12 +62,14 @@ class Assert extends React.Component<Props> {
   props: Props;
 
   render() {
-    return this.props.children;
+    const { children } = this.props;
+    return children;
   }
 }
 
-const RouteAsserter =
-({ children, initialEntries, initialIndex, steps }: {children: any} & TestOptions) => (
+const RouteAsserter = (
+  { children, initialEntries, initialIndex, steps }: {children: any} & TestOptions,
+) => (
   <MemoryRouter
     initialIndex={initialIndex}
     initialEntries={initialEntries}
@@ -81,7 +83,10 @@ const RouteAsserter =
   </MemoryRouter>
 );
 
-const renderTest = (subject: any, options: TestOptions) =>
-  mount(<RouteAsserter {...options}>{subject}</RouteAsserter>);
+const renderTest = (subject: any, options: TestOptions) => mount(
+  <RouteAsserter {...options}>
+    {subject}
+  </RouteAsserter>,
+);
 
 export default renderTest;

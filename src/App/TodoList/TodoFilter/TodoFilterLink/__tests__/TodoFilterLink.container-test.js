@@ -10,50 +10,65 @@ const mockStore = configureMockStore([]);
 
 describe('container <TodoFilterLink />', () => {
   it('should render correctly without crashing', () => {
-    shallow(<TodoFilterLink filter={Filters.ALL}>{Filters.ALL}</TodoFilterLink>, {
-      context: { store: mockStore({}) },
-    });
+    shallow(
+      <TodoFilterLink filter={Filters.ALL}>
+        {Filters.ALL}
+      </TodoFilterLink>,
+      { context: { store: mockStore({}) } },
+    );
   });
 
   it('should go to / when ALL filter is clicked', () => {
+    const filter = Filters.ALL;
     const props = {
       store: mockStore({}),
-      filter: Filters.ALL,
+      filter,
     };
     const pathname = `/${Filters.ACTIVE}`;
-    const wrapper = renderTest(<TodoFilterLink {...props}>{props.filter}</TodoFilterLink>, {
-      initialEntries: [`/${Filters.ACTIVE}`],
-      initialIndex: 0,
-      steps: [
-        ({ history }) => {
-          expect(history.location.pathname).toBe(pathname);
-        },
-        ({ history }) => {
-          expect(history.location.pathname).toBe(ROOT);
-        },
-      ],
-    });
+    const wrapper = renderTest(
+      <TodoFilterLink {...props}>
+        {filter}
+      </TodoFilterLink>,
+      {
+        initialEntries: [`/${Filters.ACTIVE}`],
+        initialIndex: 0,
+        steps: [
+          ({ history }) => {
+            expect(history.location.pathname).toBe(pathname);
+          },
+          ({ history }) => {
+            expect(history.location.pathname).toBe(ROOT);
+          },
+        ],
+      },
+    );
     wrapper.find('x-tab').simulate('click');
   });
 
   it('should go to /active when ACTIVE filter is clicked', () => {
+    const filter = Filters.ACTIVE;
     const props = {
       store: mockStore({}),
-      filter: Filters.ACTIVE,
+      filter,
     };
-    const pathname = `/${props.filter}`;
-    const wrapper = renderTest(<TodoFilterLink {...props}>{props.filter}</TodoFilterLink>, {
-      initialEntries: [ROOT],
-      initialIndex: 0,
-      steps: [
-        ({ history }) => {
-          expect(history.location.pathname).toBe(ROOT);
-        },
-        ({ history }) => {
-          expect(history.location.pathname).toBe(pathname);
-        },
-      ],
-    });
+    const pathname = `/${filter}`;
+    const wrapper = renderTest(
+      <TodoFilterLink {...props}>
+        {filter}
+      </TodoFilterLink>,
+      {
+        initialEntries: [ROOT],
+        initialIndex: 0,
+        steps: [
+          ({ history }) => {
+            expect(history.location.pathname).toBe(ROOT);
+          },
+          ({ history }) => {
+            expect(history.location.pathname).toBe(pathname);
+          },
+        ],
+      },
+    );
     wrapper.find('x-tab').simulate('click');
   });
 });

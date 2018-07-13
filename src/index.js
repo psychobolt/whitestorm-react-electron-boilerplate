@@ -20,7 +20,9 @@ const store = configureStore(reducer, initialState, [
 replayActionRenderer(store);
 
 ReactDOM.render(
-  <Provider store={store}><Routes history={history} /></Provider>,
+  <Provider store={store}>
+    <Routes history={history} />
+  </Provider>,
   document.getElementById('root'),
 );
 

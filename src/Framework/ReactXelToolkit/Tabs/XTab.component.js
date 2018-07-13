@@ -13,7 +13,9 @@ export const XTab = ({ active, onClick, children }: Props) => (
     onClick={onClick}
     selected={active || null}
   >
-    <x-label>{children}</x-label>
+    <x-label>
+      {children}
+    </x-label>
   </x-tab>
 );
 

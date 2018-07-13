@@ -27,7 +27,11 @@ export default ({ todos, onTodoClick, children, className }: Props) => (
             onClick={() => onTodoClick(todo.id)}
           />
         </li>
-      )) : <x-label>No items</x-label>}
+      )) : (
+        <x-label>
+          {'No items'}
+        </x-label>
+      )}
     </List>
   </x-card>
 );

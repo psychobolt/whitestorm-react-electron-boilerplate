@@ -16,8 +16,8 @@ export const todosReducer = (state = initialState.todos.present, action) => {
         },
       ];
     case TodoListActions.TOGGLE_TODO:
-      return state.map(todo =>
-        (todo.id === action.payload.id ? { ...todo, completed: !todo.completed } : todo));
+      return state.map(todo => (todo.id === action.payload.id
+        ? { ...todo, completed: !todo.completed } : todo));
     default:
       return state;
   }

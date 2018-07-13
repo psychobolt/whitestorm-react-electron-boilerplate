@@ -47,6 +47,7 @@ describe('components <TodoList />', () => {
     };
     const wrapper = mount(<TodoList {...props} />);
     wrapper.find('x-checkbox').first().simulate('click');
-    expect(props.onTodoClick.mock.calls.length).toBe(1);
+    const { onTodoClick } = props;
+    expect(onTodoClick.mock.calls.length).toBe(1);
   });
 });
