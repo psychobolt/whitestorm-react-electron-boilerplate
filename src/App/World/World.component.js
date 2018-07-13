@@ -23,38 +23,42 @@ type Props = {
 
 const FullScene = Scene.extend`${styles.container}`;
 
-export const World =
-({ containerEl, containerWidth = 680, containerHeight = 420, location }: Props) => (
+export const World = (
+  { containerEl, containerWidth = 680, containerHeight = 420, location }: Props,
+) => (
   <FullScene
     container={containerEl}
     width={containerWidth}
     height={containerHeight}
   >
-    {location && location.pathname === '/sphere' ?
-      <Sphere
-        key="1"
-        geometry={{
-          radius: 5,
-          widthSegments: 32,
-          heightSegments: 32,
-        }}
-        material={new THREE.MeshPhongMaterial({ color: 0xF2F2F2 })}
-        position={{
-          y: 5,
-        }}
-      /> :
-      <Box
-        key="2"
-        geometry={{
-          width: 10,
-          height: 10,
-          depth: 10,
-        }}
-        material={new THREE.MeshPhongMaterial({ color: 0xF2F2F2 })}
-        position={{
-          y: 5,
-        }}
-      />}
+    {location && location.pathname === '/sphere'
+      ? (
+        <Sphere
+          key="1"
+          geometry={{
+            radius: 5,
+            widthSegments: 32,
+            heightSegments: 32,
+          }}
+          material={new THREE.MeshPhongMaterial({ color: 0xF2F2F2 })}
+          position={{
+            y: 5,
+          }}
+        />
+      ) : (
+        <Box
+          key="2"
+          geometry={{
+            width: 10,
+            height: 10,
+            depth: 10,
+          }}
+          material={new THREE.MeshPhongMaterial({ color: 0xF2F2F2 })}
+          position={{
+            y: 5,
+          }}
+        />
+      )}
     <Plane
       key="3"
       geometry={{

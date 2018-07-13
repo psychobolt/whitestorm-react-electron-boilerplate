@@ -11,14 +11,22 @@ describe('component <RouteLink />', () => {
     const props = {
       to: [],
     };
-    shallow(<RouteLink {...props}>{() => <div />}</RouteLink>);
+    shallow(
+      <RouteLink {...props}>
+        {() => <div />}
+      </RouteLink>,
+    );
   });
 
   it('should render for a single path, without crashing', () => {
     const props = {
       to: '/path',
     };
-    shallow(<RouteLink {...props}>{() => <div />}</RouteLink>);
+    shallow(
+      <RouteLink {...props}>
+        {() => <div />}
+      </RouteLink>,
+    );
   });
 
   it('should render for multiple paths with a default, without crashing', () => {
@@ -30,7 +38,11 @@ describe('component <RouteLink />', () => {
         default: true,
       }],
     };
-    shallow(<RouteLink {...props}>{() => <div />}</RouteLink>);
+    shallow(
+      <RouteLink {...props}>
+        {() => <div />}
+      </RouteLink>,
+    );
   });
 
   it('should render for multiple paths with no default, without crashing', () => {
@@ -41,21 +53,26 @@ describe('component <RouteLink />', () => {
         to: '/path',
       }],
     };
-    shallow(<RouteLink {...props}>{() => <div />}</RouteLink>);
+    shallow(
+      <RouteLink {...props}>
+        {() => <div />}
+      </RouteLink>,
+    );
   });
 
   it('should go to path on click', () => {
-    const props = {
-      to: '/path',
-    };
+    const to = '/path';
+    const props = { to };
     const wrapper = renderTest(
-      <RouteLink {...props}>{routeProps => <div {...routeProps} />}</RouteLink>,
+      <RouteLink {...props}>
+        {routeProps => <div {...routeProps} />}
+      </RouteLink>,
       {
         initialEntires: [ROOT],
         initialIndex: 0,
         steps: [
           ({ location }) => expect(location.pathname).toBe(ROOT),
-          ({ location }) => expect(location.pathname).toBe(props.to),
+          ({ location }) => expect(location.pathname).toBe(to),
         ],
       },
     );

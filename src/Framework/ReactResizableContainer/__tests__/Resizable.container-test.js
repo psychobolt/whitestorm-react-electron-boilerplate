@@ -16,24 +16,33 @@ type Props = {
 
 // @flow
 class ResizeListenerTest extends React.Component<Props> {
+  resized = 0;
+
   componentWillMount() {
-    this.props.registerResizeListener();
+    const { registerResizeListener } = this.props;
+    registerResizeListener();
   }
 
   componentWillUpdate() {
     this.resized += 1;
   }
 
-  resized = 0;
-
   render() {
-    return <div>test</div>;
+    return (
+      <div>
+        {'test'}
+      </div>
+    );
   }
 }
 
 describe('component <ResizableContainer>', () => {
   it('should render without crashing', () => {
-    const Test = () => <div>test</div>;
+    const Test = () => (
+      <div>
+        {'test'}
+      </div>
+    );
     const Component = withResizableContainer(Test);
     shallow(<Component />);
   });

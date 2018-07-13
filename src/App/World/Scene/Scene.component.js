@@ -16,8 +16,8 @@ import styled from 'styled-components';
 
 type Props = {
   container: HTMLDivElement,
-  width: number,
-  height: number,
+  width?: number,
+  height?: number,
   className: string,
   children: any
 };
@@ -27,7 +27,13 @@ type ParentProps = {
   children: any
 }
 
-const Parent = defaultMemoize(className => forwardRef(({ children: child, className: defaultClass, ...rest }: ParentProps, ref) => <div className={`${defaultClass} ${className}`} ref={ref} {...rest}>{child}</div>));
+const Parent = defaultMemoize(className => forwardRef((
+  { children: child, className: defaultClass, ...rest }: ParentProps, ref,
+) => (
+  <div className={`${defaultClass} ${className}`} ref={ref} {...rest}>
+    {child}
+  </div>
+)));
 
 class Scene extends React.Component<Props> {
   static defaultProps = {
@@ -41,7 +47,7 @@ class Scene extends React.Component<Props> {
     this.modules = [
       new SceneModule(),
       new DefineModule('camera', new PerspectiveCamera({
-        aspect: width / height,
+        aspect: (width || Scene.defaultProps.width) / (height || Scene.defaultProps.height),
         position: new THREE.Vector3(0, 10, 50),
       })),
       new RenderingModule({

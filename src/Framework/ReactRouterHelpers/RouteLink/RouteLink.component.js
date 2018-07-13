@@ -33,9 +33,9 @@ export default ({ to, children }: Props) => {
   return (
     <Route
       path={path}
-      children={({ match, history }) => // eslint-disable-line react/no-children-prop
-        children({ match, onClick: () => !match && history.push(route) })
-      }
+      children={({ match, history }) => children({ // eslint-disable-line react/no-children-prop
+        match, onClick: () => !match && history.push(route),
+      })}
     />
   );
 };

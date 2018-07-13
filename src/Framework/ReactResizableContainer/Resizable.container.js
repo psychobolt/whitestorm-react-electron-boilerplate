@@ -15,8 +15,8 @@ type State = {
   mounted: boolean
 };
 
-const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
-  styled(class extends React.Component<Props, State> {
+const ResizableContainer = (WrappedComponent: ComponentType<any>) => styled(
+  class extends React.Component<Props, State> {
     constructor(props: Props) {
       super(props);
       this.state = {
@@ -79,6 +79,7 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) =>
         </div>
       );
     }
-  })`${styles.container}`;
+  },
+)`${styles.container}`;
 
 export default ResizableContainer;

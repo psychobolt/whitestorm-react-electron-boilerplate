@@ -11,7 +11,9 @@ const View = World.extend`${styles.worldContainer}`;
 
 export default props => (
   <Container>
-    <HeaderContainer><Header centered /></HeaderContainer>
+    <HeaderContainer>
+      <Header centered />
+    </HeaderContainer>
     <View {...props} />
   </Container>
 );
