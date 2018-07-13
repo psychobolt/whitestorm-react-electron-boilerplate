@@ -13,7 +13,11 @@ class XInputMock extends XInput {
   }
 
   render() {
-    return <div>XInput mocked</div>;
+    return (
+      <div>
+        {'XInput mocked'}
+      </div>
+    );
   }
 }
 
@@ -32,7 +36,8 @@ describe('components <XInput>', () => {
     };
     const wrapper = mount(<XInput {...props} />);
     wrapper.find('input').simulate('keyup');
-    expect(props.onKeyup.mock.calls.length).toBe(1);
+    const { onKeyup } = props;
+    expect(onKeyup.mock.calls.length).toBe(1);
     wrapper.unmount();
   });
 
@@ -45,7 +50,8 @@ describe('components <XInput>', () => {
     const keyup = new KeyboardEvent(EVENT_KEYUP);
     const instance = wrapper.instance();
     instance.input.dispatchEvent(keyup);
-    expect(props.onKeyup.mock.calls.length).toBe(1);
+    const { onKeyup } = props;
+    expect(onKeyup.mock.calls.length).toBe(1);
   });
 
   it('should update input on state change -- without fallback', () => {
@@ -72,6 +78,7 @@ describe('components <XInput>', () => {
     const instance = wrapper.instance();
     wrapper.unmount();
     instance.input.dispatchEvent(keyup);
-    expect(props.onKeyup.mock.calls.length).toBe(0);
+    const { onKeyup } = props;
+    expect(onKeyup.mock.calls.length).toBe(0);
   });
 });

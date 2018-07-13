@@ -15,9 +15,9 @@ type FallbackProps = {
 
 type Props = {
   onKeyup: (event: XInputEvent) => void,
-  value: string,
+  value?: string,
   className: string,
-  fallback: (props: FallbackProps) => React.Element<'input'>
+  fallback?: (props: FallbackProps) => React.Element<'input'>
 };
 
 type State = {
@@ -28,9 +28,8 @@ export const EVENT_KEYUP = 'keyup';
 
 export class XInput extends React.Component<Props, State> {
   static defaultProps = {
-    value: '', // eslint-disable-line react/default-props-match-prop-types
-    fallback: (props: FallbackProps) => // eslint-disable-line react/default-props-match-prop-types
-      <input {...props} />,
+    value: '',
+    fallback: (props: FallbackProps) => <input {...props} />,
   };
 
   constructor(props: Props) {
@@ -44,7 +43,8 @@ export class XInput extends React.Component<Props, State> {
   componentDidMount() {
     this.input = this.ref.current ? this.ref.current['#input'] : null;
     if (this.input) {
-      this.input.value = this.props.value;
+      const { value } = this.props;
+      this.input.value = value;
       this.input.addEventListener(EVENT_KEYUP, this.onKeyboardEvent);
     } else {
       this.onMount(() => {
@@ -58,7 +58,8 @@ export class XInput extends React.Component<Props, State> {
   componentDidUpdate() {
     /* istanbul ignore else */
     if (this.input) {
-      this.input.value = this.props.value;
+      const { value } = this.props;
+      this.input.value = value;
     }
   }
 
@@ -80,7 +81,8 @@ export class XInput extends React.Component<Props, State> {
   }
 
   onKeyUp = (target: HTMLInputElement, keyCode: number) => {
-    this.props.onKeyup({
+    const { onKeyup } = this.props;
+    onKeyup({
       type: EVENT_KEYUP,
       target,
       keyCode,
@@ -92,14 +94,17 @@ export class XInput extends React.Component<Props, State> {
   }
 
   props: Props;
+
   input: ?HTMLInputElement;
+
   ref: React.createRef<React.ElementType>;
 
   render() {
     const { className, fallback, value } = this.props;
+    const { fallbackEnabled } = this.state;
     return (
       <x-input class={className} ref={this.ref}>
-        {this.state.fallbackEnabled && fallback({
+        {fallbackEnabled && fallback({
           onKeyUp: this.onSyntheticEvent,
           defaultValue: value,
         })}
