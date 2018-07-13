@@ -17,4 +17,3 @@ const server = new WebpackDevServer(compiler, options);
 server.listen(options.port, () => {
   console.log('dev server listening on port 3000'); // eslint-disable-line no-console
 });
-
