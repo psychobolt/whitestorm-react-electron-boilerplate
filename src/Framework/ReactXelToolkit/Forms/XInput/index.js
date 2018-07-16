@@ -1,1 +1,1 @@
-export { default as XInput, XInputEvent } from './XInput.container';
+export { default, XInputEvent } from './XInput.container';
