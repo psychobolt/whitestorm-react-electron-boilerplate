@@ -111,6 +111,7 @@
     "stylelint": "^9.3.0",
     "stylelint-config-recommended": "^2.1.0",
     "webpack": "^4.16.0",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.3"

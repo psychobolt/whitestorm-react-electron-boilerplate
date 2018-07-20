@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import merge from 'webpack-merge';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import CleanWebpackPlugin from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -76,6 +77,7 @@ if (devMode) {
       new webpack.DefinePlugin({
         'process.env.NODE_ENV': JSON.stringify('development'),
       }),
+      new BundleAnalyzerPlugin(),
     ],
   });
 } else {
