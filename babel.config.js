@@ -1,4 +1,4 @@
-const isProduction = process.env === 'production';
+const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
   presets: [
