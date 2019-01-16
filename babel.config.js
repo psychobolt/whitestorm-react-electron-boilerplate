@@ -29,6 +29,7 @@ module.exports = {
     '@babel/plugin-proposal-numeric-separator',
     '@babel/plugin-proposal-throw-expressions',
     // Stage 3
+    '@babel/plugin-transform-runtime',
     '@babel/plugin-syntax-dynamic-import',
     [
       '@babel/plugin-proposal-class-properties',
