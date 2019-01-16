@@ -70,6 +70,11 @@ let htmlConfig = {
 if (devMode) {
   config = merge(config, {
     devtool: 'eval-source-map',
+    devServer: {
+      host: 'localhost',
+      port: 3000,
+      hot: true,
+    },
     plugins: [
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),
