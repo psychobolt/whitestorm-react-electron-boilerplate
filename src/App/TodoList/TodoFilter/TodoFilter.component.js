@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import styled from 'styled-components';
 
 import TodoFilterLink from './TodoFilterLink';
 import Filters from './TodoFilter.filters';
@@ -10,7 +9,7 @@ type Props = {
   className: string
 };
 
-const TodoFilter = ({ centered, className }: Props) => (
+export default ({ centered, className }: Props) => (
   <x-tabs class={className} centered={centered || null}>
     <TodoFilterLink filter={Filters.ALL}>
       All
@@ -23,8 +22,3 @@ const TodoFilter = ({ centered, className }: Props) => (
     </TodoFilterLink>
   </x-tabs>
 );
-
-
-export default styled(TodoFilter)`
-  /* stylelint-disable-line block-no-empty */
-`;

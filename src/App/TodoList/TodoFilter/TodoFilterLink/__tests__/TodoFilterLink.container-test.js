@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { shallow } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 
@@ -14,21 +15,19 @@ describe('container <TodoFilterLink />', () => {
       <TodoFilterLink filter={Filters.ALL}>
         {Filters.ALL}
       </TodoFilterLink>,
-      { context: { store: mockStore({}) } },
     );
   });
 
   it('should go to / when ALL filter is clicked', () => {
     const filter = Filters.ALL;
-    const props = {
-      store: mockStore({}),
-      filter,
-    };
+    const store = mockStore({});
     const pathname = `/${Filters.ACTIVE}`;
     const wrapper = renderTest(
-      <TodoFilterLink {...props}>
-        {filter}
-      </TodoFilterLink>,
+      <Provider store={store}>
+        <TodoFilterLink filter={filter}>
+          {filter}
+        </TodoFilterLink>
+      </Provider>,
       {
         initialEntries: [`/${Filters.ACTIVE}`],
         initialIndex: 0,
@@ -47,15 +46,14 @@ describe('container <TodoFilterLink />', () => {
 
   it('should go to /active when ACTIVE filter is clicked', () => {
     const filter = Filters.ACTIVE;
-    const props = {
-      store: mockStore({}),
-      filter,
-    };
+    const store = mockStore({});
     const pathname = `/${filter}`;
     const wrapper = renderTest(
-      <TodoFilterLink {...props}>
-        {filter}
-      </TodoFilterLink>,
+      <Provider store={store}>
+        <TodoFilterLink filter={filter}>
+          {filter}
+        </TodoFilterLink>
+      </Provider>,
       {
         initialEntries: [ROOT],
         initialIndex: 0,

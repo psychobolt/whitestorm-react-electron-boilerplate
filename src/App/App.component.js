@@ -7,9 +7,9 @@ import TodoList, { TodoForm, TodoFilter, Filters } from './TodoList';
 import * as styles from './App.style';
 
 const Container = styled.div`${styles.container}`;
-const List = TodoList.extend`${styles.todoList}`;
-const Form = TodoForm.extend`${styles.todoForm}`;
-const Filter = TodoFilter.extend`${styles.todoFilter}`;
+const List = styled(TodoList)`${styles.todoList}`;
+const Form = styled(TodoForm)`${styles.todoForm}`;
+const Filter = styled(TodoFilter)`${styles.todoFilter}`;
 
 const App = ({ match }: { match: Match }) => (
   <Container>

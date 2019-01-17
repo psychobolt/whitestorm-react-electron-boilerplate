@@ -11,6 +11,7 @@ module.exports = {
       useBuiltIns: 'entry',
     }],
     '@babel/preset-flow',
+    '@babel/preset-react',
   ],
   plugins: [
     // Stage 1
@@ -43,6 +44,7 @@ module.exports = {
       root: ['./src'],
       cwd: './',
     }],
+    'babel-plugin-styled-components',
     'react-hot-loader/babel',
   ],
   env: {

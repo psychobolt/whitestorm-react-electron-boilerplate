@@ -1,5 +1,6 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 
 import { XInput, type XInputEvent } from 'Framework/ReactXelToolkit';
 import * as styles from './TodoForm.style';
@@ -14,7 +15,7 @@ type State = {
   inputValue?: string,
 }
 
-const Input = XInput.extend`${styles.input}`;
+const Input = styled(XInput)`${styles.input}`;
 
 export const KEYCODE_ENTER = 13;
 

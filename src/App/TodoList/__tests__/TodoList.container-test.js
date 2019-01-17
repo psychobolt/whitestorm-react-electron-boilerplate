@@ -1,4 +1,5 @@
 import React from 'react';
+import { Provider } from 'react-redux';
 import { shallow, mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import PropTypes from 'prop-types';
@@ -22,15 +23,13 @@ const todos = { present: [completedTodo, activeTodo] };
 
 describe('container <TodoList />', () => {
   it('TodoList should render without crashing', () => {
-    shallow(<TodoList />, {
-      context: { store: mockStore({ todos }) },
-    });
+    shallow(<TodoList />);
   });
 
   it('TodoList should dispatch action on TodoItem click', () => {
     const id = 0;
     const store = mockStore({ todos });
-    const wrapper = mount(<TodoList />, {
+    const wrapper = mount(<Provider store={store}><TodoList /></Provider>, {
       context: { store },
       childContextTypes: { store: PropTypes.object }, // eslint-disable-line react/forbid-prop-types
     });

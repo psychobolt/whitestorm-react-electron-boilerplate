@@ -14,7 +14,7 @@ type Props = {
 
 const List = styled.ul`${styles.ul}`;
 
-const Item = TodoItem.extend`${styles.li}`;
+const Item = styled(TodoItem)`${styles.li}`;
 
 export default ({ todos, onTodoClick, children, className }: Props) => (
   <x-card class={className}>
