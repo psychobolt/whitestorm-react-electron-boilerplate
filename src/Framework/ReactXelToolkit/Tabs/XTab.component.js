@@ -1,6 +1,5 @@
 // @flow
 import React from 'react';
-import styled from 'styled-components';
 
 type Props = {
   active?: boolean,
@@ -23,6 +22,4 @@ XTab.defaultProps = {
   active: false,
 };
 
-export default styled(XTab)`
-  /* stylelint-disable-line block-no-empty */
-`;
+export default XTab;

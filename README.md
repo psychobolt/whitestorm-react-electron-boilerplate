@@ -21,7 +21,7 @@ The essential framework for WhiteStormJS React-Electron development.
   - [Reselect](https://github.com/reactjs/reselect)
 - CSS-in-JS using [Styled Components](https://www.styled-components.com/)
 - [Webpack](https://webpack.js.org/) + [Babel-loader](https://webpack.js.org/loaders/babel-loader/) with presets:
-  - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://babeljs.io/docs/plugins/preset-stage-0/) features 
+  - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0) features 
   - [Flow](https://flow.org/) Type support
   - [Sass](http://sass-lang.com/) support
   - [Hot Module Reloading](https://webpack.js.org/guides/hot-module-replacement/) enabled with [React Hot Loader](https://github.com/gaearon/react-hot-loader)

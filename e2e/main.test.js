@@ -22,7 +22,7 @@ test.afterEach.always(async t => {
   await t.context.app.stop();
 });
 
-test(async t => {
+test('Launch', async t => {
   const { app } = t.context;
   await app.client.waitUntilWindowLoaded();
 
