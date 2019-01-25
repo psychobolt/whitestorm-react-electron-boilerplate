@@ -8,6 +8,7 @@ import {
   PointLight,
   AmbientLight,
 } from 'react-whs';
+import styled from 'styled-components';
 import * as THREE from 'three';
 
 import withResizableContainer from 'Framework/ReactResizableContainer';
@@ -21,7 +22,7 @@ type Props = {
   location: Location,
 };
 
-const FullScene = Scene.extend`${styles.container}`;
+const FullScene = styled(Scene)`${styles.container}`;
 
 export const World = (
   { containerEl, containerWidth = 680, containerHeight = 420, location }: Props,

@@ -7,7 +7,7 @@ import * as styles from './App.style';
 
 const Container = styled.div`${styles.container}`;
 const HeaderContainer = styled.div`${styles.header}`;
-const View = World.extend`${styles.worldContainer}`;
+const View = styled(World)`${styles.worldContainer}`;
 
 export default props => (
   <Container>

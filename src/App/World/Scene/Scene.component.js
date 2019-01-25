@@ -1,5 +1,4 @@
 // @flow
-// $FlowFixMe
 import React, { forwardRef } from 'react';
 import {
   SceneModule,
@@ -12,7 +11,6 @@ import {
 import { App } from 'react-whs';
 import { defaultMemoize } from 'reselect';
 import * as THREE from 'three';
-import styled from 'styled-components';
 
 type Props = {
   container: HTMLDivElement,
@@ -35,7 +33,7 @@ const Parent = defaultMemoize(className => forwardRef((
   </div>
 )));
 
-class Scene extends React.Component<Props> {
+export default class Scene extends React.Component<Props> {
   static defaultProps = {
     width: 680,
     height: 420,
@@ -47,7 +45,7 @@ class Scene extends React.Component<Props> {
     this.modules = [
       new SceneModule(),
       new DefineModule('camera', new PerspectiveCamera({
-        aspect: (width || Scene.defaultProps.width) / (height || Scene.defaultProps.height),
+        aspect: width / height,
         position: new THREE.Vector3(0, 10, 50),
       })),
       new RenderingModule({
@@ -83,7 +81,3 @@ class Scene extends React.Component<Props> {
     );
   }
 }
-
-export default styled(Scene)`
-  /* stylelint-disable-line block-no-empty */
-`;

@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { shallow, mount } from 'enzyme';
 import onElementResize from 'element-resize-event';
 
@@ -14,7 +15,6 @@ type Props = {
   registerResizeListener: () => void
 }
 
-// @flow
 class ResizeListenerTest extends React.Component<Props> {
   resized = 0;
 
@@ -56,7 +56,7 @@ describe('component <ResizableContainer>', () => {
   it('should calculate new dimensions on resize', () => {
     const Component = withResizableContainer(ResizeListenerTest);
     const wrapper = mount(<Component />);
-    wrapper.childAt(0).instance().onResize();
+    wrapper.first().instance().onResize();
     expect(wrapper.find(ResizeListenerTest).instance().resized).toBe(1);
   });
 });

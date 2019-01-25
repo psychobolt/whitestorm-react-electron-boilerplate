@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import * as styles from './Resizable.style';
 
 type Props = {
-  className: string
+  className?: string
 };
 
 type State = {
@@ -15,71 +15,76 @@ type State = {
   mounted: boolean
 };
 
-const ResizableContainer = (WrappedComponent: ComponentType<any>) => styled(
-  class extends React.Component<Props, State> {
-    constructor(props: Props) {
-      super(props);
-      this.state = {
-        width: 1,
-        height: 1,
-        mounted: false,
-      };
-    }
+const Container = styled.div`${styles.container}`;
 
-    componentDidMount() {
-      /* istanbul ignore else */
-      if (this.element) {
-        this.onMount(() => this.setState({
-          ...this.getDimensions(),
-          mounted: true,
-        }));
-      }
-    }
+const ResizableContainer = (WrappedComponent: ComponentType<any>) => class extends
+  React.Component<Props, State> {
+  static defaultProps = {
+    className: null,
+  }
 
-    onMount = (callback: () => mixed) => {
-      callback();
-    }
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      width: 1,
+      height: 1,
+      mounted: false,
+    };
+  }
 
-    onResize = () => {
-      this.setState({
+  componentDidMount() {
+    /* istanbul ignore else */
+    if (this.element) {
+      this.onMount(() => this.setState({
         ...this.getDimensions(),
-      });
+        mounted: true,
+      }));
     }
+  }
 
-    getDimensions() {
-      /* istanbul ignore else */
-      if (this.element) {
-        const box: ClientRect = this.element.getBoundingClientRect();
-        return {
-          width: box.width,
-          height: box.height,
-        };
-      }
-      /* istanbul ignore next */
-      return {};
-    }
+  onMount = (callback: () => mixed) => {
+    callback();
+  }
 
-    element: ?HTMLDivElement;
+  onResize = () => {
+    this.setState({
+      ...this.getDimensions(),
+    });
+  }
 
-    render() {
-      const { className, ...rest } = this.props;
-      const { width, height, mounted } = this.state;
-      const { element, onResize } = this;
-      const props = {
-        containerEl: element,
-        containerWidth: width,
-        containerHeight: height,
-        registerResizeListener: () => {
-          onElementResize(element, onResize);
-        },
+  getDimensions() {
+    /* istanbul ignore else */
+    if (this.element) {
+      const box: ClientRect = this.element.getBoundingClientRect();
+      return {
+        width: box.width,
+        height: box.height,
       };
-      return (
-        <div className={className} ref={ref => { this.element = ref; }}>
-          {mounted && <WrappedComponent {...rest} {...props} />}
-        </div>
-      );
     }
-  },
-)`${styles.container}`;
+    /* istanbul ignore next */
+    return {};
+  }
+
+  element: ?HTMLDivElement;
+
+  render() {
+    const { className, ...rest } = this.props;
+    const { width, height, mounted } = this.state;
+    const { element, onResize } = this;
+    const props = {
+      containerEl: element,
+      containerWidth: width,
+      containerHeight: height,
+      registerResizeListener: () => {
+        onElementResize(element, onResize);
+      },
+    };
+    return (
+      <Container className={className} ref={ref => { this.element = ref; }}>
+        {mounted && <WrappedComponent {...rest} {...props} />}
+      </Container>
+    );
+  }
+};
 
 export default ResizableContainer;
