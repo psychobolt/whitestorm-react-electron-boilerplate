@@ -23,12 +23,19 @@
     {
       "name": "Debug Jest",
       "type": "node",
-      "request": "launch",    
+      "request": "launch",
       "args": [
         "${workspaceRoot}/node_modules/.bin/jest",
         "--runInBand",
         "--no-cache",
       ],
+      "windows": {
+        "args": [
+          "${workspaceRoot}/node_modules/jest/bin/jest.js",
+          "--runInBand",
+          "--no-cache"
+        ]
+      },
       "env": {
         "BABEL_ENV": "commonjs"
       },
@@ -46,6 +53,15 @@
         "--coverage",
         "--watch"
       ],
+      "windows": {
+        "args": [
+          "${workspaceRoot}/node_modules/jest/bin/jest.js",
+          "--runInBand",
+          "--no-cache",
+          "--coverage",
+          "--watch"
+        ]
+      },
       "env": {
         "BABEL_ENV": "commonjs"
       },
