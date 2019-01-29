@@ -68,20 +68,9 @@ yarn prod
 
 ## Adding dependencies (libraries)
 
-This project uses two package.json structure. For more details, see [here](https://github.com/electron-userland/electron-builder/wiki/Two-package.json-Structure).
-
-### Default -- <root_dir>/package.json
-
 ```sh
 yarn add [package-name] --dev # for dev tools
 yarn add [package-name] # for app
-```
-
-### Native libraries -- <root_dir>/src/package.json
-
-```sh
-cd src/
-yarn add [package-name]
 ```
 
 ## Merging from base project
