@@ -1,8 +1,6 @@
 import path from 'path';
 import merge from 'webpack-merge';
 
-process.env.BABEL_ENV = 'webpack4';
-
 let config = {
   module: {
     rules: [
