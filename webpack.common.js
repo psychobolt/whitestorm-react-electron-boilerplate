@@ -1,3 +1,4 @@
+import path from 'path';
 import merge from 'webpack-merge';
 
 process.env.BABEL_ENV = 'webpack4';
@@ -7,7 +8,7 @@ let config = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        include: path.resolve(__dirname, 'src'),
         use: [
           'babel-loader',
         ],
