@@ -1,4 +1,3 @@
 /src/.build/*
-/src/Framework/react-whs/*
 /src/node_modules/*
 /flow-typed/npm/*
