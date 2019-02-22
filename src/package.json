@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "productName": "MyApp",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "main": ".build/main.bundle.js",
   "repository": "https://github.com/psychobolt/react-electron-boilerplate",
   "author": "psychobolt",
