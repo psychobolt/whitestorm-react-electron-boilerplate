@@ -1,7 +1,7 @@
 {
   "name": "electron-boilerplate",
-  "version": "1.0.0",
-  "description": "Personal Electron boilerplate",
+  "version": "0.0.1",
+  "description": "A minimalistic Electron boilerplate based on the official first-app tutorial. Enhanced with webpack support.",
   "main": "src/.build/main.bundle.js",
   "scripts": {
     "postinstall": "rimraf flow-typed/npm && npm run flow-typed-install:dev && npm run flow-typed-install:app && electron-builder install-app-deps",
