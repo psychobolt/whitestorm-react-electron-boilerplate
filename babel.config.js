@@ -9,6 +9,7 @@ module.exports = {
       },
       forceAllTransforms: isProduction,
       useBuiltIns: 'entry',
+      corejs: '3.0.0',
     }],
     '@babel/preset-flow',
     '@babel/preset-react',
