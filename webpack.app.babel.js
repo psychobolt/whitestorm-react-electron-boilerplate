@@ -106,12 +106,14 @@ if (devMode) {
   });
   config = merge(config, {
     plugins: [
-      new CleanWebpackPlugin([
-        'src/.build/*.html',
-        'src/.build/app.bundle.js',
-        'src/.build/*.app.bundle.js',
-        'src/.build/*.css',
-      ]),
+      new CleanWebpackPlugin({
+        cleanOnceBeforeBuildPatterns: [
+          '*.html',
+          'app.bundle.js',
+          '*.app.bundle.js',
+          '*.css',
+        ],
+      }),
       new OptimizeCssAssetsPlugin({
         cssProcessorOptions: { discardComments: { removeAll: true } },
       }),

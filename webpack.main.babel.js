@@ -15,7 +15,9 @@ let config = {
   },
   target: 'electron-main',
   plugins: [
-    new CleanWebpackPlugin(['src/.build/main.bundle.js']),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['main.bundle.js'],
+    }),
   ],
 };
 
