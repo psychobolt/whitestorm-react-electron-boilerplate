@@ -16,7 +16,7 @@
     "dev": "npm run build.main:dev && cross-env NODE_ENV=development electron .",
     "prod": "npm run build:prod && electron .",
     "watch": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack-dev-server --config webpack.app.babel.js",
-    "test": "cross-env BABEL_ENV=commonjs jest",
+    "test": "cross-env BABEL_ENV=commonjs NODE_ENV=development jest",
     "test-e2e": "ava",
     "lint": "npm run lint:css && npm run lint:js",
     "lint:css": "stylelint ./src/**/*.js",
