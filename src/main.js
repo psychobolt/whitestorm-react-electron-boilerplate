@@ -16,7 +16,13 @@ async function installExtension() {
 
 async function createWindow() {
   // Create the browser window.
-  win = new BrowserWindow({ width: 800, height: 600 });
+  win = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
 
   // and load the index.html of the app.
   if (process.env.NODE_ENV === 'production') {
