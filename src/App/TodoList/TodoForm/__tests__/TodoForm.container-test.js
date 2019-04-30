@@ -12,7 +12,8 @@ const todos = { present: [] };
 
 describe('container <TodoForm />', () => {
   it('should render without crashing', () => {
-    shallow(<TodoForm />);
+    const store = mockStore({ todos });
+    shallow(<Provider store={store}><TodoForm /></Provider>);
   });
 
   it('should not add Todo if input value is undefined', () => {

@@ -12,7 +12,7 @@ import CommonConfig from './webpack.common';
 const devMode = process.env.NODE_ENV !== 'production';
 
 let config = {
-  entry: ['css-hot-loader/hotModuleReplacement', './src/index.js'],
+  entry: ['react-hot-loader/patch', 'css-hot-loader/hotModuleReplacement', './src/index.js'],
   output: {
     filename: 'app.bundle.js',
     path: path.resolve(__dirname, 'src', '.build'),

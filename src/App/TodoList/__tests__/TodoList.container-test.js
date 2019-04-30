@@ -23,7 +23,8 @@ const todos = { present: [completedTodo, activeTodo] };
 
 describe('container <TodoList />', () => {
   it('TodoList should render without crashing', () => {
-    shallow(<TodoList />);
+    const store = mockStore({ todos });
+    shallow(<Provider store={store}><TodoList /></Provider>);
   });
 
   it('TodoList should dispatch action on TodoItem click', () => {
