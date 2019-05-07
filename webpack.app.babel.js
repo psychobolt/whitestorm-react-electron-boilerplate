@@ -79,9 +79,6 @@ if (devMode) {
       new webpack.NamedModulesPlugin(),
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin(htmlConfig),
-      new webpack.DefinePlugin({
-        'process.env.NODE_ENV': JSON.stringify('development'),
-      }),
       new BundleAnalyzerPlugin(),
     ],
   });

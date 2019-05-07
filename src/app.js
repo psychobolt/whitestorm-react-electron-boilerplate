@@ -9,5 +9,9 @@ function timeout(duration: number): Promise<void> {
 }
 
 export default function app(): Promise<void> {
+  /* istanbul ignore next */
+  if (process.env.NODE_ENV === 'development') {
+    console.log('DEVELOPMENT MODE!'); // eslint-disable-line no-console
+  }
   return timeout(10).then(() => print('App started'));
 }
