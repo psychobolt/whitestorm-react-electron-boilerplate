@@ -1,5 +1,5 @@
 // @flow
-import React, { forwardRef } from 'react';
+import * as React from 'react';
 import {
   SceneModule,
   DefineModule,
@@ -25,7 +25,7 @@ type ParentProps = {
   children: any
 }
 
-const Parent = defaultMemoize(className => forwardRef((
+const Parent = defaultMemoize(className => React.forwardRef((
   { children: child, className: defaultClass, ...rest }: ParentProps, ref,
 ) => (
   <div className={`${defaultClass} ${className}`} ref={ref} {...rest}>
@@ -33,7 +33,7 @@ const Parent = defaultMemoize(className => forwardRef((
   </div>
 )));
 
-export default class Scene extends React.Component<Props> {
+export class Scene extends React.Component<Props> {
   static defaultProps = {
     width: 680,
     height: 420,
@@ -41,7 +41,7 @@ export default class Scene extends React.Component<Props> {
 
   constructor(props: Props) {
     super(props);
-    const { width, height } = props;
+    const { width = 680, height = 420 } = props;
     this.modules = [
       new SceneModule(),
       new DefineModule('camera', new PerspectiveCamera({
@@ -81,3 +81,16 @@ export default class Scene extends React.Component<Props> {
     );
   }
 }
+
+export default React.lazy<Props>(() => new Promise(resolve => {
+  const exports = { default: Scene };
+  /* istanbul ignore next */
+  if (process.env.NODE_ENV === 'development') {
+    import('spectorjs').then(SPECTOR => {
+      window.spector = new SPECTOR.Spector();
+      resolve(exports);
+    });
+  } else {
+    resolve(exports);
+  }
+}));

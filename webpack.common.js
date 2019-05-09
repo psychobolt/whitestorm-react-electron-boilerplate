@@ -22,6 +22,7 @@ if (process.env.NODE_ENV === 'development') {
       rules: [
         {
           test: /\.js$/,
+          exclude: /spectorjs/,
           use: ['source-map-loader'],
           enforce: 'pre',
         },

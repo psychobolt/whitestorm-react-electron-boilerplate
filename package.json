@@ -179,6 +179,7 @@
     "redux": "^4.0.1",
     "redux-undo": "^1.0.0-beta9-9-7",
     "reselect": "^4.0.0",
+    "spectorjs": "^0.9.6",
     "styled-components": "^4.2.0",
     "typeface-roboto": "^0.0.54",
     "typeface-roboto-mono": "^0.0.54",

@@ -14,7 +14,8 @@ The essential framework for WhiteStormJS React-Electron development.
 - Example App based on WhiteStormJS's [TypeScript boilerplate](https://github.com/WhitestormJS/whitestorm-typescript-boilerplate)
  - ![Preview](https://user-images.githubusercontent.com/560721/31196681-7738d1d4-a903-11e7-9793-adab6eb1f4a1.gif)
 - [whs.js](https://github.com/WhitestormJS/whs.js) with [React integration](https://github.com/WhitestormJS/react-whs)
-- [React](https://facebook.github.io/react/) with [recompose](https://github.com/acdlite/recompose) utility and [Redux support](https://github.com/reactjs/react-redux) libraries: 
+- [Spector.js](https://spector.babylonjs.com) as a module.
+- [React](https://facebook.github.io/react/) with [recomp ose](https://github.com/acdlite/recompose) utility and [Redux support](https://github.com/reactjs/react-redux) libraries: 
   - [React Router Redux](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux)
   - [Electron Redux](https://github.com/hardchor/electron-redux)
   - [Redux Undo](https://github.com/omnidan/redux-undo)
@@ -65,6 +66,15 @@ Tesing only with production code (watch and debug unnecessary):
 ```sh
 yarn prod
 ```
+
+### Enabling Spector.js (Dev Only)
+
+1. Toggle Electron developer tools.
+2. In console, execute script command: 
+    ```sh 
+    spector.displayUI()
+    ```
+
 
 ## Adding dependencies (libraries)
 
