@@ -5,6 +5,8 @@ import { createMemoryHistory } from 'history';
 
 import Routes from '../routes';
 
+jest.mock('../App/World/Scene/Scene.component');
+
 const mockStore = configureMockStore([]);
 
 test('component <Routes /> should render without crashing', () => {
