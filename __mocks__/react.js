@@ -7,4 +7,5 @@ module.exports = {
     const module = loader();
     return module.default ? module.default : module;
   },
+  memo: Component => Component,
 };

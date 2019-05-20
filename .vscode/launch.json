@@ -38,7 +38,7 @@
         ]
       },
       "env": {
-        "BABEL_ENV": "commonjs",
+        "BABEL_ENV": "test",
         "NODE_ENV": "development"
       },
       "console": "integratedTerminal",
@@ -65,7 +65,6 @@
         ]
       },
       "env": {
-        "BABEL_ENV": "commonjs",
         "NODE_ENV": "development"
       },
       "console": "integratedTerminal",
