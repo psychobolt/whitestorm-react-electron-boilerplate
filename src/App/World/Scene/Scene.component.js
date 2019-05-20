@@ -25,6 +25,8 @@ type ParentProps = {
   children: any
 }
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+
 const Parent = defaultMemoize(className => React.forwardRef((
   { children: child, className: defaultClass, ...rest }: ParentProps, ref,
 ) => (
@@ -85,7 +87,7 @@ export class Scene extends React.Component<Props> {
 export default React.lazy<Props>(() => new Promise(resolve => {
   const exports = { default: Scene };
   /* istanbul ignore next */
-  if (process.env.NODE_ENV === 'development') {
+  if (isDevelopment) {
     import('spectorjs').then(SPECTOR => {
       window.spector = new SPECTOR.Spector();
       resolve(exports);
