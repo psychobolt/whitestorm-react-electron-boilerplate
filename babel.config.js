@@ -44,6 +44,11 @@ module.exports = {
     commonjs: {
       plugins: [
         '@babel/plugin-transform-modules-commonjs',
+      ],
+    },
+    test: {
+      plugins: [
+        '@babel/plugin-transform-modules-commonjs',
         'dynamic-import-node-sync',
       ],
     },
