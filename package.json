@@ -5,8 +5,8 @@
   "main": "src/.build/main.bundle.js",
   "scripts": {
     "postinstall": "rimraf flow-typed/npm && npm run flow-typed-install:dev && npm run flow-typed-install:app && electron-builder install-app-deps",
-    "flow-typed-install:dev": "flow-typed install -s -o",
-    "flow-typed-install:app": "cd src/ && flow-typed install -s -o --packageDir ../ || true",
+    "flow-typed-install:dev": "flow-typed update -s",
+    "flow-typed-install:app": "cd src/ && flow-typed update -s -p ../ || true",
     "build.app:prod": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack --config webpack.app.babel.js",
     "build.main:dev": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack --config webpack.main.babel.js",
     "build:prod": "npm run build.app:prod && cross-env BABEL_ENV=commonjs NODE_ENV=production webpack --config webpack.main.babel.js",
