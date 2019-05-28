@@ -1,2 +1,5 @@
+[options]
+include_warnings=true
+
 [lints]
 deprecated-utility=warn
