@@ -11,6 +11,8 @@ export default class XSelect extends React.Component<Props> {
     onChange: () => {},
   }
 
+  ref: React.RefObject<EventTarget>
+
   constructor(props: Props) {
     super(props);
     this.ref = React.createRef<EventTarget>();
@@ -21,8 +23,6 @@ export default class XSelect extends React.Component<Props> {
     const { current } = this.ref;
     if (current) current.addEventListener('change', onChange);
   }
-
-  ref: React.RefObject<EventTarget>
 
   render() {
     const { onChange, children, ...rest } = this.props;
