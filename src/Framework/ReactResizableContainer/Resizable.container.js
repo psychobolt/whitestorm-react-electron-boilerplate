@@ -23,6 +23,8 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) => class exten
     className: null,
   }
 
+  element: ?HTMLDivElement;
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -64,8 +66,6 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) => class exten
     /* istanbul ignore next */
     return {};
   }
-
-  element: ?HTMLDivElement;
 
   render() {
     const { className, ...rest } = this.props;
