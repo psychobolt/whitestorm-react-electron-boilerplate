@@ -32,6 +32,10 @@ export class XInput extends React.Component<Props, State> {
     fallback: (props: FallbackProps) => <input {...props} />,
   };
 
+  input: ?HTMLInputElement;
+
+  ref: React.createRef<React.ElementType>;
+
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -92,12 +96,6 @@ export class XInput extends React.Component<Props, State> {
   onMount = (callback: () => void) => {
     callback();
   }
-
-  props: Props;
-
-  input: ?HTMLInputElement;
-
-  ref: React.createRef<React.ElementType>;
 
   render() {
     const { className, fallback, value } = this.props;

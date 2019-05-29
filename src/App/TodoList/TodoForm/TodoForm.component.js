@@ -57,8 +57,6 @@ export default class TodoForm extends React.Component<Props, State> {
     });
   }
 
-  props: Props;
-
   render() {
     const { className } = this.props;
     const { inputValue } = this.state;

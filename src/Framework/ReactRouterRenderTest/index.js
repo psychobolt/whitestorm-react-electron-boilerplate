@@ -59,8 +59,6 @@ class Assert extends React.Component<Props> {
     }
   }
 
-  props: Props;
-
   render() {
     const { children } = this.props;
     return children;

@@ -1,4 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production';
+const isTest = process.env.BABEL_ENV === 'test';
 
 module.exports = {
   presets: [
@@ -46,7 +47,7 @@ module.exports = {
       cwd: './',
     }],
     'babel-plugin-styled-components',
-    'react-hot-loader/babel',
+    ...(!isTest ? ['react-hot-loader/babel'] : []),
   ],
   env: {
     commonjs: {
