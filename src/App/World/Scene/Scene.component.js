@@ -35,7 +35,7 @@ const Parent = defaultMemoize(className => React.forwardRef((
   </div>
 )));
 
-export class Scene extends React.Component<Props> {
+class Scene extends React.Component<Props> {
   static defaultProps = {
     width: 680,
     height: 420,

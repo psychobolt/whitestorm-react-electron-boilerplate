@@ -3,8 +3,6 @@ import { shallow } from 'enzyme';
 
 import { World } from '../World.component';
 
-jest.mock('../Scene/Scene.component');
-
 describe('component <World />', () => {
   it('should render with Box by default, without crashing', () => {
     shallow(<World />);
