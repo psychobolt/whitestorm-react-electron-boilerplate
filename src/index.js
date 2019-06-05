@@ -12,9 +12,10 @@ import configureStore from './shared/store';
 import Routes from './routes';
 
 const history = createHashHistory();
-const store = configureStore(reducer(history), initialState, [
+const store = configureStore(reducer(history), initialState, middlewares => [
   forwardToMain,
   routerMiddleware(history),
+  ...middlewares,
 ]);
 
 replayActionRenderer(store);

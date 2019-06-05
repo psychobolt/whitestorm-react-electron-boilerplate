@@ -9,7 +9,11 @@ import reducers from './App/TodoList/TodoList.reducers';
 import configureStore from './shared/store';
 import menu from './menu';
 
-const store = configureStore(combineReducers(reducers), initialState, [forwardToRenderer]);
+const store = configureStore(
+  combineReducers(reducers),
+  initialState,
+  middlewares => [...middlewares, forwardToRenderer],
+);
 
 replayActionMain(store);
 
