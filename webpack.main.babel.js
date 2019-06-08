@@ -1,6 +1,6 @@
 import path from 'path';
 import merge from 'webpack-merge';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 import CommonConfig from './webpack.common';
 
