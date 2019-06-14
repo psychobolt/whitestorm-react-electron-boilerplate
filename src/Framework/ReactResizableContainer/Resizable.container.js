@@ -1,6 +1,6 @@
 // @flow
 import React, { type ComponentType } from 'react';
-import onElementResize from 'element-resize-event';
+import onElementResize, { unbind } from 'element-resize-event';
 import styled from 'styled-components';
 
 import * as styles from './Resizable.style';
@@ -77,6 +77,7 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) => class exten
       containerHeight: height,
       registerResizeListener: () => {
         onElementResize(element, onResize);
+        return () => unbind(element);
       },
     };
     return (

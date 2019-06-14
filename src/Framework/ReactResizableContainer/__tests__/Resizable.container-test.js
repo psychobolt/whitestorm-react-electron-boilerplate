@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react';
 import { shallow, mount } from 'enzyme';
-import onElementResize from 'element-resize-event';
+import onElementResize, { unbind } from 'element-resize-event';
 
 import withResizableContainer from '../Resizable.container';
 
@@ -20,11 +20,15 @@ class ResizeListenerTest extends React.Component<Props> {
 
   componentWillMount() {
     const { registerResizeListener } = this.props;
-    registerResizeListener();
+    this.unregisterResizeListener = registerResizeListener();
   }
 
   componentWillUpdate() {
     this.resized += 1;
+  }
+
+  componentWillUnmount() {
+    this.unregisterResizeListener();
   }
 
   render() {
@@ -47,10 +51,12 @@ describe('component <ResizableContainer>', () => {
     shallow(<Component />);
   });
 
-  it('should register listener on mount', () => {
+  it('should register/unregister listener on mount/unmount', () => {
     const Component = withResizableContainer(ResizeListenerTest);
-    mount(<Component />);
+    const wrapper = mount(<Component />);
     expect(onElementResize.mock.calls.length).toBe(1);
+    wrapper.unmount();
+    expect(unbind.mock.calls.length).toBe(1);
   });
 
   it('should calculate new dimensions on resize', () => {
