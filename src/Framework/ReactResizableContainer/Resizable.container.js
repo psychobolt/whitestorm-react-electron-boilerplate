@@ -71,13 +71,14 @@ const ResizableContainer = (WrappedComponent: ComponentType<any>) => class exten
     const { className, ...rest } = this.props;
     const { width, height, mounted } = this.state;
     const { element, onResize } = this;
+    const unregisterResizeListener = () => unbind(element);
     const props = {
       containerEl: element,
       containerWidth: width,
       containerHeight: height,
       registerResizeListener: () => {
         onElementResize(element, onResize);
-        return () => unbind(element);
+        return unregisterResizeListener;
       },
     };
     return (
