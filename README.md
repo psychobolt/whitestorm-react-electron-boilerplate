@@ -15,6 +15,7 @@ A minimalistic Electron boilerplate based on the official [first-app](https://el
   - [Env](https://babeljs.io/docs/plugins/preset-env/) with [stage-0](https://github.com/babel/babel/tree/master/packages/babel-preset-stage-0) features 
   - [Flow](https://flow.org/) Type support
   - [Hot Module Reloading](https://webpack.js.org/guides/hot-module-replacement/) enabled
+- Simple app persistence using [electron-store](https://github.com/sindresorhus/electron-store#readme)
 - Packaging support: [electron-builder](https://github.com/electron-userland/electron-builder)
 - Test runner: [Jest](https://facebook.github.io/jest)
 - e2e runner: [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)
