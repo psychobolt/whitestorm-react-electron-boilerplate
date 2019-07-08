@@ -29,6 +29,7 @@ The essential framework for WhiteStormJS React-Electron development.
 - Babel plugins: 
   - [Module Resolver](https://github.com/tleunen/babel-plugin-module-resolver)
   - Regenerator Runtime support with [Tranform Runtime](https://babeljs.io/docs/plugins/transform-runtime/)
+- Simple app persistence using [electron-store](https://github.com/sindresorhus/electron-store#readme)
 - Packaging support: [electron-builder](https://github.com/electron-userland/electron-builder)
 - Test runner: [Jest](https://facebook.github.io/jest)
 - e2e runner: [Spectron](https://electron.atom.io/spectron/) + [EVA](https://github.com/avajs/ava)
