@@ -1,5 +1,6 @@
 import { app, BrowserWindow, Menu } from 'electron';
 import { forwardToRenderer, replayActionMain } from 'electron-redux';
+import Store from 'electron-store';
 import { combineReducers } from 'redux';
 import path from 'path';
 import url from 'url';
@@ -8,6 +9,8 @@ import initialState from './App/TodoList/TodoList.state';
 import reducers from './App/TodoList/TodoList.reducers';
 import configureStore from './shared/store';
 import menu from './menu';
+
+const electronStore = new Store();
 
 const store = configureStore(
   combineReducers(reducers),
@@ -30,8 +33,8 @@ async function installExtension() {
 async function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: electronStore.get('window.size.width', 800),
+    height: electronStore.get('window.size.height', 600),
     webPreferences: {
       nodeIntegration: true,
     },
@@ -54,6 +57,18 @@ async function createWindow() {
     // Open the DevTools.
     win.webContents.openDevTools();
   }
+
+  win.on('resize', () => {
+    const [width, height] = win.getSize();
+    electronStore.set({
+      window: {
+        size: {
+          width,
+          height,
+        },
+      },
+    });
+  });
 
   // Emitted when the window is closed.
   win.on('closed', () => {
